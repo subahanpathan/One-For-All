@@ -3,16 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Class 10 Previous Year Questions with interactive chapters. Get ready to ace your exams!">
-    <meta name="keywords" content="Class 10, PYQs, Previous Year Questions, Learning Resources, Study Materials">
-    <meta property="og:title" content="Class 10 PYQs">
-    <meta property="og:description" content="Explore Class 10 Previous Year Questions and get ready for success!">
-    <meta property="og:image" content="path/to/image.jpg">
-    <meta property="og:url" content="https://example.com">
     <title>Class 10 PYQs</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Include Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
@@ -27,7 +18,7 @@
 
         /* Body Background and Layout */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -36,7 +27,7 @@
             background: #1d1d1d; /* Default Dark Mode */
             overflow: auto;
             height: 100vh;
-            transition: background-color 0.5s ease;
+            transition: background-color 0.3s ease;
         }
 
         /* Light Mode Styling */
@@ -113,14 +104,14 @@
         }
 
         .subject-btn:hover {
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            background-color: #ff7e5f;
             color: white;
             transform: scale(1.1);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
         }
 
         .subject-btn:focus {
-            outline: 2px solid #ff7e5f;
+            outline: none;
         }
 
         /* Styling for the chapter list */
@@ -246,27 +237,11 @@
             font-size: 18px;
             color: #333;
             background-color: #fff;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .search-bar:focus {
             outline: none;
             border-color: #feb47b;
-            box-shadow: 0 0 10px rgba(255, 126, 95, 0.5);
-        }
-
-        /* Media Query for Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .subject-buttons {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .subject-btn {
-                width: 100%;
-                padding: 14px 0;
-                font-size: 16px;
-            }
         }
     </style>
 </head>
@@ -285,7 +260,7 @@
         </div>
         
         <!-- Toggle Mode Button -->
-        <button class="toggle-btn" id="theme-toggle" aria-label="Toggle Dark/Light Mode">Toggle Dark/Light Mode</button>
+        <button class="toggle-btn" id="theme-toggle">Toggle Dark/Light Mode</button>
     </nav>
 
     <!-- Main Content -->
@@ -303,7 +278,7 @@
             <button class="subject-btn" onclick="showSubject('English')">English</button>
         </div>
 
-        <!-- Updated Section for Let's Dive Into Learning -->
+        <!-- Updated Section for Let's Dive Into Learning (No Separate Background) -->
         <div class="animated-section">
             <h2>Let's Dive Into Learning!</h2>
             <p>Get ready to explore all the chapters with interactive PYQs!</p>
@@ -348,82 +323,122 @@
                     <div class="chapter-list">
                         <div class="chapter-item"><a href="math-chapter1.html">Chapter 1: Real Numbers</a></div>
                         <div class="chapter-item"><a href="math-chapter2.html">Chapter 2: Polynomials</a></div>
+                        <div class="chapter-item"><a href="math-chapter3.html">Chapter 3: Pair of Linear Equations in Two Variables</a></div>
+                        <div class="chapter-item"><a href="math-chapter4.html">Chapter 4: Quadratic Equations</a></div>
+                        <div class="chapter-item"><a href="math-chapter5.html">Chapter 5: Arithmetic Progressions</a></div>
                     </div>
                 `,
                 Science: `
                     <h2>Science Chapters</h2>
                     <div class="chapter-list">
                         <div class="chapter-item"><a href="science-chapter1.html">Chapter 1: Chemical Reactions</a></div>
-                        <div class="chapter-item"><a href="science-chapter2.html">Chapter 2: Acid and Bases</a></div>
+                        <div class="chapter-item"><a href="science-chapter2.html">Chapter 2: Acids, Bases, and Salts</a></div>
+                    </div>
+                `,
+                History: `
+                    <h2>History Chapters</h2>
+                    <div class="chapter-list">
+                        <div class="chapter-item"><a href="history-chapter1.html">Chapter 1: The French Revolution</a></div>
+                    </div>
+                `,
+                Geography: `
+                    <h2>Geography Chapters</h2>
+                    <div class="chapter-list">
+                        <div class="chapter-item"><a href="geography-chapter1.html">Chapter 1: Resources and Development</a></div>
+                    </div>
+                `,
+                English: `
+                    <h2>English Chapters</h2>
+                    <div class="chapter-list">
+                        <div class="chapter-item"><a href="english-chapter1.html">Chapter 1: The Fun They Had</a></div>
                     </div>
                 `
             };
 
-            document.getElementById('subject-content').innerHTML = subjectContent[subject] || 'No chapters available.';
+            const content = subjectContent[subject] || '<p>No content available.</p>';
+            document.getElementById('subject-content').innerHTML = content;
         }
 
-        // Particles.js Configuration
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
+        // Initialize Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
                     }
                 },
-                "color": {
-                    "value": "#ff7e5f"
+                color: {
+                    value: "#ff7e5f"
                 },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
                     }
                 },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": true,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
+                opacity: {
+                    value: 0.3, /* Adjusted opacity for a more subtle effect */
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
                     }
                 },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": true,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
                     }
                 },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ff7e5f",
+                    opacity: 0.4,
+                    width: 1
                 },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
                     }
                 }
-            }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
+                }
+            },
+            retina_detect: true
         });
     </script>
 </body>
