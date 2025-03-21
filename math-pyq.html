@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYQs - Chapter 1: Real Numbers (Last 5 Years)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            padding: 20px;
+            overflow-y: scroll;
+            height: auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .content {
+            font-size: 20px;
+            line-height: 1.8;
+            color: white;
+            max-width: 1000px;
+            margin-bottom: 30px;
+            margin-top: 40px;
+        }
+
+        .year-section {
+            margin-bottom: 40px;
+        }
+
+        .question {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .question h2 {
+            color: #ff7e5f;
+            font-size: 30px;
+        }
+
+        .mcq-options {
+            margin-left: 20px;
+        }
+
+        .solution {
+            display: none; /* Initially hidden */
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+        }
+
+        .solution button {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            border: none;
+        }
+
+        .solution button:hover {
+            background-color: #feb47b;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .question p {
+            margin: 5px 0;
+        }
+
+        /* Back Button */
+        .back-btn {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 20px auto;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background-color: #feb47b;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>PYQs - Chapter 1: Real Numbers (Last 5 Years)</h1>
+
+    <div class="content">
+        <p>Below are the Previous Year Questions (PYQs) from Chapter 1: Real Numbers, asked in the board exams over the past 5 years. Scroll down to view all the questions.</p>
+
+        <!-- 2025 Year Section -->
+        <div class="year-section">
+            <h2>2025 - Board Exam Questions</h2>
+            <!-- Example of MCQ Question -->
+            <div class="question">
+                <h2>Q1. Which of the following is not a rational number?</h2>
+                <div class="mcq-options">
+                    <p><strong>A)</strong> √2</p>
+                    <p><strong>B)</strong> 1/3</p>
+                    <p><strong>C)</strong> 5</p>
+                    <p><strong>D)</strong> -7</p>
+                </div>
+                <div class="solution" id="sol1">
+                    <p><strong>Solution:</strong> The answer is <strong>A) √2</strong>. A rational number is one that can be written as a fraction of two integers. √2 is an irrational number because it cannot be expressed as a fraction.</p>
+                </div>
+                <button class="solution-btn" onclick="toggleSolution('sol1')">Show Solution</button>
+            </div>
+
+            <!-- Example of Short Answer Question -->
+            <div class="question">
+                <h2>Q2. Write the prime factorization of 72.</h2>
+                <div class="solution" id="sol2">
+                    <p><strong>Solution:</strong> To find the prime factorization of 72, we divide it by the smallest prime number until we get 1:</p>
+                    <p>72 ÷ 2 = 36</p>
+                    <p>36 ÷ 2 = 18</p>
+                    <p>18 ÷ 2 = 9</p>
+                    <p>9 ÷ 3 = 3</p>
+                    <p>3 ÷ 3 = 1</p>
+                    <p>Thus, the prime factorization of 72 is <strong>2<sup>3</sup> × 3<sup>2</sup></strong>.</p>
+                </div>
+                <button class="solution-btn" onclick="toggleSolution('sol2')">Show Solution</button>
+            </div>
+        </div>
+
+        <!-- 2024 Year Section -->
+        <div class="year-section">
+            <h2>2024 - Board Exam Questions</h2>
+            <div class="question">
+                <h2>Q1. Which of the following is a rational number?</h2>
+                <div class="mcq-options">
+                    <p><strong>A)</strong> √5</p>
+                    <p><strong>B)</strong> 4/7</p>
+                    <p><strong>C)</strong> 3.14</p>
+                    <p><strong>D)</strong> π</p>
+                </div>
+                <div class="solution" id="sol3">
+                    <p><strong>Solution:</strong> The answer is <strong>B) 4/7</strong>. A rational number is one that can be expressed as a fraction of two integers. 4/7 is a rational number.</p>
+                </div>
+                <button class="solution-btn" onclick="toggleSolution('sol3')">Show Solution</button>
+            </div>
+        </div>
+
+        <!-- 2023 Year Section -->
+        <div class="year-section">
+            <h2>2023 - Board Exam Questions</h2>
+            <div class="question">
+                <h2>Q1. Which of the following is an irrational number?</h2>
+                <div class="mcq-options">
+                    <p><strong>A)</strong> √5</p>
+                    <p><strong>B)</strong> -5/2</p>
+                    <p><strong>C)</strong> 0.75</p>
+                    <p><strong>D)</strong> 4</p>
+                </div>
+                <div class="solution" id="sol4">
+                    <p><strong>Solution:</strong> The answer is <strong>A) √5</strong>. √5 is irrational because it cannot be expressed as a fraction of integers.</p>
+                </div>
+                <button class="solution-btn" onclick="toggleSolution('sol4')">Show Solution</button>
+            </div>
+
+            <div class="question">
+                <h2>Q2. Find the HCF of 36 and 60.</h2>
+                <div class="solution" id="sol5">
+                    <p><strong>Solution:</strong> To find the HCF of 36 and 60, we perform prime factorization:</p>
+                    <p>36 = 2<sup>2</sup> × 3<sup>2</sup></p>
+                    <p>60 = 2<sup>2</sup> × 3 × 5</p>
+                    <p>The common factors are 2<sup>2</sup> × 3. So, HCF = 12.</p>
+                </div>
+                <button class="solution-btn" onclick="toggleSolution('sol5')">Show Solution</button>
+            </div>
+        </div>
+
+        <!-- 2022 Year Section -->
+        <div class="year-section">
+            <h2>2022 - Board Exam Questions</h2>
+            <div class="question">
+                <h2>Q1. Prove that the sum of two irrational numbers can be rational or irrational.</h2>
+                <div class="solution" id="sol6">
+                    <p><strong>Solution:</strong> Let us assume two irrational numbers a and b.</p>
+                    <p>Case 1: If a = √2 and b = -√2, then a + b = √2 + (-√2) = 0, which is rational.</p>
+                    <p>Case 2: If a = √2 and b = √3, then a + b = √2 + √3, which is irrational.</p>
+                    <p>Thus, the sum of two irrational numbers can be either rational or irrational.</p>
+                </div>
+                <button class="solution-btn" onclick="toggleSolution('sol6')">Show Solution</button>
+            </div>
+        </div>
+
+        <!-- Back Button to Previous Page -->
+        <a href="javascript:window.history.back();" class="back-btn">Back to Previous Page</a>
+
+    </div>
+
+    <footer>
+        &copy; 2025 Your Website. All Rights Reserved.
+    </footer>
+
+    <script>
+        function toggleSolution(solutionId) {
+            var solution = document.getElementById(solutionId);
+            if (solution.style.display === "none" || solution.style.display === "") {
+                solution.style.display = "block";
+            } else {
+                solution.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
