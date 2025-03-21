@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Chapter 3: Pair of Linear Equations in Two Variables</title>
+
+    <link rel="stylesheet" href="styles.css"> <!-- If you want to use a separate CSS file -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            color: #ff7e5f;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+            transform: translateY(-5px);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .external-content {
+            margin-bottom: 40px;
+        }
+
+        .external-content h3 {
+            font-size: 24px;
+            color: #ff7e5f;
+            margin-top: 40px;
+        }
+
+        .external-content p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Notes - Chapter 3: Pair of Linear Equations in Two Variables
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <h2>Introduction to Pair of Linear Equations in Two Variables</h2>
+            <p>
+                A pair of linear equations in two variables is a system of two linear equations that involve two unknowns. The general form of these equations is:
+            </p>
+            <p><strong>ax + by = c</strong> and <strong>dx + ey = f</strong></p>
+            <p>
+                Where:
+                <ul>
+                    <li><strong>a, b, d, e</strong> are constants (coefficients of x and y).</li>
+                    <li><strong>x, y</strong> are the variables (unknowns).</li>
+                    <li><strong>c, f</strong> are constants.</li>
+                </ul>
+            </p>
+
+            <h2>Methods of Solving a Pair of Linear Equations</h2>
+            <p>
+                There are three main methods to solve a pair of linear equations in two variables:
+            </p>
+            <ul>
+                <li><strong>Graphical Method</strong>: Plot both equations on a graph and find the point of intersection.</li>
+                <li><strong>Substitution Method</strong>: Solve one equation for one variable and substitute it into the other equation.</li>
+                <li><strong>Elimination Method</strong>: Add or subtract the equations to eliminate one of the variables.</li>
+            </ul>
+
+            <h2>Graphical Method</h2>
+            <p>
+                The graphical method involves plotting the equations on a graph. The point where both lines intersect is the solution to the system of equations.
+            </p>
+            <p><strong>Example:</strong> Solve the system of equations using the graphical method:
+                <ul>
+                    <li>2x + y = 5</li>
+                    <li>x - y = 1</li>
+                </ul>
+                Plotting these on a graph, we find that the lines intersect at the point (3, 2). So, the solution is x = 3 and y = 2.
+            </p>
+
+            <h2>Substitution Method</h2>
+            <p>
+                In the substitution method, we solve one of the equations for one variable and substitute this expression into the other equation to find the second variable.
+            </p>
+            <p><strong>Example:</strong> Solve the system of equations:
+                <ul>
+                    <li>3x + 4y = 12</li>
+                    <li>2x - y = 4</li>
+                </ul>
+                Step 1: Solve the second equation for y: <br> y = 2x - 4.<br>
+                Step 2: Substitute y = 2x - 4 into the first equation and solve for x, then substitute x to find y.
+            </p>
+
+            <h2>Elimination Method</h2>
+            <p>
+                The elimination method involves adding or subtracting the equations to eliminate one of the variables, and then solving for the remaining variable.
+            </p>
+            <p><strong>Example:</strong> Solve the system of equations:
+                <ul>
+                    <li>5x - 3y = 7</li>
+                    <li>3x + 4y = 11</li>
+                </ul>
+                Step 1: Multiply both equations by appropriate numbers so that the coefficients of one variable are the same (or negatives).<br>
+                Step 2: Add or subtract the equations to eliminate that variable and solve for the remaining one.
+            </p>
+
+            <h2>Applications of Pair of Linear Equations in Two Variables</h2>
+            <p>
+                Pair of linear equations are used in real-life situations such as:
+            </p>
+            <ul>
+                <li>Determining the cost of goods based on their quantities.</li>
+                <li>Modeling relationships between two variables in economics.</li>
+                <li>Solving problems in geometry involving two unknowns.</li>
+            </ul>
+        </div>
+
+        <!-- External Educational Content Section -->
+        <div class="external-content">
+            <h3>For More Information, Visit These Trusted Platforms:</h3>
+
+            <div>
+                <h4>Byju's - Pair of Linear Equations</h4>
+                <iframe src="https://byjus.com/maths/linear-equations/" title="Byju's Pair of Linear Equations"></iframe>
+                <p>For a more detailed explanation and interactive lessons, visit Byju's on <a href="https://byjus.com/maths/linear-equations/" target="_blank">Byju's website</a>.</p>
+            </div>
+
+            <div>
+                <h4>Vedantu - Pair of Linear Equations</h4>
+                <iframe src="https://www.vedantu.com/maths/linear-equations" title="Vedantu Pair of Linear Equations"></iframe>
+                <p>Explore the interactive lessons and quizzes on Vedantu's website at <a href="https://www.vedantu.com/maths/linear-equations" target="_blank">Vedantu's website</a>.</p>
+            </div>
+
+            <div>
+                <h4>Inacademy - Pair of Linear Equations</h4>
+                <iframe src="https://inacademy.in/maths/linear-equations" title="Inacademy Pair of Linear Equations"></iframe>
+                <p>Learn more about Pair of Linear Equations in depth on Inacademy. Visit their page <a href="https://inacademy.in/maths/linear-equations" target="_blank">here</a>.</p>
+            </div>
+        </div>
+
+        <!-- Link back to the main chapter page or any other content -->
+        <div class="btn-container">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Your Website. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
