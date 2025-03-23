@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: The French Revolution - Notes</title>
+
+    <!-- Include Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Background and Layout */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
+            padding: 20px;
+            overflow: hidden; /* Prevent scrolling for body */
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Notes Content */
+        .notes-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 900px;
+            color: white;
+            height: 80vh; /* Fixed height for scroll */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        .notes-container h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #ff7e5f;
+        }
+
+        .notes-container p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+            transform: translateY(-5px); /* Slight hover lift effect */
+        }
+
+        .btn:active {
+            transform: translateY(2px); /* Pressed button effect */
+        }
+
+        /* Positioning the particle background canvas */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Footer Styles */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .btn {
+                width: 200px;
+            }
+
+            .notes-container {
+                height: 70vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particles.js background -->
+    <div id="particles-js"></div>
+
+    <!-- Notes Content -->
+    <div class="notes-container" id="notes-container">
+        <h1>Chapter 1: The French Revolution - Notes</h1>
+
+        <h2>Introduction to the French Revolution</h2>
+        <p>The French Revolution, which began in 1789, was one of the most significant events in world history. It marked the end of centuries of absolute monarchy and feudalism in France. The Revolution was not just a political upheaval but a cultural and social movement that completely altered the fabric of French society. It is often considered the beginning of modern political ideologies, including the concepts of liberty, equality, and fraternity.</p>
+
+        <p>At its core, the Revolution was a response to widespread inequality, political corruption, economic hardship, and a rigid social hierarchy that left the majority of the population disenfranchised. The Revolution also aimed to address the economic and social crises that plagued France, as well as the rising influence of Enlightenment ideas calling for individual rights and freedoms.</p>
+
+        <h2>Key Causes of the French Revolution</h2>
+        
+        <h3>Political Causes</h3>
+        <p>One of the main political causes of the French Revolution was the absolute power of the monarchy, with King Louis XVI at its helm. French monarchs, particularly Louis XVI and his predecessors, ruled with an autocratic mindset, giving them full control over the state and its resources. This centralized power led to the absence of political representation for the common people (the Third Estate), resulting in resentment and demands for more participation in government.</p>
+        
+        <p>The French Estates-General, an assembly representing the three estates (the clergy, the nobility, and the common people), had not been convened for over a century before 1789. When it was called to address the financial crisis, the Third Estate—composed of peasants, workers, and the bourgeoisie—found itself underrepresented and powerless. This led to the formation of the National Assembly, where the common people declared that they represented the true French people, and vowed to create a new constitution.</p>
+
+        <h3>Economic Causes</h3>
+        <p>France's economic condition in the late 18th century was dire. The country was in debt due to its participation in the American Revolution and lavish spending on wars. This led to a heavy reliance on taxing the common people, who were already suffering from economic hardship. Moreover, poor harvests in the late 1780s caused widespread famine and food scarcity, resulting in rising bread prices and further economic strain on the lower classes.</p>
+        
+        <p>The French economy was heavily reliant on an outdated and inefficient feudal system that placed a disproportionate financial burden on the peasantry. The nobility and clergy, who were exempt from taxes, continued to enjoy their privileges, creating further resentment among the common people, who were facing hardship. The financial crisis reached its peak when the monarchy attempted to introduce new taxes, which led to widespread protests and unrest.</p>
+
+        <h3>Social Causes</h3>
+        <p>The social structure of France was rigid and hierarchical, with three distinct estates: the clergy (First Estate), the nobility (Second Estate), and the common people (Third Estate). The Third Estate made up 98% of the population but had very little political power or influence in the government. The clergy and nobility, who made up the First and Second Estates, enjoyed privileges such as tax exemptions and control over much of the land.</p>
+
+        <p>Within the Third Estate, there was further division. The bourgeoisie, the urban middle class, were educated and wealthy, but they still lacked political power. The peasantry, who made up the majority of the Third Estate, were living in dire poverty, facing high taxes and feudal obligations. The social divide was a key factor in the Revolution, as the common people demanded more equality and the abolition of the feudal system.</p>
+
+        <h3>Enlightenment Ideas</h3>
+        <p>The Enlightenment, a philosophical movement that spread throughout Europe in the 18th century, played a significant role in shaping the ideas behind the Revolution. Thinkers like Voltaire, Rousseau, and Montesquieu criticized the absolute power of monarchs and the social inequality that existed in France. They advocated for a society based on reason, liberty, and equality, ideas that resonated with the oppressed Third Estate.</p>
+        
+        <p>The Enlightenment encouraged the French people to question traditional authority and to think about political rights, the role of government, and the importance of individual freedoms. The Enlightenment's emphasis on the idea of the "social contract"—that rulers derive their authority from the consent of the governed—directly challenged the legitimacy of the monarchy and inspired the call for democratic reforms.</p>
+
+        <h2>Key Events of the French Revolution</h2>
+        
+        <h3>The Estates-General and the Tennis Court Oath</h3>
+        <p>In May 1789, King Louis XVI convened the Estates-General to address the financial crisis. Each estate sent representatives, but the Third Estate quickly found itself outvoted by the clergy and nobility. In protest, the Third Estate declared itself the National Assembly, claiming to represent the entire French people. The king responded by locking them out of their meeting hall.</p>
+        
+        <p>The members of the National Assembly met at an indoor tennis court, where they swore the Tennis Court Oath, vowing not to disband until they had created a new constitution for France. This act of defiance marked the beginning of the Revolution, as the common people began to take control of the political agenda.</p>
+
+        <h3>The Storming of the Bastille</h3>
+        <p>On July 14, 1789, in response to rumors that the king was planning to use military force to dissolve the National Assembly, Parisians stormed the Bastille, a prison that symbolized royal tyranny. The event became a symbol of the Revolution and is still celebrated annually in France as Bastille Day.</p>
+        
+        <p>The storming of the Bastille marked the collapse of royal authority in Paris and sparked widespread revolts throughout France. The Revolution gained momentum as the people began to seize power from the monarchy and the aristocracy.</p>
+
+        <h3>The Declaration of the Rights of Man and of the Citizen</h3>
+        <p>In August 1789, the National Assembly adopted the Declaration of the Rights of Man and of the Citizen, which outlined the principles of liberty, equality, and fraternity. The Declaration emphasized individual rights, including freedom of speech, freedom of the press, and the right to resist oppression. It also called for the abolition of feudal privileges and the establishment of a government based on the will of the people.</p>
+
+        <p>This document laid the foundation for the French constitution and inspired revolutionary movements around the world. It became a cornerstone of the French Republic, and its ideas are still influential in modern democratic systems.</p>
+
+        <h3>The Reign of Terror</h3>
+        <p>By 1793, the Revolution had entered a more radical phase. The monarchy was abolished, and King Louis XVI and Queen Marie Antoinette were executed by guillotine. The revolutionaries, led by figures like Maximilien Robespierre, believed that the Revolution needed to be protected at all costs, leading to the Reign of Terror.</p>
+        
+        <p>During the Reign of Terror, thousands of people were executed on charges of being enemies of the Revolution. This period of violence and repression culminated in the downfall of Robespierre, who was executed in 1794. The Reign of Terror ended, but the Revolution continued to evolve in new directions.</p>
+
+        <h2>The Legacy of the French Revolution</h2>
+        
+        <p>The French Revolution left a profound impact on France and the world. It led to the establishment of the First French Republic and the rise of secularism, as the power of the Catholic Church was greatly diminished. The Revolution abolished the feudal system and reformed the political and social structures of France, including the creation of a more egalitarian society.</p>
+
+        <p>Internationally, the French Revolution inspired other revolutions, including in Haiti, Latin America, and Europe. Its ideals of liberty, equality, and fraternity became the foundation for modern democratic movements, and its impact on political thought and government is still felt today.</p>
+
+        <p>Despite the chaos and violence, the Revolution demonstrated the power of the people to challenge oppressive systems and reshape their societies. It remains a symbol of hope for those seeking freedom and justice in the world.</p>
+
+        <p>In conclusion, the French Revolution was not merely an event in French history, but a turning point in the history of the world. It laid the groundwork for the modern world we live in today, influencing the development of democracy, human rights, and social equality.</p>
+  <h2>Key Events and Dates of the French Revolution</h2>
+
+        <h3>1789: The Estates-General and the National Assembly</h3>
+        <p>On May 5, 1789, King Louis XVI convened the Estates-General to address the financial crisis in France. The assembly consisted of representatives from the three estates: the clergy (First Estate), the nobility (Second Estate), and the common people (Third Estate). The Third Estate, feeling underrepresented and disrespected, proclaimed itself the National Assembly on June 17, 1789, and vowed to write a new constitution for France.</p>
+        
+        <p>Event Significance: This event marked the beginning of the Revolution. The Third Estate’s declaration was a direct challenge to the monarchy and the traditional structure of French society.</p>
+
+        <h3>June 20, 1789: The Tennis Court Oath</h3>
+        <p>After being locked out of their meeting hall, the National Assembly met in an indoor tennis court in Versailles. There, they swore the Tennis Court Oath, promising not to separate until they had created a new constitution for France.</p>
+
+        <p>Event Significance: This was a dramatic moment of defiance and unity. It signified the intent to reform the French political system and establish a constitutional monarchy, or even a republic.</p>
+
+        <h3>July 14, 1789: The Storming of the Bastille</h3>
+        <p>On July 14, 1789, Parisians stormed the Bastille, a prison that symbolized royal authority. The crowd’s anger was driven by fear that King Louis XVI would use military force to suppress the Revolution.</p>
+        
+        <p>Event Significance: The Bastille's fall became a powerful symbol of the Revolution, representing the collapse of royal authority and the triumph of the people.</p>
+
+        <h3>August 26, 1789: The Declaration of the Rights of Man and of the Citizen</h3>
+        <p>The National Assembly adopted the Declaration of the Rights of Man and of the Citizen, which laid out the principles of liberty, equality, and fraternity. It also emphasized individual rights such as freedom of speech, religion, and the press.</p>
+        
+        <p>Event Significance: This document became the cornerstone of the French Revolution and an inspiration for democratic movements worldwide.</p>
+
+        <h3>October 5-6, 1789: The Women’s March on Versailles</h3>
+        <p>In response to the scarcity of bread and the King’s refusal to address the issues, thousands of women marched from Paris to Versailles. They demanded that the King return to Paris, which he did, effectively signaling the end of the monarchy’s power in Versailles.</p>
+
+        <p>Event Significance: This event demonstrated the power of popular protest and the deep connection between the monarchy and the people’s welfare.</p>
+
+        <h3>1791: The King Attempts to Flee – The Flight to Varennes</h3>
+        <p>In June 1791, King Louis XVI and his family attempted to flee France to seek foreign assistance, but they were caught in Varennes and brought back to Paris. This event severely damaged the monarchy’s credibility.</p>
+
+        <p>Event Significance: The king’s failed escape turned many in France against the monarchy, leading to increased calls for the abolition of the monarchy and the establishment of a republic.</p>
+
+        <h3>1792: The Abolition of the Monarchy and the Birth of the French Republic</h3>
+        <p>On August 10, 1792, a revolution erupted in Paris, and the monarchy was effectively abolished. In September 1792, the National Convention declared France a republic.</p>
+
+        <p>Event Significance: The monarchy’s fall marked a definitive end to centuries of royal rule, and the establishment of the First French Republic laid the foundation for future democratic governance in France.</p>
+
+        <h3>1793: The Execution of Louis XVI</h3>
+        <p>On January 21, 1793, King Louis XVI was executed by guillotine after being convicted of treason. His death marked the symbolic end of the monarchy in France.</p>
+        
+        <p>Event Significance: The execution signaled the deepening radicalism of the Revolution, and the establishment of the Republic. It also led to the Reign of Terror.</p>
+
+        <h3>1793-1794: The Reign of Terror</h3>
+        <p>Led by Maximilien Robespierre, the Committee of Public Safety initiated the Reign of Terror to defend the Revolution from internal and external threats. Thousands of suspected enemies of the Revolution were executed by guillotine, including Queen Marie Antoinette.</p>
+
+        <p>Event Significance: The Reign of Terror was a period of intense violence and fear, but it also solidified the revolutionaries’ control over France. It ended with the execution of Robespierre in 1794.</p>
+
+        <h3>1795: The Directory is Established</h3>
+        <p>After the fall of Robespierre, the National Convention created a new government known as the Directory. It was characterized by corruption and instability, but it brought some peace to France after the violence of the Reign of Terror.</p>
+
+        <p>Event Significance: The Directory represented a moderate shift after the extremes of the Revolution, but it was ultimately overthrown in a coup led by Napoleon Bonaparte in 1799.</p>
+
+        <h3>1799: Napoleon Takes Power</h3>
+        <p>In November 1799, Napoleon Bonaparte staged a coup and became the ruler of France. This marked the end of the Revolution and the beginning of the Napoleonic era, with Napoleon eventually declaring himself Emperor of France in 1804.</p>
+
+        <p>Event Significance: Napoleon’s rise to power brought an end to the French Revolution but continued many of its reforms. His reign would have a lasting impact on Europe.</p>
+
+        <h2>Legacy of the French Revolution</h2>
+
+        <p>The French Revolution left a profound impact on France and the world. It led to the establishment of the First French Republic and the rise of secularism, as the power of the Catholic Church was greatly diminished. The Revolution abolished the feudal system and reformed the political and social structures of France, including the creation of a more egalitarian society.</p>
+
+        <p>Internationally, the French Revolution inspired other revolutions, including in Haiti, Latin America, and Europe. Its ideals of liberty, equality, and fraternity became the foundation for modern democratic movements, and its impact on political thought and government is still felt today.</p>
+
+        <p>In conclusion, the French Revolution was not merely an event in French history, but a turning point in the history of the world. It laid the groundwork for the modern world we live in today, influencing the development of democracy, human rights, and social equality.</p>
+
+    </div>
+
+    <!-- Button to return home -->
+    <div class="btn-container">
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Notes on The French Revolution. All rights reserved.
+    </footer>
+
+    <script>
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "size": {
+                    "value": 3
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out"
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
