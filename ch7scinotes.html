@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Acids and Bases - Notes</title>
+
+    <!-- Include Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Background and Layout */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Orange and Black Gradient background */
+            padding: 20px;
+            overflow: hidden; /* Prevent scrolling for body */
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Notes Content */
+        .notes-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 900px;
+            color: white;
+            height: 80vh; /* Fixed height for scroll */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        .notes-container h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #ff7e5f;
+        }
+
+        .notes-container p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+            transform: translateY(-5px); /* Slight hover lift effect */
+        }
+
+        .btn:active {
+            transform: translateY(2px); /* Pressed button effect */
+        }
+
+        .see-more-btn {
+            display: block;
+            margin: 30px auto;
+            font-size: 18px;
+            color: #ff7e5f;
+            background: none;
+            border: none;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Positioning the particle background canvas */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Footer Styles */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .btn {
+                width: 200px;
+            }
+
+            .notes-container {
+                height: 70vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particles.js background -->
+    <div id="particles-js"></div>
+
+    <!-- Notes Content -->
+    <div class="notes-container" id="notes-container">
+        <h1>Chapter 2: Acids and Bases - Notes</h1>
+
+        <h2>Introduction to Acids and Bases</h2>
+        <p>Acids and bases are two categories of compounds that have opposite chemical properties. Acids release hydrogen ions (H<sup>+</sup>) when dissolved in water, while bases release hydroxide ions (OH<sup>-</sup>). The study of acids and bases is essential in understanding many chemical reactions, including neutralization and acid-base titrations.</p>
+
+        <h2>Definition of Acids</h2>
+        <p>An <strong>acid</strong> is a substance that donates a proton (H<sup>+</sup>) or accepts an electron pair in reactions. Acids can be classified based on their strength (strong or weak) and their ability to dissociate in water.</p>
+
+        <h3>Examples of Acids:</h3>
+        <ul>
+            <li>Hydrochloric acid (HCl) - Found in stomach acid.</li>
+            <li>Sulfuric acid (H<sub>2</sub>SO<sub>4</sub>) - Used in batteries.</li>
+            <li>Acetic acid (CH<sub>3</sub>COOH) - Found in vinegar.</li>
+        </ul>
+
+        <h2>Definition of Bases</h2>
+        <p>A <strong>base</strong> is a substance that accepts a proton (H<sup>+</sup>) or donates an electron pair in reactions. Bases can also be classified into strong and weak, depending on their ability to dissociate in water.</p>
+
+        <h3>Examples of Bases:</h3>
+        <ul>
+            <li>Sodium hydroxide (NaOH) - Used in soap making.</li>
+            <li>Ammonia (NH<sub>3</sub>) - Found in cleaning products.</li>
+            <li>Calcium hydroxide (Ca(OH)<sub>2</sub>) - Used in agriculture to neutralize acidic soils.</li>
+        </ul>
+
+        <h2>Acid-Base Theories</h2>
+        <h3>1. Arrhenius Theory</h3>
+        <p>According to the Arrhenius theory, acids are substances that increase the concentration of hydrogen ions (H<sup>+</sup>) in water, and bases are substances that increase the concentration of hydroxide ions (OH<sup>-</sup>) in water.</p>
+
+        <h3>2. Brønsted-Lowry Theory</h3>
+        <p>In the Brønsted-Lowry theory, acids are proton (H<sup>+</sup>) donors, while bases are proton (H<sup>+</sup>) acceptors. This theory expands the concept of acids and bases beyond aqueous solutions to include non-aqueous solvents.</p>
+
+        <h3>3. Lewis Theory</h3>
+        <p>The Lewis theory defines acids as electron pair acceptors and bases as electron pair donors. This definition includes a wider range of compounds, such as metal ions.</p>
+
+        <h2>Acid-Base Reactions</h2>
+        <p>When an acid reacts with a base, a neutralization reaction occurs. This reaction forms water and a salt. The general equation for an acid-base reaction is:</p>
+        <pre>Acid + Base → Salt + Water</pre>
+
+        <h3>Example of Neutralization:</h3>
+        <p>When hydrochloric acid (HCl) reacts with sodium hydroxide (NaOH), the result is sodium chloride (NaCl) and water (H<sub>2</sub>O):</p>
+        <pre>HCl + NaOH → NaCl + H<sub>2</sub>O</pre>
+
+        <h2>The pH Scale</h2>
+        <p>The <strong>pH scale</strong> is a measure of the acidity or basicity of a solution. It ranges from 0 to 14, where:</p>
+        <ul>
+            <li><strong>pH < 7</strong>: Acidic (e.g., lemon juice, stomach acid)</li>
+            <li><strong>pH = 7</strong>: Neutral (e.g., pure water)</li>
+            <li><strong>pH > 7</strong>: Basic (e.g., soap, bleach)</li>
+        </ul>
+
+        <h3>pH Formula:</h3>
+        <pre>pH = -log[H<sup>+</sup>]</pre>
+
+        <h2>Strong vs Weak Acids and Bases</h2>
+        <h3>Strong Acids</h3>
+        <p>Strong acids completely dissociate in water, releasing all of their hydrogen ions. Examples include hydrochloric acid (HCl) and sulfuric acid (H<sub>2</sub>SO<sub>4</sub>).</p>
+
+        <h3>Weak Acids</h3>
+        <p>Weak acids only partially dissociate in water. Examples include acetic acid (CH<sub>3</sub>COOH) and citric acid (C<sub>6</sub>H<sub>8</sub>O<sub>7</sub>).</p>
+
+        <h3>Strong Bases</h3>
+        <p>Strong bases completely dissociate in water to release hydroxide ions. Examples include sodium hydroxide (NaOH) and potassium hydroxide (KOH).</p>
+
+        <h3>Weak Bases</h3>
+        <p>Weak bases only partially dissociate in water. Examples include ammonia (NH<sub>3</sub>) and magnesium hydroxide (Mg(OH)<sub>2</sub>).</p>
+
+        <h2>Applications of Acids and Bases</h2>
+        <ul>
+            <li><strong>Acids</strong> are used in the production of fertilizers, cleaning products, and in food preservation (e.g., citric acid in fruit juices).</li>
+            <li><strong>Bases</strong> are used in soaps, detergents, and as antacids for treating heartburn.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Acids and bases are fundamental concepts in chemistry. Their interactions, such as neutralization, and their role in everyday life (e.g., in digestion, cleaning, and industry) are crucial to understanding both basic and advanced chemistry. Mastery of the properties, behaviors, and applications of acids and bases will help in numerous scientific fields.</p>
+
+        <!-- See More Button -->
+        <button class="see-more-btn" id="see-more-btn">See More</button>
+    </div>
+
+    <!-- Button to return home -->
+    <div class="btn-container">
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Your Website. All Rights Reserved.
+    </footer>
+
+    <!-- Initialize Particles.js -->
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#ff7e5f"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ff7e5f",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Handle See More Button
+        document.getElementById('see-more-btn').addEventListener('click', function () {
+            document.getElementById('notes-container').style.height = 'auto'; // Remove the scroll restriction
+            document.getElementById('see-more-btn').style.display = 'none'; // Hide the button after expanding
+        });
+    </script>
+</body>
+</html>
