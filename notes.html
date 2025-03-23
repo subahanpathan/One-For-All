@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes - Chapter 1: Real Numbers</title>
+    <title>Notes - Chapter 2: Polynomials</title>
 
     <link rel="stylesheet" href="styles.css"> <!-- If you want to use a separate CSS file -->
     <style>
@@ -106,52 +106,71 @@
 <body>
 
     <div class="header">
-        Notes - Chapter 1: Real Numbers
+        Notes - Chapter 2: Polynomials
     </div>
 
     <div class="container">
         <div class="content">
-            <h2>Introduction to Real Numbers</h2>
+            <h2>Introduction to Polynomials</h2>
             <p>
-                Real numbers include all the rational and irrational numbers. They can be expressed as a decimal or a fraction. The real number system consists of natural numbers, whole numbers, integers, rational numbers, and irrational numbers. Real numbers can be plotted on a number line, and they have properties such as closure, commutative, and associative properties for addition and multiplication.
+                A polynomial is an expression that consists of variables (also known as indeterminates) raised to whole-number powers and multiplied by coefficients. The general form of a polynomial in one variable is:
+            </p>
+            <p><strong>f(x) = a<sub>n</sub>x<sup>n</sup> + a<sub>n-1</sub>x<sup>n-1</sup> + ... + a<sub>1</sub>x + a<sub>0</sub></strong></p>
+            <p>
+                Where:
+                <ul>
+                    <li><strong>n</strong> is a non-negative integer (degree of the polynomial).</li>
+                    <li><strong>a<sub>n</sub>, a<sub>n-1</sub>, ..., a<sub>0</sub></strong> are constants (coefficients of the polynomial).</li>
+                    <li><strong>x</strong> is the variable (indeterminate).</li>
+                </ul>
             </p>
 
-            <h2>Types of Real Numbers</h2>
-            <p>
-                Real numbers are divided into two broad categories:
-            </p>
+            <h2>Types of Polynomials</h2>
+            <p>Polynomials can be classified based on their degree:</p>
             <ul>
-                <li><strong>Rational Numbers</strong>: Numbers that can be written as a fraction of two integers. Examples: 1/2, 3/4, -7/8.</li>
-                <li><strong>Irrational Numbers</strong>: Numbers that cannot be expressed as fractions. Examples: √2, π.</li>
+                <li><strong>Constant Polynomial</strong>: Degree 0 (e.g., f(x) = 7).</li>
+                <li><strong>Linear Polynomial</strong>: Degree 1 (e.g., f(x) = 2x + 3).</li>
+                <li><strong>Quadratic Polynomial</strong>: Degree 2 (e.g., f(x) = x<sup>2</sup> - 4x + 4).</li>
+                <li><strong>Cubic Polynomial</strong>: Degree 3 (e.g., f(x) = x<sup>3</sup> - 2x<sup>2</sup> + 3x - 5).</li>
+                <li><strong>Quartic Polynomial</strong>: Degree 4 (e.g., f(x) = x<sup>4</sup> - x<sup>3</sup> + x<sup>2</sup> - x + 1).</li>
+                <li><strong>Higher Degree Polynomials</strong>: Degree greater than 4 (e.g., f(x) = x<sup>5</sup> - 2x<sup>4</sup> + 3x<sup>3</sup> - x<sup>2</sup> + 4).</li>
             </ul>
 
-            <h2>Properties of Real Numbers</h2>
+            <h2>Polynomial Operations</h2>
             <p>
-                Real numbers have several important properties, such as:
+                You can perform various operations with polynomials, such as:
             </p>
             <ul>
-                <li><strong>Closure Property</strong>: The sum or product of any two real numbers is also a real number.</li>
-                <li><strong>Commutative Property</strong>: The order of addition or multiplication does not change the result. Example: a + b = b + a.</li>
-                <li><strong>Associative Property</strong>: The grouping of numbers does not affect the sum or product. Example: (a + b) + c = a + (b + c).</li>
+                <li><strong>Polynomial Addition</strong>: Add polynomials by combining like terms.</li>
+                <li><strong>Polynomial Subtraction</strong>: Subtract polynomials by subtracting like terms.</li>
+                <li><strong>Polynomial Multiplication</strong>: Multiply polynomials using distributive property or FOIL method.</li>
+                <li><strong>Polynomial Division</strong>: Divide polynomials using long division or synthetic division.</li>
             </ul>
 
-            <h2>Operations on Real Numbers</h2>
+            <h2>Examples</h2>
+            <p>Let's take the following polynomials as examples:</p>
+            <ul>
+                <li>f(x) = 2x<sup>3</sup> + 4x<sup>2</sup> - 5x + 6</li>
+                <li>g(x) = x<sup>2</sup> - 3x + 2</li>
+            </ul>
+            <p>When you add them, the result is:</p>
+            <pre>f(x) + g(x) = 2x<sup>3</sup> + 4x<sup>2</sup> - 5x + 6 + x<sup>2</sup> - 3x + 2 = 2x<sup>3</sup> + 5x<sup>2</sup> - 8x + 8</pre>
+
+            <h2>Important Theorems and Properties</h2>
+            <ul>
+                <li><strong>Factor Theorem</strong>: If f(a) = 0, then (x - a) is a factor of the polynomial f(x).</li>
+                <li><strong>Remainder Theorem</strong>: When a polynomial f(x) is divided by (x - a), the remainder is f(a).</li>
+                <li><strong>Fundamental Theorem of Algebra</strong>: Every non-constant polynomial equation has at least one complex root.</li>
+            </ul>
+
+            <h2>Graphing Polynomials</h2>
             <p>
-                Real numbers can undergo various operations such as addition, subtraction, multiplication, division, and exponentiation. Understanding how to operate on real numbers is essential for solving equations and inequalities.
+                The graph of a polynomial function is continuous and smooth. The degree of the polynomial determines the number of turning points in the graph.
             </p>
 
-            <h2>Examples and Applications</h2>
+            <h2>Applications of Polynomials</h2>
             <p>
-                - Adding real numbers: 5 + (-3) = 2<br>
-                - Multiplying real numbers: 4 * (-2) = -8<br>
-                - Solving real number equations: x + 3 = 7 → x = 4
-            </p>
-
-            <h2>Important Definitions</h2>
-            <p>
-                - <strong>Rational Numbers</strong>: Numbers that can be written as a ratio of two integers.<br>
-                - <strong>Irrational Numbers</strong>: Numbers that cannot be written as a ratio of two integers.<br>
-                - <strong>Integer</strong>: A number without a decimal or fraction part, can be positive, negative, or zero.
+                Polynomials are widely used in various fields including physics, engineering, economics, and computer science. They are used to model growth rates, optimize functions, and describe physical phenomena.
             </p>
         </div>
 
@@ -160,39 +179,21 @@
             <h3>For More Information, Visit These Trusted Platforms:</h3>
 
             <div>
-                <h4>Byju's - Real Numbers</h4>
-                <iframe src="https://byjus.com/maths/real-numbers/" title="Byju's Real Numbers"></iframe>
-                <p>For a more detailed explanation and interactive lessons, visit Byju's on <a href="https://byjus.com/maths/real-numbers/" target="_blank">Byju's website</a>.</p>
+                <h4>Byju's - Polynomials</h4>
+                <iframe src="https://byjus.com/maths/polynomials/" title="Byju's Polynomials"></iframe>
+                <p>For a more detailed explanation and interactive lessons, visit Byju's on <a href="https://byjus.com/maths/polynomials/" target="_blank">Byju's website</a>.</p>
             </div>
 
             <div>
-                <h4>Vedantu - Real Numbers</h4>
-                <iframe src="https://www.vedantu.com/maths/real-numbers" title="Vedantu Real Numbers"></iframe>
-                <p>Explore the interactive lessons and quizzes on Vedantu's website at <a href="https://www.vedantu.com/maths/real-numbers" target="_blank">Vedantu's website</a>.</p>
+                <h4>Vedantu - Polynomials</h4>
+                <iframe src="https://www.vedantu.com/maths/polynomials" title="Vedantu Polynomials"></iframe>
+                <p>Explore the interactive lessons and quizzes on Vedantu's website at <a href="https://www.vedantu.com/maths/polynomials" target="_blank">Vedantu's website</a>.</p>
             </div>
 
             <div>
-                <h4>Inacademy - Real Numbers</h4>
-                <iframe src="https://inacademy.in/maths/real-numbers" title="Inacademy Real Numbers"></iframe>
-                <p>Learn about Real Numbers in more depth on Inacademy. Visit their page <a href="https://inacademy.in/maths/real-numbers" target="_blank">here</a>.</p>
-            </div>
-
-            <div>
-                <h4>Brainly - Real Numbers</h4>
-                <iframe src="https://brainly.in/question/real-numbers" title="Brainly Real Numbers"></iframe>
-                <p>Join discussions and ask questions about Real Numbers on Brainly's platform at <a href="https://brainly.in/question/real-numbers" target="_blank">Brainly's website</a>.</p>
-            </div>
-
-            <div>
-                <h4>Toppers - Real Numbers</h4>
-                <iframe src="https://www.toppers.com/real-numbers" title="Toppers Real Numbers"></iframe>
-                <p>Explore the study material and resources on Real Numbers at Toppers. Visit their page <a href="https://www.toppers.com/real-numbers" target="_blank">here</a>.</p>
-            </div>
-
-            <div>
-                <h4>Shalah.com - Real Numbers</h4>
-                <iframe src="https://www.shalah.com/maths/real-numbers" title="Shalah Real Numbers"></iframe>
-                <p>Get detailed explanations and practice exercises on Shalah.com by visiting <a href="https://www.shalah.com/maths/real-numbers" target="_blank">Shalah's website</a>.</p>
+                <h4>Inacademy - Polynomials</h4>
+                <iframe src="https://inacademy.in/maths/polynomials" title="Inacademy Polynomials"></iframe>
+                <p>Learn about Polynomials in more depth on Inacademy. Visit their page <a href="https://inacademy.in/maths/polynomials" target="_blank">here</a>.</p>
             </div>
         </div>
 
