@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: Chemical Reactions - Notes</title>
+
+    <!-- Include Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Background and Layout */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
+            padding: 20px;
+            overflow: hidden; /* Prevent scrolling for body */
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Notes Content */
+        .notes-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 900px;
+            color: white;
+            height: 80vh; /* Fixed height for scroll */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        .notes-container h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #ff7e5f;
+        }
+
+        .notes-container p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+            transform: translateY(-5px); /* Slight hover lift effect */
+        }
+
+        .btn:active {
+            transform: translateY(2px); /* Pressed button effect */
+        }
+
+        .see-more-btn {
+            display: block;
+            margin: 30px auto;
+            font-size: 18px;
+            color: #ff7e5f;
+            background: none;
+            border: none;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Positioning the particle background canvas */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Footer Styles */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .btn {
+                width: 200px;
+            }
+
+            .notes-container {
+                height: 70vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particles.js background -->
+    <div id="particles-js"></div>
+
+    <!-- Notes Content -->
+    <div class="notes-container" id="notes-container">
+        <h1>Chapter 6: Chemical Reactions - Notes</h1>
+
+        <h2>Introduction to Chemical Reactions</h2>
+        <p>Chemical reactions are processes in which substances are transformed into new substances with different properties. This transformation occurs when chemical bonds are broken and formed. During a reaction, the atoms rearrange to create products that are distinct from the reactants.</p>
+
+        <h2>Types of Chemical Reactions</h2>
+        <p>Chemical reactions can be classified into several types, such as:</p>
+        <ul>
+            <li><strong>Synthesis Reaction:</strong> Two or more reactants combine to form a single product (A + B → AB).</li>
+            <li><strong>Decomposition Reaction:</strong> A compound breaks down into simpler products (AB → A + B).</li>
+            <li><strong>Single Displacement Reaction:</strong> One element replaces another in a compound (A + BC → B + AC).</li>
+            <li><strong>Double Displacement Reaction:</strong> Two compounds react to form two new compounds (AB + CD → AD + BC).</li>
+            <li><strong>Combustion Reaction:</strong> A substance reacts with oxygen to produce heat and light (usually forming CO₂ and H₂O as products).</li>
+        </ul>
+
+        <h2>Balancing Chemical Equations</h2>
+        <p>One of the key principles in studying chemical reactions is balancing chemical equations. In a balanced equation, the number of atoms for each element is the same on both sides of the equation. This reflects the law of conservation of mass, which states that mass cannot be created or destroyed in a chemical reaction.</p>
+
+        <h2>Factors Affecting the Rate of Reactions</h2>
+        <p>Several factors can influence the rate at which chemical reactions occur:</p>
+        <ul>
+            <li><strong>Temperature:</strong> Increasing the temperature generally speeds up the rate of reaction.</li>
+            <li><strong>Concentration:</strong> Higher concentration of reactants leads to more collisions and faster reactions.</li>
+            <li><strong>Surface Area:</strong> Smaller particles or higher surface area speed up reactions by allowing more collisions.</li>
+            <li><strong>Catalysts:</strong> Catalysts are substances that speed up reactions without being consumed in the process.</li>
+        </ul>
+
+        <h2>Exothermic and Endothermic Reactions</h2>
+        <p>Reactions can be classified into exothermic and endothermic reactions based on the heat exchanged during the process:</p>
+        <ul>
+            <li><strong>Exothermic Reactions:</strong> These reactions release heat energy, making the surroundings warmer. For example, combustion reactions like burning wood or coal.</li>
+            <li><strong>Endothermic Reactions:</strong> These reactions absorb heat from the surroundings, making the surroundings cooler. For example, the process of photosynthesis in plants is endothermic.</li>
+        </ul>
+
+        <h2>Catalysis and Inhibition in Reactions</h2>
+        <p>Catalysts are substances that increase the rate of a reaction without being consumed in the process. They lower the activation energy required for the reaction to occur. On the other hand, inhibitors are substances that slow down or prevent reactions from taking place.</p>
+
+        <h2>Applications of Chemical Reactions</h2>
+        <p>Chemical reactions are fundamental to many processes in daily life, such as:</p>
+        <ul>
+            <li><strong>Medicine:</strong> Chemical reactions are used in the synthesis of drugs and vaccines.</li>
+            <li><strong>Energy Production:</strong> Combustion reactions in fossil fuels produce energy for electricity generation.</li>
+            <li><strong>Food Processing:</strong> Fermentation is a chemical reaction used to produce alcoholic beverages and bread.</li>
+        </ul>
+
+        <h2>Reversible Reactions</h2>
+        <p>Some chemical reactions are reversible, meaning the products can react to form the original reactants. These reactions are often in equilibrium, where the rate of the forward reaction equals the rate of the reverse reaction. For example, the Haber process for ammonia synthesis is a reversible reaction.</p>
+
+        <h2>Conclusion</h2>
+        <p>Chemical reactions are fundamental processes that drive the transformation of materials in our world. Understanding the different types of reactions, how to balance them, and the factors that affect their rates is essential in chemistry. The study of reactions also has practical applications in many fields such as medicine, energy production, and food science.</p>
+
+        <!-- See More Button -->
+        <button class="see-more-btn" id="see-more-btn">See More</button>
+    </div>
+
+    <!-- Button to return home -->
+    <div class="btn-container">
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Your Website. All Rights Reserved.
+    </footer>
+
+    <!-- Initialize Particles.js -->
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#ff7e5f"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ff7e5f",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Handle See More Button
+        document.getElementById('see-more-btn').addEventListener('click', function () {
+            document.getElementById('notes-container').style.height = 'auto'; // Remove the scroll restriction
+            document.getElementById('see-more-btn').style.display = 'none'; // Hide the button after expanding
+        });
+    </script>
+</body>
+</html>
