@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 10 PYQs</title>
-    
-    <!-- Include Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    
+    <title>Class 10</title>
+
+    <!-- Basic Reset -->
     <style>
-        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
@@ -24,16 +21,35 @@
             flex-direction: column;
             justify-content: flex-start;
             color: #333;
-            background: #1d1d1d; /* Default Dark Mode */
-            overflow: auto;
+            background: #1d1d1d; /* Dark Mode */
+            background-image: url("Untitled design.jpg"); /* Ensure image is correct */
+            background-size: cover; /* Make sure it covers the entire screen */
+            background-position: center center; /* Center the background image */
+            overflow: hidden; /* Hide the scrollbar */
             height: 100vh;
             transition: background-color 0.3s ease;
         }
 
-        /* Light Mode Styling */
-        body.light-mode {
-            background: #ffffff; /* Completely white for light mode */
-            color: #333; /* Dark text color for contrast */
+        /* Hide scrollbar but still allow scrolling */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+            scrollbar-width: none;  /* For Firefox */
+        }
+
+        /* Add Overlay to Background */
+        body:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+            z-index: -1;
         }
 
         /* Navigation Bar */
@@ -42,7 +58,6 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
             position: fixed;
             top: 0;
             left: 0;
@@ -57,6 +72,7 @@
             font-size: 18px;
             margin: 0 15px;
             transition: color 0.3s;
+            background-color: transparent; /* Transparent background */
         }
 
         nav a:hover {
@@ -142,16 +158,6 @@
             text-decoration: underline;
         }
 
-        /* Positioning the particle background canvas */
-        #particles-js {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
         /* New Section for Let's Dive Into Learning */
         .animated-section {
             margin-top: 50px;
@@ -186,8 +192,6 @@
 
         /* Footer Styling */
         footer {
-            background-color: #1e2535;
-            color: white;
             text-align: center;
             padding: 20px;
             position: relative;
@@ -197,32 +201,8 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
-        footer a {
-            color: #feb47b;
-            text-decoration: none;
-        }
-
         footer a:hover {
             text-decoration: underline;
-        }
-
-        /* Toggle Button */
-        .toggle-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #ff7e5f;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .toggle-btn:hover {
-            background-color: #feb47b;
         }
 
         /* Search Bar Styling */
@@ -243,12 +223,58 @@
             outline: none;
             border-color: #feb47b;
         }
+
+        /* Back to Top Button */
+        .back-to-top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff7e5f;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            transition: background-color 0.3s;
+            z-index: 20;
+        }
+
+        .back-to-top-btn:hover {
+            background-color: #feb47b;
+        }
+
+        /* Accessibility - Hidden for Screen Readers */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            border: 0;
+            clip: rect(0, 0, 0, 0);
+            clip-path: inset(50%);
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .subject-buttons {
+                flex-direction: column;
+            }
+            .subject-btn {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
     </style>
 </head>
 <body>
-
-    <!-- Particles.js background -->
-    <div id="particles-js"></div>
 
     <!-- Navigation Bar -->
     <nav>
@@ -258,17 +284,14 @@
             <a href="#">Study Materials</a>
             <a href="#">About</a>
         </div>
-        
-        <!-- Toggle Mode Button -->
-        <button class="toggle-btn" id="theme-toggle">Toggle Dark/Light Mode</button>
     </nav>
 
     <!-- Main Content -->
     <main>
         <h1>Let's turn these textbooks into a love story, one chapter at a time!</h1>
 
-
         <!-- Search Bar -->
+        <label for="chapter-search" class="sr-only">Search for a chapter</label>
         <input type="text" id="chapter-search" class="search-bar" placeholder="Search for a chapter..." oninput="searchChapter()">
 
         <div class="subject-buttons">
@@ -279,14 +302,14 @@
             <button class="subject-btn" onclick="showSubject('English')">English</button>
         </div>
 
-        <!-- Updated Section for Let's Dive Into Learning (No Separate Background) -->
+        <!-- Updated Section for Let's Dive Into Learning -->
         <div class="animated-section">
             <h2>Let's Dive Into Learning!</h2>
             <p>Get ready to explore all the chapters with interactive PYQs!</p>
         </div>
 
         <!-- Subject Chapters Display -->
-        <div id="subject-content"></div>
+        <div id="subject-content" style="opacity: 0;"></div>
     </main>
 
     <!-- Footer -->
@@ -295,13 +318,11 @@
         <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn">↑</button>
+
     <!-- JavaScript -->
     <script>
-        // Dark/Light Mode Toggle
-        document.getElementById('theme-toggle').addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-        });
-
         // Chapter Search Function
         function searchChapter() {
             const searchQuery = document.getElementById('chapter-search').value.toLowerCase();
@@ -319,7 +340,7 @@
 
         function showSubject(subject) {
             const subjectContent = {
-                Math: `
+                Math: ` 
                     <h2>Math Chapters</h2>
                     <div class="chapter-list">
                         <div class="chapter-item"><a href="math-chapter1.html">Chapter 1: Real Numbers</a></div>
@@ -351,95 +372,33 @@
                 English: `
                     <h2>English Chapters</h2>
                     <div class="chapter-list">
-                        <div class="chapter-item"><a href="english-chapter1.html">Chapter 1: The Fun They Had</a></div>
+                        <div class="chapter-item"><a href="English-chapter1.html">Chapter 1: The Lost Child</a></div>
                     </div>
                 `
             };
 
-            const content = subjectContent[subject] || '<p>No content available.</p>';
-            document.getElementById('subject-content').innerHTML = content;
+            const subjectContentDiv = document.getElementById('subject-content');
+            subjectContentDiv.innerHTML = subjectContent[subject];
+
+            // Fade-in effect
+            subjectContentDiv.style.opacity = 0;
+            setTimeout(() => {
+                subjectContentDiv.style.transition = 'opacity 0.5s ease';
+                subjectContentDiv.style.opacity = 1;
+            }, 100);
         }
 
-        // Initialize Particles.js
-        particlesJS('particles-js', {
-            particles: {
-                number: {
-                    value: 80,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: "#ff7e5f"
-                },
-                shape: {
-                    type: "circle",
-                    stroke: {
-                        width: 0,
-                        color: "#000000"
-                    },
-                    polygon: {
-                        nb_sides: 5
-                    }
-                },
-                opacity: {
-                    value: 0.3, /* Adjusted opacity for a more subtle effect */
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 40,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#ff7e5f",
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 6,
-                    direction: "none",
-                    random: false,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false,
-                    attract: {
-                        enable: false,
-                        rotateX: 600,
-                        rotateY: 1200
-                    }
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: "repulse"
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: "push"
-                    },
-                    resize: true
-                }
-            },
-            retina_detect: true
+        // Back to Top Button
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                document.getElementById('back-to-top').style.display = 'block';
+            } else {
+                document.getElementById('back-to-top').style.display = 'none';
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
