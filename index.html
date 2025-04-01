@@ -5,6 +5,7 @@
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="your-verification-code-here" /> <!-- Added this for verification -->
     <title>Class 10</title>
 
     <!-- Basic Reset -->
@@ -304,104 +305,83 @@
             <button class="subject-btn" onclick="showSubject('English')">English</button>
         </div>
 
-        <!-- Updated Section for Let's Dive Into Learning -->
+        <!-- Chapters will be displayed here dynamically -->
+        <div id="chapter-list" class="chapter-list"></div>
+
+        <!-- Animated Section for extra content -->
         <div class="animated-section">
             <h2>Let's Dive Into Learning!</h2>
-            <p>Get ready to explore all the chapters with interactive PYQs!</p>
+            <p>Stay curious, keep exploring!</p>
         </div>
-
-        <!-- Subject Chapters Display -->
-        <div id="subject-content" style="opacity: 0;"></div>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Class 10 PYQs. All Rights Reserved.</p>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        <p>&copy; 2025 Class 10, All Rights Reserved.</p>
+        <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top-btn">↑</button>
+    <button class="back-to-top-btn" id="back-to-top-btn" onclick="scrollToTop()">↑</button>
 
-    <!-- JavaScript -->
+    <!-- Scripts -->
     <script>
-        // Chapter Search Function
-        function searchChapter() {
-            const searchQuery = document.getElementById('chapter-search').value.toLowerCase();
-            const chapterItems = document.querySelectorAll('.chapter-item');
+        // Scroll to top button functionality
+        window.onscroll = function() { toggleBackToTopButton() };
+        function toggleBackToTopButton() {
+            var button = document.getElementById("back-to-top-btn");
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        }
 
-            chapterItems.forEach(item => {
-                const chapterName = item.textContent.toLowerCase();
-                if (chapterName.includes(searchQuery)) {
-                    item.style.display = 'block'; // Show matching chapter
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Search chapter functionality
+        function searchChapter() {
+            let input = document.getElementById("chapter-search").value.toLowerCase();
+            let chapters = document.getElementsByClassName("chapter-item");
+            for (let i = 0; i < chapters.length; i++) {
+                let chapterText = chapters[i].textContent || chapters[i].innerText;
+                if (chapterText.toLowerCase().includes(input)) {
+                    chapters[i].style.display = "";
                 } else {
-                    item.style.display = 'none'; // Hide non-matching chapter
+                    chapters[i].style.display = "none";
                 }
+            }
+        }
+
+        // Show subject function
+        function showSubject(subject) {
+            let chapterList = document.getElementById("chapter-list");
+            chapterList.innerHTML = ""; // Clear current chapters
+            let chapters = [];
+
+            if (subject === "Math") {
+                chapters = ["Algebra", "Geometry", "Trigonometry"];
+            } else if (subject === "Science") {
+                chapters = ["Physics", "Chemistry", "Biology"];
+            } else if (subject === "History") {
+                chapters = ["Ancient Civilizations", "Medieval Times", "Modern History"];
+            } else if (subject === "Geography") {
+                chapters = ["World Map", "Continents", "Climate Zones"];
+            } else if (subject === "English") {
+                chapters = ["Grammar", "Literature", "Writing"];
+            }
+
+            // Populate the chapters dynamically
+            chapters.forEach(function(chapter) {
+                let div = document.createElement("div");
+                div.classList.add("chapter-item");
+                div.innerHTML = `<a href="#">${chapter}</a>`;
+                chapterList.appendChild(div);
             });
         }
-
-        function showSubject(subject) {
-            const subjectContent = {
-                Math: ` 
-                    <h2>Math Chapters</h2>
-                    <div class="chapter-list">
-                        <div class="chapter-item"><a href="math-chapter1.html">Chapter 1: Real Numbers</a></div>
-                        <div class="chapter-item"><a href="math-chapter2.html">Chapter 2: Polynomials</a></div>
-                        <div class="chapter-item"><a href="math-chapter3.html">Chapter 3: Pair of Linear Equations in Two Variables</a></div>
-                        <div class="chapter-item"><a href="math-chapter4.html">Chapter 4: Quadratic Equations</a></div>
-                        <div class="chapter-item"><a href="math-chapter5.html">Chapter 5: Arithmetic Progressions</a></div>
-                    </div>
-                `,
-                Science: `
-                    <h2>Science Chapters</h2>
-                    <div class="chapter-list">
-                        <div class="chapter-item"><a href="science-chapter1.html">Chapter 1: Chemical Reactions</a></div>
-                        <div class="chapter-item"><a href="science-chapter2.html">Chapter 2: Acids, Bases, and Salts</a></div>
-                    </div>
-                `,
-                History: `
-                    <h2>History Chapters</h2>
-                    <div class="chapter-list">
-                        <div class="chapter-item"><a href="history-chapter1.html">Chapter 1: The French Revolution</a></div>
-                    </div>
-                `,
-                Geography: `
-                    <h2>Geography Chapters</h2>
-                    <div class="chapter-list">
-                        <div class="chapter-item"><a href="geography-chapter1.html">Chapter 1: Resources and Development</a></div>
-                    </div>
-                `,
-                English: `
-                    <h2>English Chapters</h2>
-                    <div class="chapter-list">
-                        <div class="chapter-item"><a href="English-chapter1.html">Chapter 1: The Lost Child</a></div>
-                    </div>
-                `
-            };
-
-            const subjectContentDiv = document.getElementById('subject-content');
-            subjectContentDiv.innerHTML = subjectContent[subject];
-
-            // Fade-in effect
-            subjectContentDiv.style.opacity = 0;
-            setTimeout(() => {
-                subjectContentDiv.style.transition = 'opacity 0.5s ease';
-                subjectContentDiv.style.opacity = 1;
-            }, 100);
-        }
-
-        // Back to Top Button
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                document.getElementById('back-to-top').style.display = 'block';
-            } else {
-                document.getElementById('back-to-top').style.display = 'none';
-            }
-        });
-
-        document.getElementById('back-to-top').addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
     </script>
+
 </body>
 </html>
