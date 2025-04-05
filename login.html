@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register with OTP</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .switch-form {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .switch-form a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .switch-form a:hover {
+            text-decoration: underline;
+        }
+
+        #responseMessage {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #e74c3c;
+        }
+
+        #loadingMessage {
+            display: none;
+            color: #3498db;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 id="formTitle">Register</h2>
+
+        <!-- Registration Form -->
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="registerUsername">Username (Email):</label>
+                <input type="email" id="registerUsername" name="username" required>
+                <div id="emailError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="registerPassword">Password:</label>
+                <input type="password" id="registerPassword" name="password" required>
+                <div id="passwordError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <div id="confirmPasswordError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" pattern="^[0-9]{10}$" required>
+                <div id="phoneNumberError" class="error"></div>
+            </div>
+
+            <button type="submit" id="registerButton">Register</button>
+        </form>
+
+        <!-- OTP Verification Form -->
+        <form id="otpForm" style="display:none;">
+            <div class="form-group">
+                <label for="otp">Enter OTP:</label>
+                <input type="text" id="otp" name="otp" required>
+            </div>
+            <button type="submit" id="otpButton">Verify OTP</button>
+        </form>
+
+        <p id="responseMessage"></p>
+        <p id="loadingMessage">Processing...</p>
+
+        <div class="switch-form">
+            <p id="switchFormMessage">Already have an account? <a href="javascript:void(0);" id="switchToLogin">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        const formTitle = document.getElementById('formTitle');
+        const registerForm = document.getElementById('registerForm');
+        const otpForm = document.getElementById('otpForm');
+        const responseMessage = document.getElementById('responseMessage');
+        const switchToRegister = document.getElementById('switchToRegister');
+        const switchToLogin = document.createElement('a');
+        switchToLogin.textContent = "Login";
+        const loadingMessage = document.getElementById('loadingMessage');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+        const confirmPasswordError = document.getElementById('confirmPasswordError');
+        const phoneNumberError = document.getElementById('phoneNumberError');
+
+        let generatedOtp = "";  // Variable to store the OTP
+
+        // Handle registration form submission
+        registerForm.addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the form from submitting the traditional way
+
+            const username = document.getElementById('registerUsername').value;
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+
+            // Reset errors
+            emailError.textContent = '';
+            passwordError.textContent = '';
+            confirmPasswordError.textContent = '';
+            phoneNumberError.textContent = '';
+
+            // Validate form
+            let valid = true;
+
+            // Email validation
+            const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+            if (!emailRegex.test(username)) {
+                emailError.textContent = 'Please enter a valid email.';
+                valid = false;
+            }
+
+            // Password validation
+            if (password !== confirmPassword) {
+                confirmPasswordError.textContent = 'Passwords do not match.';
+                valid = false;
+            }
+
+            // Phone number validation
+            const phoneRegex = /^[0-9]{10}$/;
+            if (!phoneRegex.test(phoneNumber)) {
+                phoneNumberError.textContent = 'Please enter a valid 10-digit phone number.';
+                valid = false;
+            }
+
+            if (!valid) {
+                return;  // Prevent form submission if there are validation errors
+            }
+
+            loadingMessage.style.display = 'block';  // Show loading message
+
+            // Send request to register the user
+            fetch('http://127.0.0.1:5000/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username: username, password: password, phoneNumber: phoneNumber })
+            })
+            .then(response => response.json())
+            .then(data => {
+                responseMessage.textContent = data.message;
+
+                if (data.message === 'Registration successful') {
+                    // Generate OTP and send it via email
+                    generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();  // Generate 6-digit OTP
+                    sendOtpEmail(username, generatedOtp);
+                    otpForm.style.display = 'block';
+                    registerForm.style.display = 'none';
+                }
+            })
+            .catch(error => {
+                responseMessage.textContent = 'Error: ' + error.message;
+            })
+            .finally(() => {
+                loadingMessage.style.display = 'none';  // Hide loading message
+            });
+        });
+
+        // Handle OTP verification
+        otpForm.addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the form from submitting the traditional way
+
+            const otp = document.getElementById('otp').value;
+
+            if (otp === generatedOtp) {
+                responseMessage.textContent = 'OTP verified successfully!';
+                // Proceed to log the user in, or redirect to the dashboard
+                window.location.href = '/dashboard';
+            } else {
+                responseMessage.textContent = 'Invalid OTP. Please try again.';
+            }
+        });
+
+        // Function to send OTP via email
+        function sendOtpEmail(email, otp) {
+            fetch('http://127.0.0.1:5000/sendOtpEmail', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email, otp: otp })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);  // Handle success message from server
+            })
+            .catch(error => {
+                console.error('Error sending OTP:', error);
+            });
+        }
+
+    </script>
+</body>
+</html>
