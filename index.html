@@ -89,30 +89,19 @@
         .nav-links a {
             margin: 0 15px;
         }
-        .navigate123{
-         font-weight:bold;
-        }
-            
 
+        /* Modify login-register button to match navigation buttons */
         .login-register-btn {
-            background-color: #feb47b;
             color: white;
-            font-weight: bold;
-            border: 2px solid #ff7e5f;
-            padding: 12px 24px;
-            border-radius: 25px;
+            text-decoration: none;
             font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            margin: 0 15px;
+            transition: color 0.3s;
+            background-color: transparent; /* Transparent background */
         }
 
         .login-register-btn:hover {
-            background-color: #ff7e5f;
-            transform: scale(1.1);
-        }
-
-        .login-register-btn:focus {
-            outline: none;
+            color: #feb47b;
         }
 
         /* Main Content */
@@ -301,12 +290,12 @@
     <!-- Navigation Bar -->
     <nav>
         <div class="nav-links">
-            <a href="home.html" class="navigate123">Home</a> <!-- Redirect to home.html -->
-            <a href="resources.html" class="navigate123">Resources</a> <!-- Redirect to resources.html -->
-            <a href="study-materials.html" class="navigate123">Study Materials</a> <!-- Redirect to study-materials.html -->
-            <a href="about.html" class="navigate123">About</a> <!-- Redirect to about.html -->
+            <a href="home.html">Home</a> <!-- Redirect to home.html -->
+            <a href="resources.html">Resources</a> <!-- Redirect to resources.html -->
+            <a href="study-materials.html">Study Materials</a> <!-- Redirect to study-materials.html -->
+            <a href="about.html">About</a> <!-- Redirect to about.html -->
         </div>
-        <button class="login-register-btn" onclick="window.location.href='login.html'">Login / Register</button>
+        <a href="login.html" class="login-register-btn">Login / Register</a> <!-- Changed to an anchor link with the same styles -->
     </nav>
 
     <!-- Main Content -->
@@ -385,8 +374,8 @@
                         <div class="chapter-item"><a href="math-chapter3.html">Chapter 3: Pair of Linear Equations in Two Variables</a></div>
                         <div class="chapter-item"><a href="math-chapter4.html">Chapter 4: Quadratic Equations</a></div>
                         <div class="chapter-item"><a href="math-chapter5.html">Chapter 5: Arithmetic Progressions</a></div>
-                        <div class="chapter-item"><a href="math-chapter6.html">Chapter 6: Triangles </a></div>
-                        <div class="chapter-item"><a href="math-chapter5.html">Chapter 7: Coordinate Geometry</a></div>
+                        <div class="chapter-item"><a href="math-chapter6.html">Chapter 6:Triangles </a></div>
+                        <div class="chapter-item"><a href="math-chapter5.html">Chapter 7:Coordinate Geometry</a></div>
                         <div class="chapter-item"><a href="math-chapter5.html">Chapter 8: Introduction To Trigonometry</a></div>
                         <div class="chapter-item"><a href="math-chapter5.html">Chapter 9: Some Applications Of Trigonometry</a></div>
                         <div class="chapter-item"><a href="math-chapter5.html">CChapter 10: Circles</a></div>
@@ -397,24 +386,6 @@
                         <div class="chapter-item"><a href="math-chapter5.html">Chapter 15: Probability</a></div>
                     </div>
                 `,
-Science: ` 
-                    <h2>Science Chapters</h2>
-                    <div class="chapter-list">
-                        <div class="chapter-item"><a href="science-chapter1.html">Chapter 1: Chemical Reactions and Equations</a></div>
-                        <div class="chapter-item"><a href="science-chapter2.html">Chapter 2: Acids, Bases and Salts</a></div>
-                        <div class="chapter-item"><a href="science-chapter3.html">Chapter 3: Metals and Non-metals</a></div>
-                        <div class="chapter-item"><a href="science-chapter4.html">Chapter 4: Carbon and its Compounds</a></div>
-                        <div class="chapter-item"><a href="science-chapter5.html">Chapter 5: Life Processes</a></div>
-                        <div class="chapter-item"><a href="science-chapter6.html">Chapter 6: Control and Coordination </a></div>
-                        <div class="chapter-item"><a href="science-chapter5.html">Chapter 7: How do Organisms Reproduce?</a></div>
-                        <div class="chapter-item"><a href="science-chapter5.html">Chapter 8: Heredity</a></div>
-                        <div class="chapter-item"><a href="science-chapter5.html">Chapter 9: Light – Reflection and Refraction</a></div>
-                        <div class="chapter-item"><a href="science-chapter5.html">CChapter 10: The Human Eye and the Colourful World</a></div>
-                        <div class="chapter-item"><a href="science-chapter5.html">Chapter 11: Electricity</a></div>
-                        <div class="chapter-item"><a href="science-chapter5.html">Chapter 12: Magnetic Effects of Electric Current</a></div>
-                        <div class="chapter-item"><a href="science-chapter5.html">Chapter 13:Our Environment</a></div>
-                `,
-
                 // Add similar content for Science, History, Geography, and English...
             };
 
