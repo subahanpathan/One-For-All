@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Chapter 6: Triangles</title>
+
+    <link rel="stylesheet" href="styles.css"> <!-- If you want to use a separate CSS file -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            color: #ff7e5f;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+            transform: translateY(-5px);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .external-content {
+            margin-bottom: 40px;
+        }
+
+        .external-content h3 {
+            font-size: 24px;
+            color: #ff7e5f;
+            margin-top: 40px;
+        }
+
+        .external-content p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Notes - Chapter 6: Triangles
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <h2>Introduction to Triangles</h2>
+            <p>
+                A triangle is a polygon with three sides and three angles. The sum of the interior angles of any triangle is always 180°. Triangles are classified based on their sides and angles. The main types of triangles are:
+            </p>
+            <ul>
+                <li><strong>Equilateral Triangle</strong>: All three sides are equal, and all three angles are 60°.</li>
+                <li><strong>Isosceles Triangle</strong>: Two sides are equal, and the angles opposite these sides are equal.</li>
+                <li><strong>Scalene Triangle</strong>: All sides and angles are different.</li>
+            </ul>
+
+            <h2>Important Properties of Triangles</h2>
+            <ul>
+                <li><strong>Angle Sum Property</strong>: The sum of the three interior angles of a triangle is 180°.</li>
+                <li><strong>Exterior Angle Theorem</strong>: The exterior angle of a triangle is equal to the sum of the two opposite interior angles.</li>
+                <li><strong>Congruence of Triangles</strong>: Two triangles are congruent if their corresponding sides and angles are equal.</li>
+                <li><strong>Similarity of Triangles</strong>: Two triangles are similar if their corresponding angles are equal, and the lengths of corresponding sides are proportional.</li>
+            </ul>
+
+            <h2>Types of Problems in Triangles</h2>
+            <p>Some common types of problems that involve triangles include:</p>
+            <ul>
+                <li>Finding the unknown sides or angles of a triangle using trigonometric ratios.</li>
+                <li>Using the Pythagorean theorem in right-angled triangles.</li>
+                <li>Solving problems based on the properties of congruent or similar triangles.</li>
+                <li>Finding areas of triangles using various formulas.</li>
+            </ul>
+
+            <h2>Examples</h2>
+            <p>Consider a right-angled triangle where the base is 3 cm and the height is 4 cm. To find the hypotenuse, we can use the Pythagorean theorem:</p>
+            <pre>c² = a² + b²</pre>
+            <p>Where <strong>a = 3 cm</strong> and <strong>b = 4 cm</strong>.</p>
+            <p>Thus, <strong>c² = 3² + 4² = 9 + 16 = 25</strong>, so <strong>c = 5 cm</strong> is the length of the hypotenuse.</p>
+
+            <h2>Important Theorems and Formulas</h2>
+            <ul>
+                <li><strong>Pythagorean Theorem</strong>: For a right-angled triangle, <strong>c² = a² + b²</strong>, where <strong>c</strong> is the hypotenuse.</li>
+                <li><strong>Area of a Triangle</strong>: The area of a triangle is given by the formula: <pre>A = 1/2 * base * height</pre></li>
+                <li><strong>Sine Rule</strong>: <pre>a/sin(A) = b/sin(B) = c/sin(C)</pre></li>
+                <li><strong>Cosine Rule</strong>: <pre>c² = a² + b² - 2ab * cos(C)</pre></li>
+            </ul>
+
+            <h2>Applications of Triangles</h2>
+            <p>Triangles have several real-world applications, such as:</p>
+            <ul>
+                <li>In construction and engineering (e.g., trusses, bridges, roofs).</li>
+                <li>In navigation and mapping (e.g., triangulation).</li>
+                <li>In computer graphics and design (e.g., modeling 3D shapes using triangles).</li>
+            </ul>
+        </div>
+
+        <!-- External Educational Content Section -->
+        <div class="external-content">
+            <h3>For More Information, Visit These Trusted Platforms:</h3>
+
+            <div>
+                <h4>Byju's - Triangles</h4>
+                <iframe src="https://byjus.com/maths/triangles/" title="Byju's Triangles"></iframe>
+                <p>For more detailed explanations and interactive lessons, visit Byju's on <a href="https://byjus.com/maths/triangles/" target="_blank">Byju's website</a>.</p>
+            </div>
+
+            <div>
+                <h4>Vedantu - Triangles</h4>
+                <iframe src="https://www.vedantu.com/maths/triangles" title="Vedantu Triangles"></iframe>
+                <p>Explore the interactive lessons and quizzes on Vedantu's website at <a href="https://www.vedantu.com/maths/triangles" target="_blank">Vedantu's website</a>.</p>
+            </div>
+
+            <div>
+                <h4>Inacademy - Triangles</h4>
+                <iframe src="https://inacademy.in/maths/triangles" title="Inacademy Triangles"></iframe>
+                <p>Learn about Triangles in more depth on Inacademy. Visit their page <a href="https://inacademy.in/maths/triangles" target="_blank">here</a>.</p>
+            </div>
+        </div>
+
+        <!-- Link back to the main chapter page or any other content -->
+        <div class="btn-container">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Your Website. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
