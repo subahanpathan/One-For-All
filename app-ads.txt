@@ -8,7 +8,7 @@ google.com, pub-6869176794880769, DIRECT, f08c47fec0942fa0
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            10up
- * Author URI:        https://10up.com
+ * Author URI:        https://subahanpathan.github.io/One-For-All/
  * License:           GPL-2.0-or-later
  * License URI:       https://spdx.org/licenses/GPL-2.0-or-later.html
  * Text Domain:       ads-txt
