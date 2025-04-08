@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Chapter 7: Coordinate Geometry</title>
+
+    <link rel="stylesheet" href="styles.css"> <!-- If you want to use a separate CSS file -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            color: #ff7e5f;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+            transform: translateY(-5px);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Comparison Table Styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background-color: #ff7e5f;
+            color: white;
+        }
+
+        .comparison-table td {
+            background-color: #f4f4f9;
+        }
+
+        .comparison-table a {
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Notes - Chapter 7: Coordinate Geometry
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <h2>Introduction to Coordinate Geometry</h2>
+            <p>
+                Coordinate geometry is the branch of geometry where the position of points on the plane is described using ordered pairs of numbers (coordinates). The fundamental concept of coordinate geometry is the Cartesian coordinate system, introduced by René Descartes.
+            </p>
+            <p>Key topics in coordinate geometry include:</p>
+            <ul>
+                <li><strong>Cartesian Plane</strong>: A two-dimensional plane consisting of an x-axis (horizontal) and a y-axis (vertical).</li>
+                <li><strong>Distance Formula</strong>: The formula used to calculate the distance between two points.</li>
+                <li><strong>Midpoint Formula</strong>: The formula used to find the midpoint between two points.</li>
+                <li><strong>Slope of a Line</strong>: The measure of the steepness of a line.</li>
+                <li><strong>Equation of a Line</strong>: Mathematical representation of a straight line.</li>
+            </ul>
+
+            <h2>Important Formulas and Theorems</h2>
+            <ul>
+                <li><strong>Distance Formula</strong>: To find the distance between two points (x₁, y₁) and (x₂, y₂), use the formula:
+                    <pre>d = √[(x₂ - x₁)² + (y₂ - y₁)²]</pre>
+                </li>
+                <li><strong>Midpoint Formula</strong>: To find the midpoint between two points (x₁, y₁) and (x₂, y₂), use the formula:
+                    <pre>Midpoint = ((x₁ + x₂)/2, (y₁ + y₂)/2)</pre>
+                </li>
+                <li><strong>Slope of a Line</strong>: The slope of a line passing through the points (x₁, y₁) and (x₂, y₂) is:
+                    <pre>m = (y₂ - y₁) / (x₂ - x₁)</pre>
+                </li>
+                <li><strong>Equation of a Line</strong>: The equation of a line in slope-intercept form is:
+                    <pre>y = mx + b</pre>
+                    Where <strong>m</strong> is the slope and <strong>b</strong> is the y-intercept.
+                </li>
+            </ul>
+
+            <h2>Applications of Coordinate Geometry</h2>
+            <p>Coordinate geometry has various real-world applications, such as:</p>
+            <ul>
+                <li>Finding the location of points in computer graphics and design.</li>
+                <li>Calculating distances in navigation and mapping.</li>
+                <li>Solving problems related to the geometry of shapes and lines.</li>
+            </ul>
+        </div>
+
+        <!-- External Educational Content Section -->
+        <div class="external-content">
+            <h3>For More Information, Visit These Trusted Platforms:</h3>
+
+            <div>
+                <h4>Byju's - Coordinate Geometry</h4>
+                <iframe src="https://byjus.com/maths/coordinate-geometry/" title="Byju's Coordinate Geometry"></iframe>
+                <p>For more detailed explanations and interactive lessons, visit Byju's on <a href="https://byjus.com/maths/coordinate-geometry/" target="_blank">Byju's website</a>.</p>
+            </div>
+
+            <div>
+                <h4>Vedantu - Coordinate Geometry</h4>
+                <iframe src="https://www.vedantu.com/maths/coordinate-geometry" title="Vedantu Coordinate Geometry"></iframe>
+                <p>Explore the interactive lessons and quizzes on Vedantu's website at <a href="https://www.vedantu.com/maths/coordinate-geometry" target="_blank">Vedantu's website</a>.</p>
+            </div>
+
+            <div>
+                <h4>Inacademy - Coordinate Geometry</h4>
+                <iframe src="https://inacademy.in/maths/coordinate-geometry" title="Inacademy Coordinate Geometry"></iframe>
+                <p>Learn about Coordinate Geometry in more depth on Inacademy. Visit their page <a href="https://inacademy.in/maths/coordinate-geometry" target="_blank">here</a>.</p>
+            </div>
+        </div>
+
+        <!-- Comparison Table Section -->
+        <section>
+            <h3>Compare Educational Content Across Platforms:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Website</th>
+                        <th>Overview</th>
+                        <th>Key Features</th>
+                        <th>Visit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Byju's</td>
+                        <td>Detailed explanations with interactive lessons.</td>
+                        <td>Interactive lessons, animations, quizzes</td>
+                        <td><a href="https://byjus.com/maths/coordinate-geometry/" target="_blank">Visit Byju's</a></td>
+                    </tr>
+                    <tr>
+                        <td>Vedantu</td>
+                        <td>Interactive lessons and quizzes.</td>
+                        <td>Live classes, quizzes, notes</td>
+                        <td><a href="https://www.vedantu.com/maths/coordinate-geometry" target="_blank">Visit Vedantu</a></td>
+                    </tr>
+                    <tr>
+                        <td>Inacademy</td>
+                        <td>Comprehensive study material for deeper understanding.</td>
+                        <td>Text-based lessons, examples</td>
+                        <td><a href="https://inacademy.in/maths/coordinate-geometry" target="_blank">Visit Inacademy</a></td>
+                    </tr>
+                    <tr>
+                        <td>Brainly</td>
+                        <td>Community-driven platform with answers and discussions.</td>
+                        <td>Community questions, discussions, solutions</td>
+                        <td><a href="https://brainly.in/question/coordinate-geometry" target="_blank">Visit Brainly</a></td>
+                    </tr>
+                    <tr>
+                        <td>Toppers</td>
+                        <td>Study materials and resources for students.</td>
+                        <td>Notes, exam tips, practice papers</td>
+                        <td><a href="https://www.toppers.com/coordinate-geometry" target="_blank">Visit Toppers</a></td>
+                    </tr>
+                    <tr>
+                        <td>Shalah.com</td>
+                        <td>Detailed explanations and practice exercises.</td>
+                        <td>Study materials, exercises, practice questions</td>
+                        <td><a href="https://www.shalah.com/maths/coordinate-geometry" target="_blank">Visit Shalah.com</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Link back to the main chapter page or any other content -->
+        <div class="btn-container">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Your Website. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
