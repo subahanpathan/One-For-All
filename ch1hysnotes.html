@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 1: The French Revolution - Notes</title>
 
-    <!-- Include Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
 
     <style>
         * {
@@ -91,16 +90,7 @@
             transform: translateY(2px); /* Pressed button effect */
         }
 
-        /* Positioning the particle background canvas */
-        #particles-js {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
+       
         /* Footer Styles */
         footer {
             position: absolute;
@@ -114,19 +104,31 @@
             border-radius: 5px;
         }
 
-        /* Responsive design for smaller screens */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 28px;
-            }
+        /* Comparison Table Styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
 
-            .btn {
-                width: 200px;
-            }
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
 
-            .notes-container {
-                height: 70vh;
-            }
+        .comparison-table th {
+            background-color: #ff7e5f;
+            color: white;
+        }
+
+        .comparison-table td {
+            background-color: #f4f4f9;
+        }
+
+        .comparison-table a {
+            color: #ff7e5f;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -264,6 +266,60 @@
 
     </div>
 
+
+     <!-- Comparison Table Section -->
+        <section>
+            <h3>Compare Educational Content Across Platforms:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Website</th>
+                        <th>Overview</th>
+                        <th>Key Features</th>
+                        <th>Visit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Byju's</td>
+                        <td>Detailed explanations with interactive lessons.</td>
+                        <td>Interactive lessons, animations, quizzes</td>
+                        <td><a href="https://byjus.com/maths/real-numbers/" target="_blank">Visit Byju's</a></td>
+                    </tr>
+                    <tr>
+                        <td>Vedantu</td>
+                        <td>Interactive lessons and quizzes.</td>
+                        <td>Live classes, quizzes, notes</td>
+                        <td><a href="https://www.vedantu.com/maths/real-numbers" target="_blank">Visit Vedantu</a></td>
+                    </tr>
+                    <tr>
+                        <td>Inacademy</td>
+                        <td>Comprehensive study material for deeper understanding.</td>
+                        <td>Text-based lessons, examples</td>
+                        <td><a href="https://inacademy.in/maths/real-numbers" target="_blank">Visit Inacademy</a></td>
+                    </tr>
+                    <tr>
+                        <td>Brainly</td>
+                        <td>Community-driven platform with answers and discussions.</td>
+                        <td>Community questions, discussions, solutions</td>
+                        <td><a href="https://brainly.in/question/real-numbers" target="_blank">Visit Brainly</a></td>
+                    </tr>
+                    <tr>
+                        <td>Toppers</td>
+                        <td>Study materials and resources for students.</td>
+                        <td>Notes, exam tips, practice papers</td>
+                        <td><a href="https://www.toppers.com/real-numbers" target="_blank">Visit Toppers</a></td>
+                    </tr>
+                    <tr>
+                        <td>Shalah.com</td>
+                        <td>Detailed explanations and practice exercises.</td>
+                        <td>Study materials, exercises, practice questions</td>
+                        <td><a href="https://www.shalah.com/maths/real-numbers" target="_blank">Visit Shalah.com</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
     <!-- Button to return home -->
     <div class="btn-container">
         <a href="index.html" class="btn">Back to Home</a>
@@ -274,38 +330,7 @@
         &copy; 2025 Notes on The French Revolution. All rights reserved.
     </footer>
 
-    <script>
-        // Particles.js configuration
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "size": {
-                    "value": 3
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out"
-                }
-            }
-        });
-    </script>
+   
 
 </body>
 </html>
