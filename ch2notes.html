@@ -1,1 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Chapter 2: Polynomials</title>
+
+    <link rel="stylesheet" href="styles.css"> <!-- If you want to use a separate CSS file -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            color: #ff7e5f;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+            transform: translateY(-5px);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Comparison Table Styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background-color: #ff7e5f;
+            color: white;
+        }
+
+        .comparison-table td {
+            background-color: #f4f4f9;
+        }
+
+        .comparison-table a {
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Notes - Chapter 2: Polynomials
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <h2>Introduction to Polynomials</h2>
+            <p>
+                A polynomial is an expression consisting of variables (also called indeterminates) raised to non-negative integer powers, combined with coefficients. A polynomial can have one or more terms, where each term is a product of a constant (coefficient) and a variable raised to an exponent.
+            </p>
+            <ul>
+                <li><strong>Monomial</strong>: A polynomial with just one term, such as <strong>5x</strong> or <strong>7</strong>.</li>
+                <li><strong>Binomial</strong>: A polynomial with two terms, such as <strong>x + 1</strong>.</li>
+                <li><strong>Trinomial</strong>: A polynomial with three terms, such as <strong>x² + 2x + 1</strong>.</li>
+                <li><strong>Multinomial</strong>: A polynomial with more than three terms.</li>
+            </ul>
+
+            <h2>Key Terms in Polynomials</h2>
+            <ul>
+                <li><strong>Degree of a Polynomial</strong>: The highest power of the variable in a polynomial. For example, in <strong>4x³ + 3x² + 2x + 1</strong>, the degree is 3.</li>
+                <li><strong>Leading Term</strong>: The term with the highest degree. For example, in <strong>4x³ + 3x² + 2x + 1</strong>, the leading term is <strong>4x³</strong>.</li>
+                <li><strong>Constant Term</strong>: The term without any variable. For example, in <strong>4x³ + 3x² + 2x + 1</strong>, the constant term is <strong>1</strong>.</li>
+            </ul>
+
+            <h2>Operations with Polynomials</h2>
+            <p>We can perform several operations with polynomials, such as:</p>
+            <ul>
+                <li><strong>Addition and Subtraction</strong>: Combine like terms (terms with the same degree).</li>
+                <li><strong>Multiplication</strong>: Multiply each term in one polynomial by each term in another polynomial.</li>
+                <li><strong>Division</strong>: Use long division or synthetic division to divide polynomials.</li>
+            </ul>
+
+            <h2>Examples</h2>
+            <p>Consider the following polynomial:</p>
+            <pre>3x² + 5x - 7</pre>
+            <p>This polynomial has 3 terms. The degree is 2, the leading term is <strong>3x²</strong>, and the constant term is <strong>-7</strong>.</p>
+
+            <h2>Important Theorems and Formulas</h2>
+            <ul>
+                <li><strong>Factor Theorem</strong>: A polynomial <strong>f(x)</strong> has a factor <strong>(x - a)</strong> if and only if <strong>f(a) = 0</strong>.</li>
+                <li><strong>Remainder Theorem</strong>: When a polynomial <strong>f(x)</strong> is divided by <strong>(x - a)</strong>, the remainder is <strong>f(a)</strong>.</li>
+                <li><strong>Sum and Product of Roots</strong>: The sum and product of the roots of a quadratic polynomial <strong>ax² + bx + c</strong> are given by:
+                    <ul>
+                        <li>Sum of roots: <strong>-b/a</strong></li>
+                        <li>Product of roots: <strong>c/a</strong></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>Applications of Polynomials</h2>
+            <p>Polynomials have several real-world applications, including:</p>
+            <ul>
+                <li>Modeling physical phenomena such as motion and growth patterns.</li>
+                <li>Solving real-world problems in engineering and physics.</li>
+                <li>Used in computer science for algorithms, especially in cryptography and optimization.</li>
+            </ul>
+        </div>
+
+        <!-- External Educational Content Section -->
+        <div class="external-content">
+            <h3>For More Information, Visit These Trusted Platforms:</h3>
+
+            <div>
+                <h4>Byju's - Polynomials</h4>
+                <iframe src="https://byjus.com/maths/polynomials/" title="Byju's Polynomials"></iframe>
+                <p>For more detailed explanations and interactive lessons, visit Byju's on <a href="https://byjus.com/maths/polynomials/" target="_blank">Byju's website</a>.</p>
+            </div>
+
+            <div>
+                <h4>Vedantu - Polynomials</h4>
+                <iframe src="https://www.vedantu.com/maths/polynomials" title="Vedantu Polynomials"></iframe>
+                <p>Explore the interactive lessons and quizzes on Vedantu's website at <a href="https://www.vedantu.com/maths/polynomials" target="_blank">Vedantu's website</a>.</p>
+            </div>
+
+            <div>
+                <h4>Inacademy - Polynomials</h4>
+                <iframe src="https://inacademy.in/maths/polynomials" title="Inacademy Polynomials"></iframe>
+                <p>Learn about Polynomials in more depth on Inacademy. Visit their page <a href="https://inacademy.in/maths/polynomials" target="_blank">here</a>.</p>
+            </div>
+        </div>
+
+        <!-- Comparison Table Section -->
+        <section>
+            <h3>Compare Educational Content Across Platforms:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Website</th>
+                        <th>Overview</th>
+                        <th>Key Features</th>
+                        <th>Visit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Byju's</td>
+                        <td>Detailed explanations with interactive lessons.</td>
+                        <td>Interactive lessons, animations, quizzes</td>
+                        <td><a href="https://byjus.com/maths/polynomials/" target="_blank">Visit Byju's</a></td>
+                    </tr>
+                    <tr>
+                        <td>Vedantu</td>
+                        <td>Interactive lessons and quizzes.</td>
+                        <td>Live classes, quizzes, notes</td>
+                        <td><a href="https://www.vedantu.com/maths/polynomials" target="_blank">Visit Vedantu</a></td>
+                    </tr>
+                    <tr>
+                        <td>Inacademy</td>
+                        <td>Comprehensive study material for deeper understanding.</td>
+                        <td>Text-based lessons, examples</td>
+                        <td><a href="https://inacademy.in/maths/polynomials" target="_blank">Visit Inacademy</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Link back to the main chapter page or any other content -->
+        <div class="btn-container">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Your Website. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
 
