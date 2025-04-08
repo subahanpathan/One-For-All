@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6869176794880769"
-     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login / Register</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* Styles for the page */
         body {
             font-family: 'Roboto', sans-serif;
             background: #f0f0f0;
@@ -31,87 +28,26 @@
             margin-bottom: 20px;
             font-size: 26px;
         }
-        input {
+        .g-signin2 {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: #4CAF50;
+            background-color: #db4437;
             color: white;
             border: none;
             border-radius: 5px;
+            padding: 12px;
             cursor: pointer;
         }
-        button:hover {
-            background-color: #45a049;
-        }
-        .toggle-link {
-            margin-top: 15px;
-        }
-        .toggle-link a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-        .toggle-link a:hover {
-            text-decoration: underline;
+        .g-signin2:hover {
+            background-color: #c1351d;
         }
     </style>
 </head>
 <body>
 
     <div class="form-container">
-        <h2 id="form-heading">Login</h2>
-        
-        <!-- Login Form -->
-        <form method="POST" action="{{ url_for('login') }}">
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-
-        <!-- Registration Form -->
-        <form method="POST" action="{{ url_for('register') }}" style="display: none;" id="register-form">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Register</button>
-        </form>
-
-        <div class="toggle-link">
-            <span id="toggle-text">Don't have an account? <a href="javascript:void(0);" id="toggle-link">Register</a></span>
-        </div>
-
-        <!-- Google Login Button -->
-        <a href="{{ url_for('google_login') }}">
-            <button style="background-color: #db4437;">Login with Google</button>
-        </a>
+        <h2>Login</h2>
+        <a href="{{ url_for('login') }}" class="g-signin2">Login with Google</a>
     </div>
 
-    <script>
-        // Toggle between Login and Register Forms
-        document.getElementById('toggle-link').addEventListener('click', function() {
-            const loginForm = document.querySelector('form[action="{{ url_for('login') }}"]');
-            const registerForm = document.getElementById('register-form');
-            const formHeading = document.getElementById('form-heading');
-            const toggleText = document.getElementById('toggle-text');
-
-            if (loginForm.style.display !== 'none') {
-                loginForm.style.display = 'none';
-                registerForm.style.display = 'block';
-                formHeading.textContent = 'Register';
-                toggleText.innerHTML = 'Already have an account? <a href="javascript:void(0);" id="toggle-link">Login</a>';
-            } else {
-                loginForm.style.display = 'block';
-                registerForm.style.display = 'none';
-                formHeading.textContent = 'Login';
-                toggleText.innerHTML = 'Don\'t have an account? <a href="javascript:void(0);" id="toggle-link">Register</a>';
-            }
-        });
-    </script>
 </body>
 </html>
