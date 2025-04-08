@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,138 +5,289 @@
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 8: Introduction To Trigonometry</title>
+    <title>Notes - Chapter 8: Introduction to Trigonometry</title>
 
+    <link rel="stylesheet" href="styles.css"> <!-- If you want to use a separate CSS file -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body Background and Layout */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('mathimg.jpg'); /* Set your image as the background */
-            background-size: cover; /* Ensure the background image covers the full screen */
-            background-position: center; /* Center the image */
-            background-repeat: no-repeat; /* Prevent the image from repeating */
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
             padding: 20px;
-            overflow: hidden; /* Prevent scrolling for body */
-            position: relative;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            animation: backgroundAnimation 30s ease-in-out infinite; /* Apply background animation */
-        }
-
-        /* Keyframes to animate the background */
-        @keyframes backgroundAnimation {
-            0% {
-                background-position: center;
-                transform: scale(1);
-            }
-            50% {
-                background-position: top right;
-                transform: scale(1.1); /* Zoom in effect */
-            }
-            100% {
-                background-position: center;
-                transform: scale(1); /* Back to original size */
-            }
-        }
-
-        h1 {
+            color: white;
             text-align: center;
             font-size: 36px;
-            margin-bottom: 40px;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Styling the buttons */
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        article, section {
+            margin-bottom: 30px;
+        }
+
+        .content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            color: #ff7e5f;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
         .btn-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
             justify-content: center;
-            margin-top: 50px;
+            margin-top: 30px;
         }
 
         .btn {
-            background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Gradient background */
+            background-color: #ff7e5f;
             color: white;
-            padding: 18px 35px;
+            padding: 15px 30px;
             font-size: 18px;
             text-decoration: none;
-            border-radius: 15px;
-            width: 250px;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease-in-out;
-            position: relative;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            z-index: -1;
-            transition: all 0.3s ease-in-out;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .btn:hover {
-            transform: translateY(-5px); /* Slight hover lift effect */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            background-color: #feb47b;
+            transform: translateY(-5px);
         }
 
         .btn:active {
-            transform: translateY(2px); /* Pressed button effect */
+            transform: translateY(2px);
         }
 
-        .btn:hover::before {
-            background: rgba(255, 255, 255, 0.1); /* Lighter shadow on hover */
-        }
-
-        /* Footer Styles */
         footer {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
             text-align: center;
-            color: white;
-            font-size: 14px;
-            background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
-            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
 
-        
+        .external-content {
+            margin-bottom: 40px;
+        }
+
+        .external-content h3 {
+            font-size: 24px;
+            color: #ff7e5f;
+            margin-top: 40px;
+        }
+
+        .external-content p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .content h2 {
+                font-size: 24px;
+            }
+
+            iframe {
+                height: 250px;
+            }
+
+            .btn {
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+        }
+
+        /* Comparison Table Styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background-color: #ff7e5f;
+            color: white;
+        }
+
+        .comparison-table td {
+            background-color: #f4f4f9;
+        }
+
+        .comparison-table a {
+            color: #ff7e5f;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Chapter Content -->
-    <h1>Chapter 8: Introduction To Trigonometry</h1>
-
-    <!-- Button Container -->
-    <div class="btn-container">
-        <a href="math-pyq.html" class="btn">PYQ</a>
-        <a href="full-chapter-pdf.html" class="btn">Full Chapter PDF</a>
-        <a href="mathch1exercise_solution.html" class="btn">Exercise Solution</a>
-        <a href="ch8notes.html" class="btn">Notes</a>
-        <a href="index.html" class="btn">Home</a>
+    <div class="header">
+        Notes - Chapter 8: Introduction to Trigonometry
     </div>
 
-    <!-- Footer -->
+    <div class="container">
+        <article class="content">
+            <h2>Introduction to Trigonometry</h2>
+            <p>
+                Trigonometry is a branch of mathematics that studies the relationships between the sides and angles of triangles. It is widely used in various fields, including physics, engineering, and astronomy. Trigonometry focuses on the trigonometric ratios such as sine, cosine, and tangent, which help in calculating unknown angles and sides in right-angled triangles.
+            </p>
+        </article>
+
+        <article class="content">
+            <h2>Basic Trigonometric Ratios</h2>
+            <p>The three basic trigonometric ratios are:</p>
+            <ul>
+                <li><strong>Sine (sin)</strong>: The ratio of the length of the opposite side to the hypotenuse. <br> <strong>sin(θ) = opposite / hypotenuse</strong></li>
+                <li><strong>Cosine (cos)</strong>: The ratio of the length of the adjacent side to the hypotenuse. <br> <strong>cos(θ) = adjacent / hypotenuse</strong></li>
+                <li><strong>Tangent (tan)</strong>: The ratio of the length of the opposite side to the adjacent side. <br> <strong>tan(θ) = opposite / adjacent</strong></li>
+            </ul>
+        </article>
+
+        <article class="content">
+            <h2>Trigonometric Functions for Other Angles</h2>
+            <p>Trigonometric functions are not limited to right-angled triangles. They can also be applied to any angle in the unit circle. For angles between 0° and 360°, the sine, cosine, and tangent functions help determine the coordinates and relationships between points on the circle.</p>
+        </article>
+
+        <article class="content">
+            <h2>Trigonometric Identities</h2>
+            <p>There are several key identities used in trigonometry:</p>
+            <ul>
+                <li><strong>Pythagorean Identity</strong>: <br> <strong>sin²(θ) + cos²(θ) = 1</strong></li>
+                <li><strong>Reciprocal Identities</strong>: <br> <strong>csc(θ) = 1/sin(θ), sec(θ) = 1/cos(θ), cot(θ) = 1/tan(θ)</strong></li>
+                <li><strong>Angle Sum and Difference Identities</strong>: <br> <strong>sin(A ± B) = sin(A)cos(B) ± cos(A)sin(B)</strong></li>
+            </ul>
+        </article>
+
+        <article class="content">
+            <h2>Applications of Trigonometry</h2>
+            <p>Trigonometry has many real-world applications such as:</p>
+            <ul>
+                <li>In navigation and mapping (e.g., triangulation to determine distances between two points).</li>
+                <li>In physics (e.g., to calculate forces acting on an object).</li>
+                <li>In engineering (e.g., designing structures like bridges and buildings using angles and forces).</li>
+                <li>In computer graphics and animation (e.g., calculating angles and distances in 3D space).</li>
+            </ul>
+        </article>
+
+        <article class="content">
+            <h2>Examples and Applications</h2>
+            <p>
+                Consider a right-angled triangle with an angle of 30° and a hypotenuse of 10 units. To find the length of the opposite side, use the sine function:
+                <pre>sin(30°) = opposite / 10</pre>
+                <p>Thus, <strong>opposite = 10 * sin(30°) = 10 * 0.5 = 5 units.</strong></p>
+            </p>
+        </article>
+
+        <article class="content">
+            <h2>Important Definitions</h2>
+            <p>
+                - <strong>Sine (sin)</strong>: Ratio of the opposite side to the hypotenuse in a right-angled triangle.<br>
+                - <strong>Cosine (cos)</strong>: Ratio of the adjacent side to the hypotenuse in a right-angled triangle.<br>
+                - <strong>Tangent (tan)</strong>: Ratio of the opposite side to the adjacent side in a right-angled triangle.<br>
+                - <strong>Hypotenuse</strong>: The longest side of a right-angled triangle, opposite the right angle.
+            </p>
+        </article>
+
+        <!-- External Content Section -->
+        <div class="external-content">
+            <h3>For More Information, Visit These Trusted Platforms:</h3>
+
+            <div>
+                <h4>Byju's - Trigonometry</h4>
+                <iframe src="https://byjus.com/maths/trigonometry/" title="Byju's Trigonometry"></iframe>
+                <p>For more detailed explanations and interactive lessons, visit Byju's on <a href="https://byjus.com/maths/trigonometry/" target="_blank">Byju's website</a>.</p>
+            </div>
+
+            <div>
+                <h4>Vedantu - Trigonometry</h4>
+                <iframe src="https://www.vedantu.com/maths/trigonometry" title="Vedantu Trigonometry"></iframe>
+                <p>Explore the interactive lessons and quizzes on Vedantu's website at <a href="https://www.vedantu.com/maths/trigonometry" target="_blank">Vedantu's website</a>.</p>
+            </div>
+
+            <div>
+                <h4>Inacademy - Trigonometry</h4>
+                <iframe src="https://inacademy.in/maths/trigonometry" title="Inacademy Trigonometry"></iframe>
+                <p>Learn about Trigonometry in more depth on Inacademy. Visit their page <a href="https://inacademy.in/maths/trigonometry" target="_blank">here</a>.</p>
+            </div>
+        </div>
+
+        <!-- Comparison Table Section -->
+        <section>
+            <h3>Compare Educational Content Across Platforms:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Website</th>
+                        <th>Overview</th>
+                        <th>Key Features</th>
+                        <th>Visit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Byju's</td>
+                        <td>Interactive lessons with detailed explanations.</td>
+                        <td>Animations, quizzes, interactive lessons</td>
+                        <td><a href="https://byjus.com/maths/trigonometry/" target="_blank">Visit Byju's</a></td>
+                    </tr>
+                    <tr>
+                        <td>Vedantu</td>
+                        <td>Interactive lessons with live classes.</td>
+                        <td>Live classes, quizzes, notes</td>
+                        <td><a href="https://www.vedantu.com/maths/trigonometry" target="_blank">Visit Vedantu</a></td>
+                    </tr>
+                    <tr>
+                        <td>Inacademy</td>
+                        <td>Comprehensive study material for trigonometry.</td>
+                        <td>Text-based lessons, examples</td>
+                        <td><a href="https://inacademy.in/maths/trigonometry" target="_blank">Visit Inacademy</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Link back to the main chapter page or any other content -->
+        <div class="btn-container">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </div>
+
     <footer>
         &copy; 2025 Your Website. All Rights Reserved.
     </footer>
