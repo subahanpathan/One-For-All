@@ -126,19 +126,31 @@
             border-radius: 5px;
         }
 
-        /* Responsive design for smaller screens */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 28px;
-            }
+        /* Comparison Table Styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
 
-            .btn {
-                width: 200px;
-            }
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
 
-            .notes-container {
-                height: 70vh;
-            }
+        .comparison-table th {
+            background-color: #ff7e5f;
+            color: white;
+        }
+
+        .comparison-table td {
+            background-color: #f4f4f9;
+        }
+
+        .comparison-table a {
+            color: #ff7e5f;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -234,99 +246,63 @@
         <a href="index.html" class="btn">Back to Home</a>
     </div>
 
+  <!-- Comparison Table Section -->
+        <section>
+            <h3>Compare Educational Content Across Platforms:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Website</th>
+                        <th>Overview</th>
+                        <th>Key Features</th>
+                        <th>Visit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Byju's</td>
+                        <td>Detailed explanations with interactive lessons.</td>
+                        <td>Interactive lessons, animations, quizzes</td>
+                        <td><a href="https://byjus.com/maths/coordinate-geometry/" target="_blank">Visit Byju's</a></td>
+                    </tr>
+                    <tr>
+                        <td>Vedantu</td>
+                        <td>Interactive lessons and quizzes.</td>
+                        <td>Live classes, quizzes, notes</td>
+                        <td><a href="https://www.vedantu.com/maths/coordinate-geometry" target="_blank">Visit Vedantu</a></td>
+                    </tr>
+                    <tr>
+                        <td>Inacademy</td>
+                        <td>Comprehensive study material for deeper understanding.</td>
+                        <td>Text-based lessons, examples</td>
+                        <td><a href="https://inacademy.in/maths/coordinate-geometry" target="_blank">Visit Inacademy</a></td>
+                    </tr>
+                    <tr>
+                        <td>Brainly</td>
+                        <td>Community-driven platform with answers and discussions.</td>
+                        <td>Community questions, discussions, solutions</td>
+                        <td><a href="https://brainly.in/question/coordinate-geometry" target="_blank">Visit Brainly</a></td>
+                    </tr>
+                    <tr>
+                        <td>Toppers</td>
+                        <td>Study materials and resources for students.</td>
+                        <td>Notes, exam tips, practice papers</td>
+                        <td><a href="https://www.toppers.com/coordinate-geometry" target="_blank">Visit Toppers</a></td>
+                    </tr>
+                    <tr>
+                        <td>Shalah.com</td>
+                        <td>Detailed explanations and practice exercises.</td>
+                        <td>Study materials, exercises, practice questions</td>
+                        <td><a href="https://www.shalah.com/maths/coordinate-geometry" target="_blank">Visit Shalah.com</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     <!-- Footer -->
     <footer>
         &copy; 2025 Your Website. All Rights Reserved.
     </footer>
 
-    <!-- Initialize Particles.js -->
-    <script>
-        particlesJS('particles-js', {
-            particles: {
-                number: {
-                    value: 80,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: "#ff7e5f"
-                },
-                shape: {
-                    type: "circle",
-                    stroke: {
-                        width: 0,
-                        color: "#000000"
-                    },
-                    polygon: {
-                        nb_sides: 5
-                    }
-                },
-                opacity: {
-                    value: 0.5,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 40,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#ff7e5f",
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 6,
-                    direction: "none",
-                    random: false,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false,
-                    attract: {
-                        enable: false,
-                        rotateX: 600,
-                        rotateY: 1200
-                    }
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: "repulse"
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: "push"
-                    },
-                    resize: true
-                }
-            },
-            retina_detect: true
-        });
-
-        // Handle See More Button
-        document.getElementById('see-more-btn').addEventListener('click', function () {
-            document.getElementById('notes-container').style.height = 'auto'; // Remove the scroll restriction
-            document.getElementById('see-more-btn').style.display = 'none'; // Hide the button after expanding
-        });
-    </script>
+   
 </body>
 </html>
