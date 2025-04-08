@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 6: Chemical Reactions - Notes</title>
 
-    <!-- Include Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+   
 
     <style>
         * {
@@ -143,9 +142,7 @@
 </head>
 <body>
 
-    <!-- Particles.js background -->
-    <div id="particles-js"></div>
-
+   
     <!-- Notes Content -->
     <div class="notes-container" id="notes-container">
         <h1>Chapter 6: Chemical Reactions - Notes</h1>
@@ -213,94 +210,6 @@
         &copy; 2025 Your Website. All Rights Reserved.
     </footer>
 
-    <!-- Initialize Particles.js -->
-    <script>
-        particlesJS('particles-js', {
-            particles: {
-                number: {
-                    value: 80,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: "#ff7e5f"
-                },
-                shape: {
-                    type: "circle",
-                    stroke: {
-                        width: 0,
-                        color: "#000000"
-                    },
-                    polygon: {
-                        nb_sides: 5
-                    }
-                },
-                opacity: {
-                    value: 0.5,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 40,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#ff7e5f",
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 6,
-                    direction: "none",
-                    random: false,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false,
-                    attract: {
-                        enable: false,
-                        rotateX: 600,
-                        rotateY: 1200
-                    }
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: "repulse"
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: "push"
-                    },
-                    resize: true
-                }
-            },
-            retina_detect: true
-        });
-
-        // Handle See More Button
-        document.getElementById('see-more-btn').addEventListener('click', function () {
-            document.getElementById('notes-container').style.height = 'auto'; // Remove the scroll restriction
-            document.getElementById('see-more-btn').style.display = 'none'; // Hide the button after expanding
-        });
-    </script>
+    
 </body>
 </html>
