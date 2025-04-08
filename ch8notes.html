@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta name="google-adsense-account" content="ca-pub-6869176794880769">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: Introduction to Trigonometry - Notes</title>
+
+    <!-- Include Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Background and Layout */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Orange and Black Gradient background */
+            padding: 20px;
+            overflow: hidden; /* Prevent scrolling for body */
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Notes Content */
+        .notes-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 900px;
+            color: white;
+            height: 80vh; /* Fixed height for scroll */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        .notes-container h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #ff7e5f;
+        }
+
+        .notes-container p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+            transform: translateY(-5px); /* Slight hover lift effect */
+        }
+
+        .btn:active {
+            transform: translateY(2px); /* Pressed button effect */
+        }
+
+        .see-more-btn {
+            display: block;
+            margin: 30px auto;
+            font-size: 18px;
+            color: #ff7e5f;
+            background: none;
+            border: none;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Positioning the particle background canvas */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Footer Styles */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Comparison Table Styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background-color: #ff7e5f;
+            color: white;
+        }
+
+        .comparison-table td {
+            background-color: #f4f4f9;
+        }
+
+        .comparison-table a {
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particles.js background -->
+    <div id="particles-js"></div>
+
+    <!-- Notes Content -->
+    <div class="notes-container" id="notes-container">
+        <h1>Chapter 8: Introduction to Trigonometry - Notes</h1>
+
+        <h2>What is Trigonometry?</h2>
+        <p>Trigonometry is a branch of mathematics that studies the relationships between the sides and angles of triangles. It has applications in many fields, including physics, engineering, architecture, and astronomy. The most basic concepts of trigonometry involve the ratios of the sides of a right triangle.</p>
+
+        <h2>Basic Trigonometric Ratios</h2>
+        <p>In a right triangle, the three main sides are:</p>
+        <ul>
+            <li><strong>Hypotenuse</strong> - The longest side of the triangle, opposite the right angle.</li>
+            <li><strong>Opposite</strong> - The side opposite the angle of interest.</li>
+            <li><strong>Adjacent</strong> - The side next to the angle of interest (not the hypotenuse).</li>
+        </ul>
+
+        <p>Using these sides, we can define the following basic trigonometric ratios:</p>
+        <ul>
+            <li><strong>Sine (sin)</strong>: <code>sin(θ) = Opposite / Hypotenuse</code></li>
+            <li><strong>Cosine (cos)</strong>: <code>cos(θ) = Adjacent / Hypotenuse</code></li>
+            <li><strong>Tangent (tan)</strong>: <code>tan(θ) = Opposite / Adjacent</code></li>
+        </ul>
+
+        <h2>Important Trigonometric Identities</h2>
+        <p>Trigonometric identities are equations involving trigonometric functions that are true for all values of the variable.</p>
+        <ul>
+            <li><strong>Pythagorean Identity:</strong> <code>sin²(θ) + cos²(θ) = 1</code></li>
+            <li><strong>Reciprocal Identities:</strong> <code>sec(θ) = 1/cos(θ), cosec(θ) = 1/sin(θ), cot(θ) = 1/tan(θ)</code></li>
+            <li><strong>Angle Sum and Difference Identities:</strong> <code>sin(A ± B) = sinA cosB ± cosA sinB</code></li>
+        </ul>
+
+        <h2>Applications of Trigonometry</h2>
+        <ul>
+            <li><strong>Architecture:</strong> Trigonometry is used to calculate angles and dimensions of buildings.</li>
+            <li><strong>Navigation:</strong> Trigonometry is essential for determining locations and distances on the Earth.</li>
+            <li><strong>Astronomy:</strong> It helps to measure distances between celestial bodies.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Trigonometry plays a vital role in various fields. Its understanding allows us to solve problems related to angles, distances, and forces, making it one of the key mathematical disciplines. By mastering trigonometric ratios and identities, students can develop the skills necessary for more advanced studies in mathematics and science.</p>
+
+        <!-- See More Button -->
+        <button class="see-more-btn" id="see-more-btn">See More</button>
+    </div>
+
+    <!-- Button to return home -->
+    <div class="btn-container">
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
+
+    <!-- Comparison Table Section -->
+    <section>
+        <h3>Compare Educational Content Across Platforms:</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Website</th>
+                    <th>Overview</th>
+                    <th>Key Features</th>
+                    <th>Visit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Byju's</td>
+                    <td>Detailed explanations with interactive lessons.</td>
+                    <td>Interactive lessons, animations, quizzes</td>
+                    <td><a href="https://byjus.com/maths/trigonometry/" target="_blank">Visit Byju's</a></td>
+                </tr>
+                <tr>
+                    <td>Vedantu</td>
+                    <td>Interactive lessons and quizzes.</td>
+                    <td>Live classes, quizzes, notes</td>
+                    <td><a href="https://www.vedantu.com/maths/trigonometry" target="_blank">Visit Vedantu</a></td>
+                </tr>
+                <tr>
+                    <td>Inacademy</td>
+                    <td>Comprehensive study material for deeper understanding.</td>
+                    <td>Text-based lessons, examples</td>
+                    <td><a href="https://inacademy.in/maths/trigonometry" target="_blank">Visit Inacademy</a></td>
+                </tr>
+                <tr>
+                    <td>Brainly</td>
+                    <td>Community-driven platform with answers and discussions.</td>
+                    <td>Community questions, discussions, solutions</td>
+                    <td><a href="https://brainly.in/question/trigonometry" target="_blank">Visit Brainly</a></td>
+                </tr>
+                <tr>
+                    <td>Toppers</td>
+                    <td>Study materials and resources for students.</td>
+                    <td>Notes, exam tips, practice papers</td>
+                    <td><a href="https://www.toppers.com/trigonometry" target="_blank">Visit Toppers</a></td>
+                </tr>
+                <tr>
+                    <td>Shalah.com</td>
+                    <td>Detailed explanations and practice exercises.</td>
+                    <td>Study materials, exercises, practice questions</td>
+                    <td><a href="https://www.shalah.com/maths/trigonometry" target="_blank">Visit Shalah.com</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Your Website. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
