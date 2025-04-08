@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 1: Resources and Development</title>
 
-    <!-- Include Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-
+   
     <style>
         * {
             margin: 0;
@@ -98,42 +96,7 @@
             animation: float 12s ease-in-out infinite, rotate 10s linear infinite;
         }
 
-        .cube {
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-
-        .sphere {
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.6);
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotateX(0deg) rotateY(0deg);
-            }
-            25% {
-                transform: translateY(-50px) rotateX(180deg) rotateY(180deg);
-            }
-            50% {
-                transform: translateY(0) rotateX(360deg) rotateY(360deg);
-            }
-            75% {
-                transform: translateY(50px) rotateX(540deg) rotateY(540deg);
-            }
-            100% {
-                transform: translateY(0) rotateX(720deg) rotateY(720deg);
-            }
-        }
-
-        @keyframes rotate {
-            0% {
-                transform: rotateY(0deg);
-            }
-            100% {
-                transform: rotateY(360deg);
-            }
-        }
-
+      
         /* Footer Styles */
         footer {
             position: absolute;
@@ -172,88 +135,6 @@
         &copy; 2025 Your Website. All Rights Reserved.
     </footer>
 
-    <!-- Initialize Particles.js -->
-    <script>
-        particlesJS('particles-js', {
-            particles: {
-                number: {
-                    value: 80,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: "#ff7e5f"
-                },
-                shape: {
-                    type: "circle",
-                    stroke: {
-                        width: 0,
-                        color: "#000000"
-                    },
-                    polygon: {
-                        nb_sides: 5
-                    }
-                },
-                opacity: {
-                    value: 0.5,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 40,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#ff7e5f",
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 6,
-                    direction: "none",
-                    random: false,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false,
-                    attract: {
-                        enable: false,
-                        rotateX: 600,
-                        rotateY: 1200
-                    }
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: "repulse"
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: "push"
-                    },
-                    resize: true
-                }
-            },
-            retina_detect: true
-        });
-    </script>
+  
 </body>
 </html>
