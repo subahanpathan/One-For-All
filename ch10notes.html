@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Chapter 10: Circles</title>
+
+    <link rel="stylesheet" href="styles.css"> <!-- If you want to use a separate CSS file -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            color: #ff7e5f;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+            transform: translateY(-5px);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Comparison Table Styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background-color: #ff7e5f;
+            color: white;
+        }
+
+        .comparison-table td {
+            background-color: #f4f4f9;
+        }
+
+        .comparison-table a {
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Notes - Chapter 10: Circles
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <h2>Introduction to Circles</h2>
+            <p>
+                A circle is a set of all points in a plane that are at a fixed distance (radius) from a given point (center). The study of circles involves understanding various properties related to the radius, circumference, and area, as well as the angles and segments associated with them.
+            </p>
+
+            <h2>Key Concepts in Circles</h2>
+            <ul>
+                <li><strong>Center</strong>: The fixed point from which every point on the circle is equidistant.</li>
+                <li><strong>Radius</strong>: The distance from the center to any point on the circle.</li>
+                <li><strong>Diameter</strong>: The longest chord of the circle, passing through the center, and is twice the length of the radius.</li>
+                <li><strong>Circumference</strong>: The perimeter or boundary line of the circle. It is calculated as <strong>C = 2πr</strong>, where <strong>r</strong> is the radius.</li>
+                <li><strong>Area</strong>: The space enclosed by the circle, calculated using the formula <strong>A = πr²</strong>.</li>
+            </ul>
+
+            <h2>Important Theorems and Properties</h2>
+            <ul>
+                <li><strong>The Angle at the Center Theorem</strong>: The angle subtended by a chord at the center of a circle is twice any angle subtended by the same chord at the circumference.</li>
+                <li><strong>Chord Properties</strong>: Chords that are equidistant from the center of the circle are equal in length.</li>
+                <li><strong>Inscribed Angle Theorem</strong>: The angle subtended by a chord at any point on the circumference is half of the central angle.</li>
+                <li><strong>Secant and Tangent</strong>: A secant is a line that intersects the circle at two points, while a tangent touches the circle at exactly one point.</li>
+            </ul>
+
+            <h2>Applications of Circles</h2>
+            <p>
+                Circles have many real-life applications in various fields. Some examples include:
+            </p>
+            <ul>
+                <li><strong>Engineering and Design</strong>: Circles are fundamental in the design of gears, wheels, and other rotational machinery.</li>
+                <li><strong>Astronomy</strong>: The orbits of planets and satellites are often elliptical, which is closely related to circular motion.</li>
+                <li><strong>Architecture</strong>: Circular designs are often used in domes, arches, and other structural elements.</li>
+                <li><strong>Art and Design</strong>: Circles are often used in artwork and logo design due to their symmetry and aesthetic appeal.</li>
+            </ul>
+
+            <h2>Key Circle Formulas</h2>
+            <ul>
+                <li><strong>Circumference</strong>: <pre>C = 2πr</pre></li>
+                <li><strong>Area</strong>: <pre>A = πr²</pre></li>
+                <li><strong>Length of an Arc</strong>: <pre>Length = (θ / 360) × 2πr</pre> where θ is the central angle in degrees.</li>
+                <li><strong>Area of a Sector</strong>: <pre>Area = (θ / 360) × πr²</pre> where θ is the central angle in degrees.</li>
+            </ul>
+        </div>
+
+        <!-- Comparison Table Section -->
+        <section>
+            <h3>Compare Educational Content Across Platforms:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Website</th>
+                        <th>Overview</th>
+                        <th>Key Features</th>
+                        <th>Visit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Byju's</td>
+                        <td>Detailed explanations with interactive lessons.</td>
+                        <td>Interactive lessons, animations, quizzes</td>
+                        <td><a href="https://byjus.com/maths/circles/" target="_blank">Visit Byju's</a></td>
+                    </tr>
+                    <tr>
+                        <td>Vedantu</td>
+                        <td>Interactive lessons and quizzes.</td>
+                        <td>Live classes, quizzes, notes</td>
+                        <td><a href="https://www.vedantu.com/maths/circles" target="_blank">Visit Vedantu</a></td>
+                    </tr>
+                    <tr>
+                        <td>Inacademy</td>
+                        <td>Comprehensive study material for deeper understanding.</td>
+                        <td>Text-based lessons, examples</td>
+                        <td><a href="https://inacademy.in/maths/circles" target="_blank">Visit Inacademy</a></td>
+                    </tr>
+                    <tr>
+                        <td>Brainly</td>
+                        <td>Community-driven platform with answers and discussions.</td>
+                        <td>Community questions, discussions, solutions</td>
+                        <td><a href="https://brainly.in/question/circles" target="_blank">Visit Brainly</a></td>
+                    </tr>
+                    <tr>
+                        <td>Toppers</td>
+                        <td>Study materials and resources for students.</td>
+                        <td>Notes, exam tips, practice papers</td>
+                        <td><a href="https://www.toppers.com/circles" target="_blank">Visit Toppers</a></td>
+                    </tr>
+                    <tr>
+                        <td>Shalah.com</td>
+                        <td>Detailed explanations and practice exercises.</td>
+                        <td>Study materials, exercises, practice questions</td>
+                        <td><a href="https://www.shalah.com/maths/circles" target="_blank">Visit Shalah.com</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Link back to the main chapter page or any other content -->
+        <div class="btn-container">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Your Website. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
