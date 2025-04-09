@@ -1,70 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta name="google-adsense-account" content="ca-pub-6869176794880769">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 8: Introduction to Trigonometry - Notes</title>
+    <title>Notes -Chapter 9: Some Applications of Trigonometry</title>
 
-    
-
+    <link rel="stylesheet" href="styles.css"> <!-- If you want to use a separate CSS file -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body Background and Layout */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Orange and Black Gradient background */
-            padding: 20px;
-            overflow: hidden; /* Prevent scrolling for body */
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
         }
 
-        h1 {
+        .header {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            padding: 20px;
+            color: white;
             text-align: center;
             font-size: 36px;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Notes Content */
-        .notes-container {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 900px;
-            color: white;
-            height: 80vh; /* Fixed height for scroll */
-            overflow-y: auto; /* Enable vertical scrolling */
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .notes-container h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            text-align: center;
-            color: #ff7e5f;
-        }
-
-        .notes-container p {
+        .content {
             font-size: 18px;
-            line-height: 1.6;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            color: #ff7e5f;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
             margin-bottom: 20px;
         }
 
         .btn-container {
-            margin-top: 30px;
             display: flex;
             justify-content: center;
+            margin-top: 30px;
         }
 
         .btn {
@@ -74,45 +63,27 @@
             font-size: 18px;
             text-decoration: none;
             border-radius: 10px;
-            width: 250px;
-            text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             transition: background-color 0.3s, transform 0.3s;
         }
 
         .btn:hover {
             background-color: #feb47b;
-            transform: translateY(-5px); /* Slight hover lift effect */
+            transform: translateY(-5px);
         }
 
         .btn:active {
-            transform: translateY(2px); /* Pressed button effect */
+            transform: translateY(2px);
         }
 
-        .see-more-btn {
-            display: block;
-            margin: 30px auto;
-            font-size: 18px;
-            color: #ff7e5f;
-            background: none;
-            border: none;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        
-
-        /* Footer Styles */
         footer {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
             text-align: center;
-            color: white;
-            font-size: 14px;
-            background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
-            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
 
         /* Comparison Table Styles */
@@ -145,11 +116,13 @@
 </head>
 <body>
 
-   
+    <div class="header">
+        Notes - Chapter 9: Some Applications of Trigonometry
+    </div>
 
-    <!-- Notes Content -->
-    <div class="notes-container" id="notes-container">
-        <h1>Chapter 8: Introduction to Trigonometry - Notes</h1>
+    <div class="container">
+        <div class="content">
+              <h1>Chapter 8: Introduction to Trigonometry - Notes</h1>
 
         <h2>What is Trigonometry?</h2>
         <p>Trigonometry is a branch of mathematics that studies the relationships between the sides and angles of triangles. It has applications in many fields, including physics, engineering, architecture, and astronomy. The most basic concepts of trigonometry involve the ratios of the sides of a right triangle.</p>
@@ -190,65 +163,68 @@
         <!-- See More Button -->
         <button class="see-more-btn" id="see-more-btn">See More</button>
     </div>
+     
+</div>
+        
+        <!-- Comparison Table Section -->
+        <section>
+            <h3>Compare Educational Content Across Platforms:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Website</th>
+                        <th>Overview</th>
+                        <th>Key Features</th>
+                        <th>Visit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Byju's</td>
+                        <td>Detailed explanations with interactive lessons.</td>
+                        <td>Interactive lessons, animations, quizzes</td>
+                        <td><a href="https://byjus.com/maths/coordinate-geometry/" target="_blank">Visit Byju's</a></td>
+                    </tr>
+                    <tr>
+                        <td>Vedantu</td>
+                        <td>Interactive lessons and quizzes.</td>
+                        <td>Live classes, quizzes, notes</td>
+                        <td><a href="https://www.vedantu.com/maths/coordinate-geometry" target="_blank">Visit Vedantu</a></td>
+                    </tr>
+                    <tr>
+                        <td>Inacademy</td>
+                        <td>Comprehensive study material for deeper understanding.</td>
+                        <td>Text-based lessons, examples</td>
+                        <td><a href="https://inacademy.in/maths/coordinate-geometry" target="_blank">Visit Inacademy</a></td>
+                    </tr>
+                    <tr>
+                        <td>Brainly</td>
+                        <td>Community-driven platform with answers and discussions.</td>
+                        <td>Community questions, discussions, solutions</td>
+                        <td><a href="https://brainly.in/question/coordinate-geometry" target="_blank">Visit Brainly</a></td>
+                    </tr>
+                    <tr>
+                        <td>Toppers</td>
+                        <td>Study materials and resources for students.</td>
+                        <td>Notes, exam tips, practice papers</td>
+                        <td><a href="https://www.toppers.com/coordinate-geometry" target="_blank">Visit Toppers</a></td>
+                    </tr>
+                    <tr>
+                        <td>Shalah.com</td>
+                        <td>Detailed explanations and practice exercises.</td>
+                        <td>Study materials, exercises, practice questions</td>
+                        <td><a href="https://www.shalah.com/maths/coordinate-geometry" target="_blank">Visit Shalah.com</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-    <!-- Comparison Table Section -->
-    <section>
-        <h3>Compare Educational Content Across Platforms:</h3>
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Website</th>
-                    <th>Overview</th>
-                    <th>Key Features</th>
-                    <th>Visit</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Byju's</td>
-                    <td>Detailed explanations with interactive lessons.</td>
-                    <td>Interactive lessons, animations, quizzes</td>
-                    <td><a href="https://byjus.com/maths/trigonometry/" target="_blank">Visit Byju's</a></td>
-                </tr>
-                <tr>
-                    <td>Vedantu</td>
-                    <td>Interactive lessons and quizzes.</td>
-                    <td>Live classes, quizzes, notes</td>
-                    <td><a href="https://www.vedantu.com/maths/trigonometry" target="_blank">Visit Vedantu</a></td>
-                </tr>
-                <tr>
-                    <td>Inacademy</td>
-                    <td>Comprehensive study material for deeper understanding.</td>
-                    <td>Text-based lessons, examples</td>
-                    <td><a href="https://inacademy.in/maths/trigonometry" target="_blank">Visit Inacademy</a></td>
-                </tr>
-                <tr>
-                    <td>Brainly</td>
-                    <td>Community-driven platform with answers and discussions.</td>
-                    <td>Community questions, discussions, solutions</td>
-                    <td><a href="https://brainly.in/question/trigonometry" target="_blank">Visit Brainly</a></td>
-                </tr>
-                <tr>
-                    <td>Toppers</td>
-                    <td>Study materials and resources for students.</td>
-                    <td>Notes, exam tips, practice papers</td>
-                    <td><a href="https://www.toppers.com/trigonometry" target="_blank">Visit Toppers</a></td>
-                </tr>
-                <tr>
-                    <td>Shalah.com</td>
-                    <td>Detailed explanations and practice exercises.</td>
-                    <td>Study materials, exercises, practice questions</td>
-                    <td><a href="https://www.shalah.com/maths/trigonometry" target="_blank">Visit Shalah.com</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-  <!-- Button to return home -->
-    <div class="btn-container">
-        <a href="index.html" class="btn">Back to Home</a>
+        <!-- Link back to the main chapter page or any other content -->
+        <div class="btn-container">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         &copy; 2025 Your Website. All Rights Reserved.
     </footer>
