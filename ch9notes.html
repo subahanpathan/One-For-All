@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-adsense-account" content="ca-pub-6869176794880769">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: Some Applications of Trigonometry - Notes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Background and Layout */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Orange and Black Gradient background */
+            padding: 20px;
+            overflow: hidden; /* Prevent scrolling for body */
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Notes Content */
+        .notes-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 900px;
+            color: white;
+            height: 80vh; /* Fixed height for scroll */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        .notes-container h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #ff7e5f;
+        }
+
+        .notes-container p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+            transform: translateY(-5px); /* Slight hover lift effect */
+        }
+
+        .btn:active {
+            transform: translateY(2px); /* Pressed button effect */
+        }
+
+        .see-more-btn {
+            display: block;
+            margin: 30px auto;
+            font-size: 18px;
+            color: #ff7e5f;
+            background: none;
+            border: none;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Footer Styles */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Comparison Table Styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background-color: #ff7e5f;
+            color: white;
+        }
+
+        .comparison-table td {
+            background-color: #f4f4f9;
+        }
+
+        .comparison-table a {
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Notes Content -->
+<div class="notes-container" id="notes-container">
+    <h1>Chapter 9: Some Applications of Trigonometry - Notes</h1>
+
+    <h2>Introduction</h2>
+    <p>Trigonometry has numerous practical applications in fields such as architecture, navigation, and engineering. It helps in measuring angles, heights, distances, and solving real-world problems involving triangles.</p>
+
+    <h2>Applications of Trigonometry</h2>
+    <p>Trigonometry is used in a wide variety of fields, including:</p>
+    <ul>
+        <li><strong>Architecture:</strong> Trigonometry helps architects to determine angles and dimensions when designing buildings and structures.</li>
+        <li><strong>Navigation:</strong> Trigonometry is essential in navigation to calculate distances and angles between locations, especially in air and sea navigation.</li>
+        <li><strong>Engineering:</strong> Engineers use trigonometry to design machines, bridges, and other structures, ensuring stability and correct measurements.</li>
+        <li><strong>Surveying:</strong> Trigonometry is used in land surveying to measure distances, areas, and angles between landmarks.</li>
+        <li><strong>Physics:</strong> Trigonometry helps in calculating forces, vectors, and other quantities in physics, particularly in mechanics and wave studies.</li>
+    </ul>
+
+    <h2>Trigonometric Formulas in Applications</h2>
+    <p>Some of the key formulas used in applications of trigonometry include:</p>
+    <ul>
+        <li><strong>Height and Distance Problems:</strong> Trigonometric ratios like sine, cosine, and tangent are used to calculate heights and distances that cannot be measured directly.</li>
+        <li><strong>Law of Sines:</strong> <code>a/sin(A) = b/sin(B) = c/sin(C)</code> is used in non-right angled triangles to calculate missing sides or angles.</li>
+        <li><strong>Law of Cosines:</strong> <code>c² = a² + b² - 2ab cos(C)</code> is used to find the length of a side or angle in a triangle when other sides and angles are known.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Trigonometry is a powerful tool that enables the solution of complex problems in various fields. By applying trigonometric formulas and understanding the relationships between angles and sides, we can solve real-life problems efficiently.</p>
+
+    <!-- See More Button -->
+    <button class="see-more-btn" id="see-more-btn">See More</button>
+</div>
+
+<!-- Comparison Table Section -->
+<section>
+    <h3>Compare Educational Content Across Platforms:</h3>
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Website</th>
+                <th>Overview</th>
+                <th>Key Features</th>
+                <th>Visit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Byju's</td>
+                <td>Detailed explanations with interactive lessons.</td>
+                <td>Interactive lessons, animations, quizzes</td>
+                <td><a href="https://byjus.com/maths/trigonometry/" target="_blank">Visit Byju's</a></td>
+            </tr>
+            <tr>
+                <td>Vedantu</td>
+                <td>Interactive lessons and quizzes.</td>
+                <td>Live classes, quizzes, notes</td>
+                <td><a href="https://www.vedantu.com/maths/trigonometry" target="_blank">Visit Vedantu</a></td>
+            </tr>
+            <tr>
+                <td>Inacademy</td>
+                <td>Comprehensive study material for deeper understanding.</td>
+                <td>Text-based lessons, examples</td>
+                <td><a href="https://inacademy.in/maths/trigonometry" target="_blank">Visit Inacademy</a></td>
+            </tr>
+            <tr>
+                <td>Brainly</td>
+                <td>Community-driven platform with answers and discussions.</td>
+                <td>Community questions, discussions, solutions</td>
+                <td><a href="https://brainly.in/question/trigonometry" target="_blank">Visit Brainly</a></td>
+            </tr>
+            <tr>
+                <td>Toppers</td>
+                <td>Study materials and resources for students.</td>
+                <td>Notes, exam tips, practice papers</td>
+                <td><a href="https://www.toppers.com/trigonometry" target="_blank">Visit Toppers</a></td>
+            </tr>
+            <tr>
+                <td>Shalah.com</td>
+                <td>Detailed explanations and practice exercises.</td>
+                <td>Study materials, exercises, practice questions</td>
+                <td><a href="https://www.shalah.com/maths/trigonometry" target="_blank">Visit Shalah.com</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- Button to return home -->
+<div class="btn-container">
+    <a href="index.html" class="btn">Back to Home</a>
+</div>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Your Website. All Rights Reserved.
+</footer>
+</body>
+</html>
