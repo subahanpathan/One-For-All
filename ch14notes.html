@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Chapter 14: Statistics</title>
+
+    <link rel="stylesheet" href="styles.css"> <!-- If you want to use a separate CSS file -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            color: #ff7e5f;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+            transform: translateY(-5px);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Comparison Table Styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background-color: #ff7e5f;
+            color: white;
+        }
+
+        .comparison-table td {
+            background-color: #f4f4f9;
+        }
+
+        .comparison-table a {
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Notes - Chapter 14: Statistics
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <h2>Introduction to Statistics</h2>
+            <p>
+                Statistics is a branch of mathematics that deals with collecting, analyzing, interpreting, and presenting data. In this chapter, we will explore key concepts in statistics such as data collection, measures of central tendency (mean, median, mode), measures of dispersion (range, variance, standard deviation), and more.
+            </p>
+
+            <h2>Key Concepts in Statistics</h2>
+            <ul>
+                <li><strong>Data Collection</strong>: The process of gathering information from a variety of sources, such as surveys, experiments, or observations.</li>
+                <li><strong>Data Representation</strong>: Data can be represented in various forms such as tables, charts, and graphs, including bar graphs, histograms, and pie charts.</li>
+                <li><strong>Measures of Central Tendency</strong>: These measures include the mean, median, and mode, and they describe the center of a data set.</li>
+                <li><strong>Measures of Dispersion</strong>: These measures, such as range, variance, and standard deviation, provide information about the spread or variability of the data.</li>
+            </ul>
+
+            <h2>Measures of Central Tendency</h2>
+            <h3>Mean</h3>
+            <p>The mean is the average of all the data values. It is calculated by adding all the values and dividing by the number of values:</p>
+            <pre>Mean = (Sum of all data values) / (Number of data values)</pre>
+
+            <h3>Median</h3>
+            <p>The median is the middle value of a data set when the values are arranged in ascending or descending order. If the number of values is even, the median is the average of the two middle values.</p>
+
+            <h3>Mode</h3>
+            <p>The mode is the value that appears most frequently in a data set. A data set may have one mode, more than one mode, or no mode at all.</p>
+
+            <h2>Measures of Dispersion</h2>
+            <h3>Range</h3>
+            <p>The range is the difference between the largest and smallest values in a data set:</p>
+            <pre>Range = Largest value - Smallest value</pre>
+
+            <h3>Variance</h3>
+            <p>Variance measures the average squared deviation from the mean. It gives an idea of how spread out the data is.</p>
+
+            <h3>Standard Deviation</h3>
+            <p>Standard deviation is the square root of the variance. It provides a more intuitive measure of the spread of data because it is in the same units as the data itself.</p>
+
+            <h2>Data Representation</h2>
+            <h3>Bar Graphs</h3>
+            <p>Bar graphs are used to represent data with rectangular bars, where the length of each bar is proportional to the value it represents.</p>
+
+            <h3>Histograms</h3>
+            <p>Histograms are similar to bar graphs, but they represent frequency distributions of continuous data by grouping data into intervals or bins.</p>
+
+            <h3>Pie Charts</h3>
+            <p>Pie charts are circular graphs divided into slices to illustrate numerical proportions. Each slice represents a category's contribution to the total.</p>
+
+            <h2>Steps for Analyzing Data</h2>
+            <ol>
+                <li><strong>Step 1</strong>: Collect the data from a reliable source (survey, experiment, etc.).</li>
+                <li><strong>Step 2</strong>: Organize and represent the data (use tables, charts, etc.).</li>
+                <li><strong>Step 3</strong>: Calculate the measures of central tendency (mean, median, mode) and measures of dispersion (range, variance, standard deviation).</li>
+                <li><strong>Step 4</strong>: Interpret the results and draw conclusions based on the data analysis.</li>
+            </ol>
+
+            <h2>Applications of Statistics</h2>
+            <p>
+                Statistics is used in a wide range of fields to analyze and interpret data. Some common applications include:
+            </p>
+            <ul>
+                <li><strong>Business</strong>: Analyzing sales data, customer feedback, and market trends to make informed decisions.</li>
+                <li><strong>Healthcare</strong>: Evaluating clinical trial data, determining the effectiveness of treatments, and studying public health trends.</li>
+                <li><strong>Sports</strong>: Analyzing player performance, team statistics, and game outcomes.</li>
+                <li><strong>Government</strong>: Conducting surveys, analyzing population data, and formulating policies based on statistical analysis.</li>
+            </ul>
+
+            <h2>Real-Life Examples</h2>
+            <ul>
+                <li><strong>Market Research</strong>: Companies use surveys to collect data on consumer preferences and behavior, then apply statistical methods to analyze the data.</li>
+                <li><strong>Polls</strong>: News organizations use statistics to predict election outcomes based on polling data.</li>
+                <li><strong>Education</strong>: Teachers analyze test scores to assess the effectiveness of their teaching methods and make improvements.</li>
+            </ul>
+        </div>
+
+        <!-- Comparison Table Section -->
+        <section>
+            <h3>Compare Educational Content Across Platforms:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Website</th>
+                        <th>Overview</th>
+                        <th>Key Features</th>
+                        <th>Visit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Byju's</td>
+                        <td>Interactive lessons with quizzes and practice problems on statistics.</td>
+                        <td>Interactive lessons, animations, quizzes</td>
+                        <td><a href="https://byjus.com/maths/statistics/" target="_blank">Visit Byju's</a></td>
+                    </tr>
+                    <tr>
+                        <td>Vedantu</td>
+                        <td>Live classes on statistics and data analysis concepts.</td>
+                        <td>Live classes, quizzes, notes</td>
+                        <td><a href="https://www.vedantu.com/maths/statistics" target="_blank">Visit Vedantu</a></td>
+                    </tr>
+                    <tr>
+                        <td>Inacademy</td>
+                        <td>Comprehensive lessons and examples for understanding statistics and data analysis.</td>
+                        <td>Text-based lessons, examples</td>
+                        <td><a href="https://inacademy.in/maths/statistics" target="_blank">Visit Inacademy</a></td>
+                    </tr>
+                    <tr>
+                        <td>Brainly</td>
+                        <td>Community-driven platform with answers and discussions on statistical problems.</td>
+                        <td>Community questions, discussions, solutions</td>
+                        <td><a href="https://brainly.in/question/statistics" target="_blank">Visit Brainly</a></td>
+                    </tr>
+                    <tr>
+                        <td>Toppers</td>
+                        <td>Study materials and practice tests for statistics.</td>
+                        <td>Notes, exam tips, practice papers</td>
+                        <td><a href="https://www.toppers.com/statistics" target="_blank">Visit Toppers</a></td>
+                    </tr>
+                    <tr>
+                        <td>Shalah.com</td>
+                        <td>Practice exercises and study material for learning statistics.</td>
+                        <td>Study materials, exercises, practice questions</td>
+                        <td><a href="https://www.shalah.com/maths/statistics" target="_blank">Visit Shalah.com</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Link back to the main chapter page or any other content -->
+        <div class="btn-container">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Your Website. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
