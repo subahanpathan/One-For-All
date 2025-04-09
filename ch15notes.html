@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Chapter 15: Probability</title>
+
+    <link rel="stylesheet" href="styles.css"> <!-- If you want to use a separate CSS file -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            color: #ff7e5f;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+            transform: translateY(-5px);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Comparison Table Styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background-color: #ff7e5f;
+            color: white;
+        }
+
+        .comparison-table td {
+            background-color: #f4f4f9;
+        }
+
+        .comparison-table a {
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Notes - Chapter 15: Probability
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <h2>Introduction to Probability</h2>
+            <p>
+                Probability is a branch of mathematics that deals with the likelihood or chance of events occurring. This chapter introduces key concepts in probability, including experimental probability, theoretical probability, events, outcomes, and more.
+            </p>
+
+            <h2>Key Concepts in Probability</h2>
+            <ul>
+                <li><strong>Experiment</strong>: An action or process that leads to a single outcome (e.g., tossing a coin, rolling a die).</li>
+                <li><strong>Outcome</strong>: A possible result of an experiment (e.g., heads or tails for a coin toss).</li>
+                <li><strong>Event</strong>: A set of outcomes for an experiment (e.g., getting an even number when rolling a die).</li>
+                <li><strong>Sample Space</strong>: The set of all possible outcomes of an experiment (e.g., the outcomes for rolling a die are 1, 2, 3, 4, 5, and 6).</li>
+                <li><strong>Probability of an Event</strong>: The likelihood of an event occurring, calculated by dividing the number of favorable outcomes by the total number of outcomes in the sample space.</li>
+            </ul>
+
+            <h2>Types of Probability</h2>
+            <h3>Theoretical Probability</h3>
+            <p>Theoretical probability is based on the assumption that all outcomes are equally likely. It is calculated using the formula:</p>
+            <pre>Probability (P) = (Number of favorable outcomes) / (Total number of outcomes)</pre>
+
+            <h3>Experimental Probability</h3>
+            <p>Experimental probability is based on actual experiments or observations. It is calculated by dividing the number of times an event occurs by the total number of trials:</p>
+            <pre>Experimental Probability (P) = (Number of favorable outcomes) / (Total number of trials)</pre>
+
+            <h3>Complementary Events</h3>
+            <p>Complementary events are events that cannot happen at the same time. The sum of the probabilities of an event and its complement is always 1.</p>
+            <pre>P(A') = 1 - P(A)</pre>
+            where P(A') is the probability of the complement of event A.
+
+            <h2>Compound Events</h2>
+            <p>Compound events involve two or more simple events. These can be categorized into two types:</p>
+            <ul>
+                <li><strong>Independent Events</strong>: The outcome of one event does not affect the outcome of another event.</li>
+                <li><strong>Dependent Events</strong>: The outcome of one event affects the outcome of another event.</li>
+            </ul>
+
+            <h2>Addition and Multiplication Rules</h2>
+            <h3>Addition Rule</h3>
+            <p>The addition rule states that the probability of the union of two events is the sum of the probabilities of the events, minus the probability of their intersection:</p>
+            <pre>P(A ∪ B) = P(A) + P(B) - P(A ∩ B)</pre>
+
+            <h3>Multiplication Rule</h3>
+            <p>The multiplication rule states that the probability of the intersection of two events is the product of the probabilities of the individual events:</p>
+            <pre>P(A ∩ B) = P(A) * P(B)</pre>
+            This rule is used for independent events.
+
+            <h2>Examples of Probability</h2>
+            <ul>
+                <li><strong>Tossing a Coin:</strong> The probability of getting heads is 1/2, and the probability of getting tails is 1/2.</li>
+                <li><strong>Rolling a Die:</strong> The probability of rolling a 3 is 1/6, as there are 6 possible outcomes (1, 2, 3, 4, 5, 6).</li>
+                <li><strong>Drawing a Card:</strong> The probability of drawing an Ace from a standard deck of 52 cards is 4/52 (since there are 4 Aces in the deck).</li>
+            </ul>
+
+            <h2>Real-Life Applications of Probability</h2>
+            <p>Probability is used in various fields to make predictions and decisions based on uncertain information. Some applications include:</p>
+            <ul>
+                <li><strong>Weather Forecasting</strong>: Meteorologists use probability to predict the likelihood of weather events, such as rain or snow.</li>
+                <li><strong>Insurance</strong>: Insurance companies use probability to calculate risks and set premiums based on the likelihood of certain events happening.</li>
+                <li><strong>Games of Chance</strong>: Probability is used to calculate the odds of winning in games like poker, roulette, and lotteries.</li>
+                <li><strong>Quality Control</strong>: In manufacturing, probability is used to assess the likelihood of defects in products and to implement quality control measures.</li>
+            </ul>
+        </div>
+
+        <!-- Comparison Table Section -->
+        <section>
+            <h3>Compare Educational Content Across Platforms:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Website</th>
+                        <th>Overview</th>
+                        <th>Key Features</th>
+                        <th>Visit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Byju's</td>
+                        <td>Interactive lessons with quizzes and practice problems on probability.</td>
+                        <td>Interactive lessons, animations, quizzes</td>
+                        <td><a href="https://byjus.com/maths/probability/" target="_blank">Visit Byju's</a></td>
+                    </tr>
+                    <tr>
+                        <td>Vedantu</td>
+                        <td>Live classes and tutorials on probability concepts.</td>
+                        <td>Live classes, quizzes, notes</td>
+                        <td><a href="https://www.vedantu.com/maths/probability" target="_blank">Visit Vedantu</a></td>
+                    </tr>
+                    <tr>
+                        <td>Inacademy</td>
+                        <td>Comprehensive lessons and examples on probability.</td>
+                        <td>Text-based lessons, examples</td>
+                        <td><a href="https://inacademy.in/maths/probability" target="_blank">Visit Inacademy</a></td>
+                    </tr>
+                    <tr>
+                        <td>Brainly</td>
+                        <td>Community-driven platform with answers and discussions on probability problems.</td>
+                        <td>Community questions, discussions, solutions</td>
+                        <td><a href="https://brainly.in/question/probability" target="_blank">Visit Brainly</a></td>
+                    </tr>
+                    <tr>
+                        <td>Toppers</td>
+                        <td>Study materials and practice tests for probability.</td>
+                        <td>Notes, exam tips, practice papers</td>
+                        <td><a href="https://www.toppers.com/probability" target="_blank">Visit Toppers</a></td>
+                    </tr>
+                    <tr>
+                        <td>Shalah.com</td>
+                        <td>Practice exercises and study material for learning probability.</td>
+                        <td>Study materials, exercises, practice questions</td>
+                        <td><a href="https://www.shalah.com/maths/probability" target="_blank">Visit Shalah.com</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Link back to the main chapter page or any other content -->
+        <div class="btn-container">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Your Website. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
