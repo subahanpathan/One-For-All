@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Chapter 13: Surface Areas and Volumes</title>
+
+    <link rel="stylesheet" href="styles.css"> <!-- If you want to use a separate CSS file -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            color: #ff7e5f;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background-color: #ff7e5f;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #feb47b;
+            transform: translateY(-5px);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Comparison Table Styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background-color: #ff7e5f;
+            color: white;
+        }
+
+        .comparison-table td {
+            background-color: #f4f4f9;
+        }
+
+        .comparison-table a {
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Notes - Chapter 13: Surface Areas and Volumes
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <h2>Introduction to Surface Areas and Volumes</h2>
+            <p>
+                Surface area and volume are important concepts in geometry that describe the outer surface and the amount of space occupied by three-dimensional objects. In this chapter, we will explore how to calculate the surface area and volume of various solids such as cubes, cylinders, cones, spheres, and hemispheres.
+            </p>
+
+            <h2>Key Concepts in Surface Areas and Volumes</h2>
+            <ul>
+                <li><strong>Surface Area</strong>: The total area of the outer surface of a 3D object. The surface area is measured in square units.</li>
+                <li><strong>Volume</strong>: The amount of space enclosed by a 3D object. The volume is measured in cubic units.</li>
+                <li><strong>Types of Solids</strong>: Common solids include cubes, cuboids, spheres, cones, cylinders, and hemispheres.</li>
+            </ul>
+
+            <h2>Surface Area and Volume Formulas</h2>
+            <h3>Cuboid</h3>
+            <ul>
+                <li><strong>Surface Area</strong>: <pre>SA = 2(lw + lh + wh)</pre> (where l = length, w = width, h = height)</li>
+                <li><strong>Volume</strong>: <pre>V = l × w × h</pre></li>
+            </ul>
+
+            <h3>Cylinder</h3>
+            <ul>
+                <li><strong>Surface Area</strong>: <pre>SA = 2πr² + 2πrh</pre> (where r = radius, h = height)</li>
+                <li><strong>Volume</strong>: <pre>V = πr²h</pre></li>
+            </ul>
+
+            <h3>Sphere</h3>
+            <ul>
+                <li><strong>Surface Area</strong>: <pre>SA = 4πr²</pre></li>
+                <li><strong>Volume</strong>: <pre>V = (4/3)πr³</pre></li>
+            </ul>
+
+            <h3>Cone</h3>
+            <ul>
+                <li><strong>Surface Area</strong>: <pre>SA = πr(r + l)</pre> (where l = slant height)</li>
+                <li><strong>Volume</strong>: <pre>V = (1/3)πr²h</pre></li>
+            </ul>
+
+            <h3>Hemisphere</h3>
+            <ul>
+                <li><strong>Surface Area</strong>: <pre>SA = 3πr²</pre></li>
+                <li><strong>Volume</strong>: <pre>V = (2/3)πr³</pre></li>
+            </ul>
+
+            <h2>Steps for Calculating Surface Area and Volume</h2>
+            <ol>
+                <li><strong>Step 1</strong>: Identify the shape of the solid (cube, cylinder, cone, sphere, etc.).</li>
+                <li><strong>Step 2</strong>: Gather the necessary dimensions of the solid (radius, height, length, width, etc.).</li>
+                <li><strong>Step 3</strong>: Apply the appropriate formula to calculate the surface area or volume.</li>
+                <li><strong>Step 4</strong>: Ensure that all units are consistent, and convert them if necessary.</li>
+            </ol>
+
+            <h2>Applications of Surface Area and Volume</h2>
+            <p>
+                Understanding surface areas and volumes is essential for many practical applications:
+            </p>
+            <ul>
+                <li><strong>Architecture</strong>: Calculating the materials needed to construct buildings, walls, and roofs.</li>
+                <li><strong>Engineering</strong>: Designing components such as gears, tanks, and pipes based on their surface area and volume.</li>
+                <li><strong>Manufacturing</strong>: Estimating the amount of material required for production, including packaging and containers.</li>
+                <li><strong>Environmental Science</strong>: Understanding the capacity of natural or man-made reservoirs, lakes, and other structures.</li>
+            </ul>
+
+            <h2>Real-Life Examples</h2>
+            <ul>
+                <li><strong>Water Tank</strong>: Calculating the volume of a cylindrical water tank to determine how much water it can hold.</li>
+                <li><strong>Paint on a Wall</strong>: Estimating the surface area of a wall to determine how much paint is needed to cover it.</li>
+                <li><strong>Ball</strong>: Determining the volume of a spherical ball to understand how much air or material is needed to create it.</li>
+            </ul>
+        </div>
+
+        <!-- Comparison Table Section -->
+        <section>
+            <h3>Compare Educational Content Across Platforms:</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Website</th>
+                        <th>Overview</th>
+                        <th>Key Features</th>
+                        <th>Visit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Byju's</td>
+                        <td>Interactive lessons with animations and practice problems on surface areas and volumes.</td>
+                        <td>Interactive lessons, animations, quizzes</td>
+                        <td><a href="https://byjus.com/maths/surface-areas-and-volumes/" target="_blank">Visit Byju's</a></td>
+                    </tr>
+                    <tr>
+                        <td>Vedantu</td>
+                        <td>Live classes and explanations on surface areas, volumes, and related concepts.</td>
+                        <td>Live classes, quizzes, notes</td>
+                        <td><a href="https://www.vedantu.com/maths/surface-areas-and-volumes" target="_blank">Visit Vedantu</a></td>
+                    </tr>
+                    <tr>
+                        <td>Inacademy</td>
+                        <td>Comprehensive material for calculating surface areas and volumes of solids.</td>
+                        <td>Text-based lessons, examples</td>
+                        <td><a href="https://inacademy.in/maths/surface-areas-and-volumes" target="_blank">Visit Inacademy</a></td>
+                    </tr>
+                    <tr>
+                        <td>Brainly</td>
+                        <td>Community-driven platform with answers and discussions on surface areas and volumes.</td>
+                        <td>Community questions, discussions, solutions</td>
+                        <td><a href="https://brainly.in/question/surface-areas-and-volumes" target="_blank">Visit Brainly</a></td>
+                    </tr>
+                    <tr>
+                        <td>Toppers</td>
+                        <td>Study materials and resources on surface areas and volumes.</td>
+                        <td>Notes, exam tips, practice papers</td>
+                        <td><a href="https://www.toppers.com/surface-areas-and-volumes" target="_blank">Visit Toppers</a></td>
+                    </tr>
+                    <tr>
+                        <td>Shalah.com</td>
+                        <td>Practice problems and exercises on surface areas and volumes of solids.</td>
+                        <td>Study materials, exercises, practice questions</td>
+                        <td><a href="https://www.shalah.com/maths/surface-areas-and-volumes" target="_blank">Visit Shalah.com</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Link back to the main chapter page or any other content -->
+        <div class="btn-container">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Your Website. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
