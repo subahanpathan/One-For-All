@@ -5,9 +5,128 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
     <style>
-        /* Same style as before, feel free to copy from the previous code */
+        /* Reset and universal styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 0 20px;
+            color: #333;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 14px;
+            margin: 12px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            font-size: 16px;
+            color: #333;
+            transition: 0.3s ease-in-out;
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+            background-color: #ffffff;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .g-signin2 {
+            display: inline-block;
+            background-color: #db4437;
+            color: white;
+            border-radius: 8px;
+            padding: 14px;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-decoration: none;
+            transition: 0.3s ease-in-out;
+        }
+
+        .g-signin2:hover {
+            background-color: #c1351d;
+        }
+
+        .toggle-link {
+            margin-top: 15px;
+            color: #6c757d;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        .toggle-link:hover {
+            color: #007bff;
+        }
+
+        .message {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #28a745;
+        }
+
+        /* Animation for form */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
     </style>
 </head>
 
@@ -16,57 +135,14 @@
     <div class="form-container">
         <h2>Login</h2>
 
-        <!-- Google Login Button -->
-        <a href="{{ url_for('google.login') }}" class="g-signin2">Login with Google</a>
-
-        <!-- Email Login -->
+        <!-- Login Form -->
         <input type="email" id="email" placeholder="Email" required />
         <input type="password" id="password" placeholder="Password" required />
         <button id="auth-button" onclick="handleLogin()">Login</button>
 
-        <p>Don't have an account? <a href="register.html">Register</a></p>
+        <p class="toggle-link">Don't have an account? <a href="register.html">Register</a></p>
         <p class="message" id="auth-message"></p>
     </div>
 
     <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"></script>
-
-    <script>
-        // Initialize Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
-            authDomain: "one-for-all-c5cad.firebaseapp.com",
-            projectId: "one-for-all-c5cad",
-            storageBucket: "one-for-all-c5cad.appspot.com",
-            messagingSenderId: "441934086050",
-            appId: "1:441934086050:web:4546123218cce1155efcfb",
-            measurementId: "G-FWXJ1489ND"
-        };
-
-        firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-
-        function handleLogin() {
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            const messageBox = document.getElementById("auth-message");
-
-            auth.signInWithEmailAndPassword(email, password)
-                .then(() => {
-                    messageBox.textContent = "Login successful!";
-                    messageBox.style.color = "#28a745"; // Green success message
-                    setTimeout(() => {
-                        window.location.href = "home.html"; // Redirect to home page after successful login
-                    }, 1500);
-                })
-                .catch(err => {
-                    messageBox.textContent = err.message;
-                    messageBox.style.color = "salmon"; // Red for errors
-                });
-        }
-    </script>
-
-</body>
-
-</html>
+    <script src="https://www
