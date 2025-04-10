@@ -493,6 +493,29 @@ English: `
         document.getElementById('back-to-top').addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-    </script>
+ </script>
+    <!-- Other HTML content -->
+
+<!-- 🔽 Add this just before the closing </body> tag -->
+<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"></script>
+<script>
+  // Your Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
+    authDomain: "one-for-all-c5cad.firebaseapp.com",
+    projectId: "one-for-all-c5cad",
+    storageBucket: "one-for-all-c5cad.firebasestorage.app",
+    messagingSenderId: "441934086050",
+    appId: "1:441934086050:web:4546123218cce1155efcfb",
+    measurementId: "G-FWXJ1489ND"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+</body>
+</html>
+
 </body>
 </html>
