@@ -1,53 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login / Register</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .form-container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-        h2 {
-            margin-bottom: 20px;
-            font-size: 26px;
-        }
-        .g-signin2 {
-            width: 100%;
-            background-color: #db4437;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 12px;
-            cursor: pointer;
-        }
-        .g-signin2:hover {
-            background-color: #c1351d;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login / Register</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f7fa; /* Soft gray background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333; /* Darker text for readability */
+      padding: 0 20px;
+    }
+
+    .form-container {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #007bff; /* Accent blue color */
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 14px;
+      margin: 12px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f8f9fa; /* Soft input field background */
+      color: #333;
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: #007bff; /* Accent border on focus */
+      background-color: #ffffff; /* Light white on focus */
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #007bff; /* Primary blue color for buttons */
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    .toggle-link {
+      margin-top: 15px;
+      color: #6c757d; /* Gray for secondary links */
+      cursor: pointer;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .toggle-link:hover {
+      color: #007bff; /* Blue on hover */
+    }
+
+    .g-signin2 {
+      display: inline-block;
+      background-color: #db4437;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      width: 100%;
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 15px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .g-signin2:hover {
+      background-color: #c1351d;
+    }
+
+    .message {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #28a745; /* Green for success messages */
+    }
+
+  </style>
 </head>
+
 <body>
 
-    <div class="form-container">
-        <h2>Login</h2>
-        <a href="{{ url_for('login') }}" class="g-signin2">Login with Google</a>
-    </div>
+  <div class="form-container">
+    <h2 id="form-title">Login</h2>
+
+    <!-- Google Login Button -->
+    <a href="{{ url_for('google.login') }}" class="g-signin2">Login with Google</a>
+
+    <!-- Email Login/Register -->
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button id="auth-button" onclick="handleAuth()">Login</button>
+
+    <p class="toggle-link" onclick="toggleForm()">Don't have an account? Register</p>
+    <p class="message" id="auth-message"></p>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"></script>
+
+  <script>
+    // Initialize Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
+      authDomain: "one-for-all-c5cad.firebaseapp.com",
+      projectId: "one-for-all-c5cad",
+      storageBucket: "one-for-all-c5cad.appspot.com",
+      messagingSenderId: "441934086050",
+      appId: "1:441934086050:web:4546123218cce1155efcfb",
+      measurementId: "G-FWXJ1489ND"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    let isLogin = true; // Start in Login Mode
+
+    function toggleForm() {
+      isLogin = !isLogin;
+      document.getElementById("form-title").innerText = isLogin ? "Login" : "Register";
+      document.getElementById("auth-button").innerText = isLogin ? "Login" : "Register";
+      document.querySelector(".toggle-link").innerText = isLogin ? "Don't have an account? Register" : "Already have an account? Login";
+      document.getElementById("auth-message").innerText = ""; // Clear messages when toggling
+    }
+
+    function handleAuth() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const messageBox = document.getElementById("auth-message");
+
+      if (isLogin) {
+        // Login Mode
+        auth.signInWithEmailAndPassword(email, password)
+          .then(() => {
+            messageBox.textContent = "Login successful!";
+            messageBox.style.color = "#28a745"; // Green success message
+            setTimeout(() => {
+              window.location.href = "home.html"; // Redirect to home page after successful login
+            }, 1500);
+          })
+          .catch(err => {
+            messageBox.textContent = err.message;
+            messageBox.style.color = "salmon"; // Red for errors
+          });
+      } else {
+        // Register Mode
+        auth.createUserWithEmailAndPassword(email, password)
+          .then(() => {
+            messageBox.textContent = "Registration successful!";
+            messageBox.style.color = "#28a745"; // Green success message
+          })
+          .catch(err => {
+            messageBox.textContent = err.message;
+            messageBox.style.color = "salmon"; // Red for errors
+          });
+      }
+    }
+  </script>
 
 </body>
+
 </html>
