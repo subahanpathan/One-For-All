@@ -5,9 +5,7 @@
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 2: Acids, Bases, and Salts</title>
-
-   
+    <title>Chapter 1: Chemical Reactions and Equations</title>
 
     <style>
         * {
@@ -19,7 +17,10 @@
         /* Body Background and Layout */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
+            background-image: url('mathimg.jpg'); /* Set your image as the background */
+            background-size: cover; /* Ensure the background image covers the full screen */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
             padding: 20px;
             overflow: hidden; /* Prevent scrolling for body */
             position: relative;
@@ -28,84 +29,109 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            animation: backgroundAnimation 30s ease-in-out infinite; /* Apply background animation */
+        }
+
+        /* Keyframes to animate the background */
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: center;
+                transform: scale(1);
+            }
+            50% {
+                background-position: top right;
+                transform: scale(1.1); /* Zoom in effect */
+            }
+            100% {
+                background-position: center;
+                transform: scale(1); /* Back to original size */
+            }
         }
 
         h1 {
             text-align: center;
             font-size: 36px;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             color: white;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-        }
-
-        .content {
-            margin-top: 20px;
-            font-size: 18px;
-            line-height: 1.6;
-            color: white;
+            text-transform: uppercase;
         }
 
         /* Styling the buttons */
         .btn-container {
             display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
             justify-content: center;
+            margin-top: 50px;
         }
 
         .btn {
-            background-color: #ff7e5f;
+            background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Gradient background */
             color: white;
-            padding: 15px 30px;
+            padding: 18px 35px;
             font-size: 18px;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 15px;
             width: 250px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            z-index: -1;
+            transition: all 0.3s ease-in-out;
         }
 
         .btn:hover {
-            background-color: #feb47b;
             transform: translateY(-5px); /* Slight hover lift effect */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
 
         .btn:active {
             transform: translateY(2px); /* Pressed button effect */
         }
 
- 
+        .btn:hover::before {
+            background: rgba(255, 255, 255, 0.1); /* Lighter shadow on hover */
+        }
 
-        /* Floating 3D objects */
-        .floating-object {
+        /* Footer Styles */
+        footer {
             position: absolute;
-            width: 60px;
-            height: 60px;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            animation: float 12s ease-in-out infinite, rotate 10s linear infinite;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
         }
 
     </style>
 </head>
 <body>
 
-    <!-- Particles.js background -->
-    <div id="particles-js"></div>
-
     <!-- Chapter Content -->
-    <h1>Chapter 2: Acids, Bases, and Salts</h1>
+    <h1>Chapter 1: Chemical Reactions and Equations</h1>
 
-  
     <!-- Button Container -->
     <div class="btn-container">
-        <a href="pyq.html" class="btn">PYQ</a>
+        <a href="math-pyq.html" class="btn">PYQ</a>
         <a href="full-chapter-pdf.html" class="btn">Full Chapter PDF</a>
-        <a href="exercise_solution.html" class="btn">Exercise Solution</a>
-        <a href="ch2scinotes.html" class="btn">Notes</a>
+        <a href="mathch1exercise_solution.html" class="btn">Exercise Solution</a>
+        <a href="ch9notes.html" class="btn">Notes</a>
         <a href="index.html" class="btn">Home</a>
     </div>
 
