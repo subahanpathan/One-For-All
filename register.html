@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <style>
+        /* Same style as before, feel free to copy from the previous code */
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Register</h2>
+
+        <!-- Google Login Button -->
+        <a href="{{ url_for('google.login') }}" class="g-signin2">Login with Google</a>
+
+        <!-- Email Registration -->
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button id="auth-button" onclick="handleRegister()">Register</button>
+
+        <p>Already have an account? <a href="login.html">Login</a></p>
+        <p class="message" id="auth-message"></p>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"></script>
+
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
+            authDomain: "one-for-all-c5cad.firebaseapp.com",
+            projectId: "one-for-all-c5cad",
+            storageBucket: "one-for-all-c5cad.appspot.com",
+            messagingSenderId: "441934086050",
+            appId: "1:441934086050:web:4546123218cce1155efcfb",
+            measurementId: "G-FWXJ1489ND"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        function handleRegister() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const messageBox = document.getElementById("auth-message");
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .then(() => {
+                    messageBox.textContent = "Registration successful!";
+                    messageBox.style.color = "#28a745"; // Green success message
+                    setTimeout(() => {
+                        window.location.href = "login.html"; // Redirect to login page after successful registration
+                    }, 1500);
+                })
+                .catch(err => {
+                    messageBox.textContent = err.message;
+                    messageBox.style.color = "salmon"; // Red for errors
+                });
+        }
+    </script>
+
+</body>
+
+</html>
