@@ -13,10 +13,27 @@
     <input type="password" id="register-confirm-password" placeholder="Confirm Password" required />
     <button type="submit">Register</button>
   </form>
-<p>Already have an account? <a href="login.html">Login</a></p>
+  <p>Already have an account? <a href="login.html">Login</a></p>
   <p id="register-error" style="color: red;"></p>
 
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"></script>
+
   <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
+      authDomain: "one-for-all-c5cad.firebaseapp.com",
+      projectId: "one-for-all-c5cad",
+      storageBucket: "one-for-all-c5cad.firebasestorage.app",
+      messagingSenderId: "441934086050",
+      appId: "1:441934086050:web:4546123218cce1155efcfb",
+      measurementId: "G-FWXJ1489ND"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
     document.getElementById("register-form").addEventListener("submit", function(e) {
       e.preventDefault();
 
@@ -32,22 +49,14 @@
         return;
       }
 
-      // Get existing users from localStorage
-      let users = JSON.parse(localStorage.getItem("users")) || [];
-
-      // Check if user already exists
-      const userExists = users.find(user => user.email === email);
-      if (userExists) {
-        errorEl.textContent = "User already exists.";
-        return;
-      }
-
-      // Save new user
-      users.push({ email, password });
-      localStorage.setItem("users", JSON.stringify(users));
-
-      alert("Registration successful!");
-      window.location.href = "login.html.html";  // Redirect to index.html
+      auth.createUserWithEmailAndPassword(email, password)
+        .then(() => {
+          alert("Registration successful!");
+          window.location.href = "login.html";  // Redirect to login page
+        })
+        .catch((error) => {
+          errorEl.textContent = error.message;
+        });
     });
   </script>
 </body>
