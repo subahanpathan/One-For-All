@@ -18,41 +18,47 @@
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
 
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
-      authDomain: "one-for-all-c5cad.firebaseapp.com",
-      projectId: "one-for-all-c5cad",
-      storageBucket: "one-for-all-c5cad.firebasestorage.app",
-      messagingSenderId: "441934086050",
-      appId: "1:441934086050:web:4546123218cce1155efcfb",
-      measurementId: "G-FWXJ1489ND"
-    };
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    sendEmailVerification
+  } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
 
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
+  const firebaseConfig = {
+    apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
+    authDomain: "one-for-all-c5cad.firebaseapp.com",
+    projectId: "one-for-all-c5cad",
+    storageBucket: "one-for-all-c5cad.appspot.com",
+    messagingSenderId: "441934086050",
+    appId: "1:441934086050:web:4546123218cce1155efcfb"
+  };
 
-    document.getElementById("register-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const email = document.getElementById("register-email").value;
-      const password = document.getElementById("register-password").value;
-      const confirmPassword = document.getElementById("register-confirm-password").value;
-      const errorEl = document.getElementById("register-error");
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
 
-      if (password !== confirmPassword) {
-        errorEl.textContent = "Passwords do not match.";
-        return;
-      }
+  document.getElementById("register-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("register-email").value;
+    const password = document.getElementById("register-password").value;
 
-      auth.createUserWithEmailAndPassword(email, password)
-        .then(() => {
-          alert("Registration successful!");
-          window.location.href = "login.html";
-        })
-        .catch(error => {
-          errorEl.textContent = error.message;
-        });
-    });
-  </script>
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+
+        sendEmailVerification(user)
+          .then(() => {
+            alert("✅ Registration successful. A verification email has been sent to your inbox. Please verify your email before logging in.");
+            // You can redirect to login page if you want
+            // window.location.href = "login.html";
+          });
+      })
+      .catch((error) => {
+        alert("Error: " + error.message);
+      });
+  });
+</script>
+
 </body>
 </html>
