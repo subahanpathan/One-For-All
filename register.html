@@ -1,21 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Register</h2>
-        <form action="register" method="POST">
-            <input type="text" name="name" placeholder="Name" required />
-            <input type="email" name="email" placeholder="Email" required />
-            <input type="password" name="password" placeholder="Password" required />
-            <input type="password" name="confirm_password" placeholder="Confirm Password" required />
-            <button type="submit" onclick="display('sectionlogin')">Register</button>
-        </form>
-        <p>Already have an account? <a href="login.html">Login</a></p>
-    </div>
+  <h2>Register</h2>
+  <form id="register-form">
+    <input type="email" id="register-email" placeholder="Email" required />
+    <input type="password" id="register-password" placeholder="Password" required />
+    <input type="password" id="register-confirm-password" placeholder="Confirm Password" required />
+    <button type="submit">Register</button>
+  </form>
+<p>Already have an account? <a href="login.html">Login</a></p>
+  <p id="register-error" style="color: red;"></p>
+
+  <script>
+    document.getElementById("register-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById("register-email").value;
+      const password = document.getElementById("register-password").value;
+      const confirmPassword = document.getElementById("register-confirm-password").value;
+      const errorEl = document.getElementById("register-error");
+
+      errorEl.textContent = "";
+
+      if (password !== confirmPassword) {
+        errorEl.textContent = "Passwords do not match.";
+        return;
+      }
+
+      // Get existing users from localStorage
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
+      // Check if user already exists
+      const userExists = users.find(user => user.email === email);
+      if (userExists) {
+        errorEl.textContent = "User already exists.";
+        return;
+      }
+
+      // Save new user
+      users.push({ email, password });
+      localStorage.setItem("users", JSON.stringify(users));
+
+      alert("Registration successful!");
+      window.location.href = "index.html";  // Redirect to index.html
+    });
+  </script>
 </body>
 </html>
