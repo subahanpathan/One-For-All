@@ -10,55 +10,64 @@
     <input type="password" id="login-password" placeholder="Password" required />
     <button type="submit">Login</button>
   </form>
+
   <p id="login-error" style="color: red;"></p>
   <p>Don't have an account? <a href="register.html">Register</a></p>
 
-  <!-- Firebase SDKs -->
+  <!-- Firebase SDKs (UI compatibility) -->
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
 
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
-  import {
-    getAuth,
-    signInWithEmailAndPassword,
-    signOut
-  } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+  <!-- Firebase Login Script with Email Verification -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+    import {
+      getAuth,
+      signInWithEmailAndPassword,
+      sendEmailVerification
+    } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
-    authDomain: "one-for-all-c5cad.firebaseapp.com",
-    projectId: "one-for-all-c5cad",
-    storageBucket: "one-for-all-c5cad.appspot.com",
-    messagingSenderId: "441934086050",
-    appId: "1:441934086050:web:4546123218cce1155efcfb"
-  };
+    const firebaseConfig = {
+      apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
+      authDomain: "one-for-all-c5cad.firebaseapp.com",
+      projectId: "one-for-all-c5cad",
+      storageBucket: "one-for-all-c5cad.appspot.com",
+      messagingSenderId: "441934086050",
+      appId: "1:441934086050:web:4546123218cce1155efcfb"
+    };
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-  document.getElementById("login-form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = document.getElementById("login-email").value;
-    const password = document.getElementById("login-password").value;
+    const form = document.getElementById("login-form");
+    const errorDisplay = document.getElementById("login-error");
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        if (user.emailVerified) {
-          alert("✅ Login successful!");
-          // Redirect to index or dashboard
-          window.location.href = "index.html";
-        } else {
-          alert("⚠️ Email not verified. Please check your inbox.");
-          signOut(auth); // Force sign out
-        }
-      })
-      .catch((error) => {
-        alert("Login error: " + error.message);
-      });
-  });
-</script>
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      errorDisplay.textContent = "";
 
+      const email = document.getElementById("login-email").value;
+      const password = document.getElementById("login-password").value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+
+          if (user.emailVerified) {
+            alert("✅ Login successful!");
+            window.location.href = "index.html"; // Redirect to homepage or dashboard
+          } else {
+            errorDisplay.textContent = "❌ Email not verified. Please check your inbox.";
+            sendEmailVerification(user)
+              .then(() => {
+                alert("📩 A fresh verification email has been sent to your inbox.");
+              });
+          }
+        })
+        .catch((error) => {
+          errorDisplay.textContent = "❌ " + error.message;
+        });
+    });
+  </script>
 </body>
 </html>
