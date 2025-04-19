@@ -12,19 +12,37 @@
   </form>
 
   <p id="login-error" style="color: red;"></p>
+
+  <!-- Hidden resend section -->
+  <div id="resend-section" style="display: none;">
+    <p style="color: orange;">Didn't receive the email? <a href="#" id="resend-link">Resend verification email</a></p>
+  </div>
+
+  <!-- Forgot password link -->
+  <p><a href="#" id="forgot-password-link">Forgot your password?</a></p>
+
+  <!-- Password reset form (hidden initially) -->
+  <div id="reset-password-section" style="display: none;">
+    <p>Enter your email to reset your password:</p>
+    <input type="email" id="reset-email" placeholder="Email" required />
+    <button id="reset-btn">Send Reset Link</button>
+    <p id="reset-error" style="color: red;"></p>
+  </div>
+
   <p>Don't have an account? <a href="register.html">Register</a></p>
 
-  <!-- Firebase SDKs (UI compatibility) -->
+  <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
 
-  <!-- Firebase Login Script with Email Verification -->
+  <!-- Firebase Login Script with Resend & Reset -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
     import {
       getAuth,
       signInWithEmailAndPassword,
-      sendEmailVerification
+      sendEmailVerification,
+      sendPasswordResetEmail
     } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
 
     const firebaseConfig = {
@@ -39,12 +57,23 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
+    let currentUnverifiedUser = null; // Save for resending
+
     const form = document.getElementById("login-form");
     const errorDisplay = document.getElementById("login-error");
+    const resendSection = document.getElementById("resend-section");
+    const resendLink = document.getElementById("resend-link");
+    const forgotPasswordLink = document.getElementById("forgot-password-link");
+    const resetSection = document.getElementById("reset-password-section");
+    const resetEmailInput = document.getElementById("reset-email");
+    const resetBtn = document.getElementById("reset-btn");
+    const resetErrorDisplay = document.getElementById("reset-error");
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       errorDisplay.textContent = "";
+      resendSection.style.display = "none";
+      currentUnverifiedUser = null;
 
       const email = document.getElementById("login-email").value;
       const password = document.getElementById("login-password").value;
@@ -55,17 +84,56 @@
 
           if (user.emailVerified) {
             alert("✅ Login successful!");
-            window.location.href = "index.html"; // Redirect to homepage or dashboard
+            window.location.href = "index.html"; // redirect
           } else {
-            errorDisplay.textContent = "❌ Email not verified. Please check your inbox.";
-            sendEmailVerification(user)
-              .then(() => {
-                alert("📩 A fresh verification email has been sent to your inbox.");
-              });
+            errorDisplay.textContent = "❌ Email not verified. Please verify your email.";
+            currentUnverifiedUser = user;
+            resendSection.style.display = "block";
           }
         })
         .catch((error) => {
           errorDisplay.textContent = "❌ " + error.message;
+        });
+    });
+
+    // Handle resend link
+    resendLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (currentUnverifiedUser) {
+        sendEmailVerification(currentUnverifiedUser)
+          .then(() => {
+            alert("📩 Verification email sent again. Check your inbox.");
+          })
+          .catch((error) => {
+            alert("❌ Error sending email: " + error.message);
+          });
+      }
+    });
+
+    // Show the password reset section
+    forgotPasswordLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      resetSection.style.display = "block";
+    });
+
+    // Handle password reset
+    resetBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const email = resetEmailInput.value;
+
+      if (!email) {
+        resetErrorDisplay.textContent = "❌ Please enter your email address.";
+        return;
+      }
+
+      sendPasswordResetEmail(auth, email)
+        .then(() => {
+          alert("📩 A password reset link has been sent to your email. Check your inbox.");
+          resetEmailInput.value = ""; // Clear the input
+          resetSection.style.display = "none"; // Hide the reset form again
+        })
+        .catch((error) => {
+          resetErrorDisplay.textContent = "❌ " + error.message;
         });
     });
   </script>
