@@ -17,35 +17,48 @@
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
 
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
-      authDomain: "one-for-all-c5cad.firebaseapp.com",
-      projectId: "one-for-all-c5cad",
-      storageBucket: "one-for-all-c5cad.firebasestorage.app",
-      messagingSenderId: "441934086050",
-      appId: "1:441934086050:web:4546123218cce1155efcfb",
-      measurementId: "G-FWXJ1489ND"
-    };
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+  import {
+    getAuth,
+    signInWithEmailAndPassword,
+    signOut
+  } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
 
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
+  const firebaseConfig = {
+    apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
+    authDomain: "one-for-all-c5cad.firebaseapp.com",
+    projectId: "one-for-all-c5cad",
+    storageBucket: "one-for-all-c5cad.appspot.com",
+    messagingSenderId: "441934086050",
+    appId: "1:441934086050:web:4546123218cce1155efcfb"
+  };
 
-    document.getElementById("login-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const email = document.getElementById("login-email").value;
-      const password = document.getElementById("login-password").value;
-      const errorEl = document.getElementById("login-error");
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
 
-      auth.signInWithEmailAndPassword(email, password)
-        .then(() => {
-          alert("Login successful!");
+  document.getElementById("login-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        if (user.emailVerified) {
+          alert("✅ Login successful!");
+          // Redirect to index or dashboard
           window.location.href = "index.html";
-        })
-        .catch(error => {
-          errorEl.textContent = error.message;
-        });
-    });
-  </script>
+        } else {
+          alert("⚠️ Email not verified. Please check your inbox.");
+          signOut(auth); // Force sign out
+        }
+      })
+      .catch((error) => {
+        alert("Login error: " + error.message);
+      });
+  });
+</script>
+
 </body>
 </html>
