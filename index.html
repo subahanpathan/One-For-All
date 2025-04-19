@@ -581,35 +581,36 @@ English: `
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  // Check if the user is logged in
+  const logoutBtn = document.getElementById("logout-btn");
+  const loginBtn = document.querySelector(".login-register-btn");
+
+  // Auth state listener
   onAuthStateChanged(auth, (user) => {
-    const logoutBtn = document.getElementById("logout-btn");
-    
     if (user) {
-      // Show the logout button if the user is logged in
-      logoutBtn.style.display = "block";
+      // Logged in: Show logout, hide login
+      logoutBtn.style.display = "inline-block";
+      loginBtn.style.display = "none";
     } else {
-      // Hide the logout button if the user is not logged in
+      // Logged out: Show login, hide logout
       logoutBtn.style.display = "none";
+      loginBtn.style.display = "inline-block";
     }
   });
 
-  // Logout button handler
-  document.getElementById("logout-btn").addEventListener("click", (e) => {
-    e.preventDefault(); // Prevent default anchor behavior
-
+  // Logout handler
+  logoutBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     signOut(auth)
       .then(() => {
         alert("✅ Logged out successfully.");
-        // Optionally disable UI or content here after logout
-        // document.getElementById("protected-content").style.display = "none";
       })
       .catch((error) => {
         console.error("Logout error:", error.message);
-        alert("❌ Something went wrong. Try again.");
+        alert("❌ Error while logging out.");
       });
   });
 </script>
+
 
 </body>
 </html>
