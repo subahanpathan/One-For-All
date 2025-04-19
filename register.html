@@ -13,17 +13,9 @@
     <input type="password" id="register-confirm-password" placeholder="Confirm Password" required />
     <button type="submit">Register</button>
   </form>
-  <p>Already have an account? <a href="login.html">Login</a></p>
+<p>Already have an account? <a href="login.html">Login</a></p>
   <p id="register-error" style="color: red;"></p>
 
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"></script>
-
-  <!-- Firebase Config -->
-  <script src="firebase-config.js"></script>
-
-  <!-- Register Logic -->
   <script>
     document.getElementById("register-form").addEventListener("submit", function(e) {
       e.preventDefault();
@@ -40,14 +32,22 @@
         return;
       }
 
-      auth.createUserWithEmailAndPassword(email, password)
-        .then(() => {
-          alert("Registration successful!");
-          window.location.href = "index.html";
-        })
-        .catch((error) => {
-          errorEl.textContent = error.message;
-        });
+      // Get existing users from localStorage
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
+      // Check if user already exists
+      const userExists = users.find(user => user.email === email);
+      if (userExists) {
+        errorEl.textContent = "User already exists.";
+        return;
+      }
+
+      // Save new user
+      users.push({ email, password });
+      localStorage.setItem("users", JSON.stringify(users));
+
+      alert("Registration successful!");
+      window.location.href = "login.html.html";  // Redirect to index.html
     });
   </script>
 </body>
