@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Register</title>
 </head>
 <body>
@@ -13,16 +11,14 @@
     <input type="password" id="register-confirm-password" placeholder="Confirm Password" required />
     <button type="submit">Register</button>
   </form>
-  <p>Already have an account? <a href="login.html">Login</a></p>
   <p id="register-error" style="color: red;"></p>
+  <p>Already have an account? <a href="login.html">Login</a></p>
 
-  <!-- Firebase SDK (modular approach) -->
-  <script type="module">
-    // Import necessary Firebase modules
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
 
-    // Firebase configuration
+  <script>
     const firebaseConfig = {
       apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
       authDomain: "one-for-all-c5cad.firebaseapp.com",
@@ -33,34 +29,27 @@
       measurementId: "G-FWXJ1489ND"
     };
 
-    // Initialize Firebase app
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
 
-    // Registration form handler
     document.getElementById("register-form").addEventListener("submit", function(e) {
       e.preventDefault();
-
       const email = document.getElementById("register-email").value;
       const password = document.getElementById("register-password").value;
       const confirmPassword = document.getElementById("register-confirm-password").value;
       const errorEl = document.getElementById("register-error");
 
-      errorEl.textContent = "";
-
-      // Check if passwords match
       if (password !== confirmPassword) {
         errorEl.textContent = "Passwords do not match.";
         return;
       }
 
-      // Create user with Firebase Authentication
-      createUserWithEmailAndPassword(auth, email, password)
+      auth.createUserWithEmailAndPassword(email, password)
         .then(() => {
           alert("Registration successful!");
-          window.location.href = "login.html";  // Redirect to login page after successful registration
+          window.location.href = "login.html";
         })
-        .catch((error) => {
+        .catch(error => {
           errorEl.textContent = error.message;
         });
     });
