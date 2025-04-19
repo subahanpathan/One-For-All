@@ -236,7 +236,7 @@
             bottom: 0;
             font-size: 14px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        
+        }
         
         .bold-155{
             font-weight:bold;
@@ -322,21 +322,22 @@
 <body>
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bghfh">
+    <nav class="navbar navbar-expand-lg navbar-dark  bghfh">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
-      <a class="nav-link active text-white bold-200" href="home.html">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-link active text-white bold-200" href="resources.html">Resources</a>
-      <a class="nav-link active text-white bold-200" href="study-materials.html">Studay Material</a>
-      <a class="nav-link active text-white bold-200" href="about.html" >About Us</a>
-         <!-- Existing login/register -->
+      <a class="nav-link active" href="home.html">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link active" href="resources.html">Resources</a>
+      <a class="nav-link active" href="study-materials.html">Studay Material</a>
+      <a class="nav-link active" href="about.html" >About Us</a>
+     <!-- Existing login/register -->
       <a href="login.html" class="login-register-btn bold-155">Login / Register</a>
         <!-- Updated Logout Button styled like other links -->
      <a href="#" id="logout-btn" class="login-register-btn bold-155">Logout</a>
+
     </div>
   </div>
     </nav>
@@ -581,36 +582,35 @@ English: `
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  const logoutBtn = document.getElementById("logout-btn");
-  const loginBtn = document.querySelector(".login-register-btn");
-
-  // Auth state listener
+  // Check if the user is logged in
   onAuthStateChanged(auth, (user) => {
+    const logoutBtn = document.getElementById("logout-btn");
+    
     if (user) {
-      // Logged in: Show logout, hide login
-      logoutBtn.style.display = "inline-block";
-      loginBtn.style.display = "none";
+      // Show the logout button if the user is logged in
+      logoutBtn.style.display = "block";
     } else {
-      // Logged out: Show login, hide logout
+      // Hide the logout button if the user is not logged in
       logoutBtn.style.display = "none";
-      loginBtn.style.display = "inline-block";
     }
   });
 
-  // Logout handler
-  logoutBtn.addEventListener("click", (e) => {
-    e.preventDefault();
+  // Logout button handler
+  document.getElementById("logout-btn").addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+
     signOut(auth)
       .then(() => {
         alert("✅ Logged out successfully.");
+        // Optionally disable UI or content here after logout
+        // document.getElementById("protected-content").style.display = "none";
       })
       .catch((error) => {
         console.error("Logout error:", error.message);
-        alert("❌ Error while logging out.");
+        alert("❌ Something went wrong. Try again.");
       });
   });
 </script>
-
 
 </body>
 </html>
