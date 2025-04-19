@@ -331,6 +331,9 @@
       <a class="nav-link active" href="about.html" >About Us</a>
     </div>
   </div>
+         <!-- Updated Logout Button styled like other links -->
+    <a href="#" id="logout-btn" class="login-register-btn bold-155">Logout</a>
+
 </nav>
 
     <!-- Main Content -->
@@ -554,20 +557,51 @@ English: `
 <!-- 🔽 Add this just before the closing </body> tag -->
 <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"></script>
-<script>
-  // Your Firebase configuration
+<!-- Firebase Init -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+  import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+
   const firebaseConfig = {
     apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
     authDomain: "one-for-all-c5cad.firebaseapp.com",
     projectId: "one-for-all-c5cad",
-    storageBucket: "one-for-all-c5cad.firebasestorage.app",
+    storageBucket: "one-for-all-c5cad.appspot.com",
     messagingSenderId: "441934086050",
-    appId: "1:441934086050:web:4546123218cce1155efcfb",
-    measurementId: "G-FWXJ1489ND"
+    appId: "1:441934086050:web:4546123218cce1155efcfb"
   };
 
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // Check if the user is logged in
+  onAuthStateChanged(auth, (user) => {
+    const logoutBtn = document.getElementById("logout-btn");
+    
+    if (user) {
+      // Show the logout button if the user is logged in
+      logoutBtn.style.display = "block";
+    } else {
+      // Hide the logout button if the user is not logged in
+      logoutBtn.style.display = "none";
+    }
+  });
+
+  // Logout button handler
+  document.getElementById("logout-btn").addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+
+    signOut(auth)
+      .then(() => {
+        alert("✅ Logged out successfully.");
+        // Optionally disable UI or content here after logout
+        // document.getElementById("protected-content").style.display = "none";
+      })
+      .catch((error) => {
+        console.error("Logout error:", error.message);
+        alert("❌ Something went wrong. Try again.");
+      });
+  });
 </script>
 
 </body>
