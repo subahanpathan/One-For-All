@@ -11,54 +11,69 @@
     <input type="password" id="register-confirm-password" placeholder="Confirm Password" required />
     <button type="submit">Register</button>
   </form>
+
   <p id="register-error" style="color: red;"></p>
   <p>Already have an account? <a href="login.html">Login</a></p>
 
-  <!-- Firebase SDKs -->
+  <!-- Firebase SDKs (Compat used for UI, but logic uses Modular) -->
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
 
+  <!-- Firebase Registration Script -->
   <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
-  import {
-    getAuth,
-    createUserWithEmailAndPassword,
-    sendEmailVerification
-  } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      sendEmailVerification
+    } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
-    authDomain: "one-for-all-c5cad.firebaseapp.com",
-    projectId: "one-for-all-c5cad",
-    storageBucket: "one-for-all-c5cad.appspot.com",
-    messagingSenderId: "441934086050",
-    appId: "1:441934086050:web:4546123218cce1155efcfb"
-  };
+    const firebaseConfig = {
+      apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
+      authDomain: "one-for-all-c5cad.firebaseapp.com",
+      projectId: "one-for-all-c5cad",
+      storageBucket: "one-for-all-c5cad.appspot.com",
+      messagingSenderId: "441934086050",
+      appId: "1:441934086050:web:4546123218cce1155efcfb"
+    };
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-  document.getElementById("register-form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = document.getElementById("register-email").value;
-    const password = document.getElementById("register-password").value;
+    const form = document.getElementById("register-form");
+    const errorDisplay = document.getElementById("register-error");
 
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      errorDisplay.textContent = "";
 
-        sendEmailVerification(user)
-          .then(() => {
-            alert("✅ Registration successful. A verification email has been sent to your inbox. Please verify your email before logging in.");
-            // You can redirect to login page if you want
-            // window.location.href = "login.html";
-          });
-      })
-      .catch((error) => {
-        alert("Error: " + error.message);
-      });
-  });
-</script>
+      const email = document.getElementById("register-email").value;
+      const password = document.getElementById("register-password").value;
+      const confirmPassword = document.getElementById("register-confirm-password").value;
 
+      if (password !== confirmPassword) {
+        errorDisplay.textContent = "❌ Passwords do not match.";
+        return;
+      }
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+
+          // Send email verification
+          sendEmailVerification(user)
+            .then(() => {
+              alert("✅ Verification email sent! Please check your inbox before logging in.");
+              window.location.href = "login.html"; // Optional redirect
+            })
+            .catch((error) => {
+              errorDisplay.textContent = "Error sending verification email: " + error.message;
+            });
+        })
+        .catch((error) => {
+          errorDisplay.textContent = "❌ " + error.message;
+        });
+    });
+  </script>
 </body>
 </html>
