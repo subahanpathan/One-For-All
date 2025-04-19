@@ -15,11 +15,13 @@
   <p>Don't have an account? <a href="register.html">Register</a></p>
   <p id="login-error" style="color: red;"></p>
 
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js"></script>
+  <!-- Firebase SDK (modular approach) -->
+  <script type="module">
+    // Import necessary Firebase modules
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
-  <script>
+    // Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
       authDomain: "one-for-all-c5cad.firebaseapp.com",
@@ -30,9 +32,11 @@
       measurementId: "G-FWXJ1489ND"
     };
 
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
+    // Initialize Firebase app
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
+    // Login form handler
     document.getElementById("login-form").addEventListener("submit", function(e) {
       e.preventDefault();
 
@@ -40,7 +44,8 @@
       const password = document.getElementById("login-password").value;
       const errorEl = document.getElementById("login-error");
 
-      auth.signInWithEmailAndPassword(email, password)
+      // Sign in with Firebase Authentication
+      signInWithEmailAndPassword(auth, email, password)
         .then(() => {
           alert("Login successful!");
           window.location.href = "index.html";  // Redirect to homepage after successful login
