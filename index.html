@@ -617,23 +617,7 @@ English: `
         alert("❌ Something went wrong. Try again.");
       });
   });
-     // Check if the user is logged in
-  onAuthStateChanged(auth, (user) => {
-    const logoutBtn = document.getElementById("logout-btn");
-    
-    if (user) {
-      // Show the logged in if the user is logout button
-      logoutBtn.style.display = "block";
-    } else {
-      // Hide the logged in if the user is not logout button
-      logoutBtn.style.display = "none";
-    }
-  });
-
-  // Logout button handler
-  document.getElementById("logged in").addEventListener("click", (e) => {
-    e.preventDefault(); // Prevent default anchor behavior
-
+   
 
 
     </script>
