@@ -600,13 +600,6 @@ English: `
       // Hide the logout button if the user is not logged in
       logoutBtn.style.display = "none";
     }
-       if (user) {
-      // Show the logged in button if the user is logout
-      logged in Btn.style.display = "none";
-    } else {
-      // Hide the logged in button if the user is not logout
-      logged in.style.display = "block";
-    }
   });
 
   // Logout button handler
@@ -624,6 +617,23 @@ English: `
         alert("❌ Something went wrong. Try again.");
       });
   });
+     // Check if the user is logged in
+  onAuthStateChanged(auth, (user) => {
+    const logoutBtn = document.getElementById("logout-btn");
+    
+    if (user) {
+      // Show the logged in if the user is logout button
+      logoutBtn.style.display = "block";
+    } else {
+      // Hide the logged in if the user is not logout button
+      logoutBtn.style.display = "none";
+    }
+  });
+
+  // Logout button handler
+  document.getElementById("logged in").addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+
 
 
     </script>
