@@ -617,6 +617,46 @@ English: `
         alert("❌ Something went wrong. Try again.");
       });
   });
+
+
+    onAuthStateChanged(auth, (user) => {
+  const logoutBtn = document.getElementById("logout-btn");
+  const loginBtn = document.getElementById("login-btn");
+
+  if (user) {
+    // User is logged in
+    logoutBtn.style.display = "block";
+    loginBtn.style.display = "none"; // Hide login button
+  } else {
+    // User is not logged in
+    logoutBtn.style.display = "none";
+    loginBtn.style.display = "block"; // Show login button
+  }
+});
+
+    
+// Logout button handler
+document.getElementById("logout-btn").addEventListener("click", (e) => {
+  e.preventDefault(); // Prevent default anchor behavior
+
+  signOut(auth)
+    .then(() => {
+      alert("✅ Logged out successfully.");
+    })
+    .catch((error) => {
+      console.error("Logout error:", error.message);
+      alert("❌ Something went wrong. Try again.");
+    });
+});
+
+// Optional: Login button handler (example)
+document.getElementById("login-btn").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // Redirect to login page or show login modal
+  window.location.href = "/login.html"; // Change this to your actual login route
+});
+
    
 
 
