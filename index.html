@@ -634,32 +634,6 @@ English: `
   }
 });
 
-    
-// Logout button handler
-document.getElementById("logout-btn").addEventListener("click", (e) => {
-  e.preventDefault(); // Prevent default anchor behavior
-
-  signOut(auth)
-    .then(() => {
-      alert("✅ Logged out successfully.");
-    })
-    .catch((error) => {
-      console.error("Logout error:", error.message);
-      alert("❌ Something went wrong. Try again.");
-    });
-});
-
-// Optional: Login button handler (example)
-document.getElementById("login-btn").addEventListener("click", (e) => {
-  e.preventDefault();
-
-  // Redirect to login page or show login modal
-  window.location.href = "/login.html"; // Change this to your actual login route
-});
-
-   
-
-
     </script>
 </body>
 </html>
