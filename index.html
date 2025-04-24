@@ -600,6 +600,13 @@ English: `
       // Hide the logout button if the user is not logged in
       logoutBtn.style.display = "none";
     }
+       if (user) {
+      // Show the logged in button if the user is logout
+      logged in Btn.style.display = "none";
+    } else {
+      // Hide the logged in button if the user is not logout
+      logged in.style.display = "block";
+    }
   });
 
   // Logout button handler
