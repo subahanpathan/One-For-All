@@ -590,24 +590,15 @@ English: `
   const auth = getAuth(app);
 
   // Check if the user is logged in
-  onAuthStateChanged(auth, (user) => {
-    const logoutBtn = document.getElementById("logout-btn");
-    
-    if (user) {
-      // Show the logout button if the user is logged in
-      logoutBtn.style.display = "block";
-    } else {
-      // Hide the logout button if the user is not logged in
-      logoutBtn.style.display = "none";
-    }
- if (user) {
-      // Show the logged in button if the user is logged in
-      logged in Btn.style.display = "none";
-    } else {
-      // Hide the logout button if the user is not logged in
-      logoutBtn.style.display = "block";
-    }
-  });
+onAuthStateChanged(auth, (user) => {
+  const logoutBtn = document.getElementById("logout-btn");
+  if (user) {
+    logoutBtn.style.display = "block";
+  } else {
+    logoutBtn.style.display = "none";
+  }
+});
+
 
   // Logout button handler
   document.getElementById("logout-btn").addEventListener("click", (e) => {
