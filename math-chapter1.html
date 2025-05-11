@@ -5,10 +5,6 @@
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <title>Chapter 1: Real Numbers</title>
 
     <style>
@@ -18,22 +14,22 @@
             box-sizing: border-box;
         }
 
-        /* Body Background and Layout */
-       
-         body {
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('mathimg.jpg'); /* Set your image as the background */
-            background-size: cover; /* Ensure the background image covers the full screen */
-            background-position: center; /* Center the image */
-            background-repeat: no-repeat; /* Prevent the image from repeating */
-            overflow: hidden; /* Prevent scrolling for body */
+            background-image: url('mathimg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 20px;
+            overflow: hidden;
             position: relative;
-            height: 100vh;           
+            height: 100vh;
+            display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
         }
-        /* Keyframes to animate the background */
+
         @keyframes backgroundAnimation {
             0% {
                 background-position: center;
@@ -41,11 +37,11 @@
             }
             50% {
                 background-position: top right;
-                transform: scale(1.1); /* Zoom in effect */
+                transform: scale(1.1);
             }
             100% {
                 background-position: center;
-                transform: scale(1); /* Back to original size */
+                transform: scale(1);
             }
         }
 
@@ -58,7 +54,6 @@
             text-transform: uppercase;
         }
 
-        /* Styling the buttons */
         .btn-container {
             display: flex;
             flex-wrap: wrap;
@@ -68,7 +63,7 @@
         }
 
         .btn {
-            background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Gradient background */
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
             color: white;
             padding: 18px 35px;
             font-size: 18px;
@@ -95,19 +90,18 @@
         }
 
         .btn:hover {
-            transform: translateY(-5px); /* Slight hover lift effect */
+            transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
 
         .btn:active {
-            transform: translateY(2px); /* Pressed button effect */
+            transform: translateY(2px);
         }
 
         .btn:hover::before {
-            background: rgba(255, 255, 255, 0.1); /* Lighter shadow on hover */
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        /* Footer Styles */
         footer {
             position: absolute;
             bottom: 10px;
@@ -119,51 +113,20 @@
             padding: 10px;
             border-radius: 5px;
         }
-        .imge8465846{
-            height:8vh;
-            border-radius:90px;
-        }
-        .text-align{
-           justify-content: center;
-        }
-
     </style>
 </head>
 <body>
-      <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark  bghfh">
-  <a class="navbar-brand" href="#">
-      <img src="logo-OFA.jpg.png" class="imge8465846" >
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav ml-auto">
-      <a class="nav-link active" href="home.html">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-link active" href="resources.html">Resources</a>
-      <a class="nav-link active" href="study-materials.html">Studay Material</a>
-      <a class="nav-link active" href="about.html" >About Us</a>
-    </div>
-  </div>
-    </nav>
-         
-</nav>
-    <div class="d-flex flex-column justify-content-center text-align"> 
-    <!-- Chapter Content -->
+
     <h1>Chapter 1: Real Numbers</h1>
 
-    <!-- Button Container -->
     <div class="btn-container">
-        <a href="https://subahanpathan.github.io/One-For-All/assets/pdf/math-chapter1pyq.pdf" class="btn"target"_blank">PYQ</a>
-        <!-- Correct Full URL Link for PDF (no download, just open in browser) -->
-  <a href="https://subahanpathan.github.io/One-For-All/assets/pdf/math-chapter1.pdf" class="btn" target="_blank">Full Chapter PDF</a>
+        <a href="https://subahanpathan.github.io/One-For-All/assets/pdf/math-chapter1pyq.pdf" class="btn" target="_blank">PYQ</a>
+        <a href="https://subahanpathan.github.io/One-For-All/assets/pdf/math-chapter1.pdf" class="btn" target="_blank">Chapter 1 PDF</a>
         <a href="mathch1exercise_solution.html" class="btn">Exercise Solution</a>
         <a href="ch1notes.html" class="btn">Notes</a>
         <a href="index.html" class="btn">Home</a>
     </div>
-</div>
-    <!-- Footer -->
+
     <footer>
         &copy; 2025 Your Website. All Rights Reserved.
     </footer>
