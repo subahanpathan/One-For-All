@@ -1,35 +1,186 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
+
+  <!-- Google Fonts for professional typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-image: url('https://pixabay.com/get/g5dca32c4f31a209411d0b2ab11ca1f56ec534d5bf99bb0964f62c29ec27e43426e9fc05f6e5631c49cfd3c5b649c346e.jpg'); /* Update this with your image URL */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 420px;
+      padding: 40px 30px;
+      text-align: center;
+      transform: scale(0.95);
+      animation: fadeIn 0.8s forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    h2 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #333;
+      letter-spacing: 0.5px;
+    }
+
+    .form-section {
+      margin-bottom: 15px;
+    }
+
+    input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      border: 2px solid #ddd;
+      background-color: #f9f9f9;
+      font-size: 16px;
+      color: #333;
+      outline: none;
+      transition: border 0.3s ease;
+    }
+
+    input[type="email"]:focus, input[type="password"]:focus {
+      border-color: #007bff;
+      background-color: #eef8ff; /* Slightly lighter background on focus */
+    }
+
+    button, input[type="submit"] {
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover, input[type="submit"]:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #0056b3;
+    }
+
+    .error {
+      color: #e74c3c;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .info {
+      color: #f39c12;
+      font-size: 14px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    .footer a {
+      font-weight: 500;
+      color: #007bff;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 500px) {
+      .container {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+    }
+
+  </style>
 </head>
 <body>
-  <h2>Login</h2>
-  <form id="login-form">
-    <input type="email" id="login-email" placeholder="Email" required />
-    <input type="password" id="login-password" placeholder="Password" required />
-    <button type="submit">Login</button>
-  </form>
 
-  <p id="login-error" style="color: red;"></p>
+  <div class="container">
+    <h2>Login</h2>
 
-  <!-- Hidden resend section -->
-  <div id="resend-section" style="display: none;">
-    <p style="color: orange;">Didn't receive the email? <a href="#" id="resend-link">Resend verification email</a></p>
+    <!-- Login Form -->
+    <form id="login-form">
+      <div class="form-section">
+        <input type="email" id="login-email" placeholder="Email" required />
+      </div>
+      <div class="form-section">
+        <input type="password" id="login-password" placeholder="Password" required />
+      </div>
+      <button type="submit">Login</button>
+    </form>
+
+    <p id="login-error" class="error"></p>
+
+    <!-- Resend Verification Section -->
+    <div id="resend-section" style="display: none;">
+      <p class="info">Didn't receive the email? <a href="#" id="resend-link">Resend verification email</a></p>
+    </div>
+
+    <!-- Forgot Password Link -->
+    <p><a href="#" id="forgot-password-link">Forgot your password?</a></p>
+
+    <!-- Password Reset Section -->
+    <div id="reset-password-section" style="display: none;">
+      <p>Enter your email to reset your password:</p>
+      <input type="email" id="reset-email" placeholder="Email" required />
+      <button id="reset-btn">Send Reset Link</button>
+      <p id="reset-error" class="error"></p>
+    </div>
+
+    <p class="footer">Don't have an account? <a href="register.html">Register</a></p>
   </div>
-
-  <!-- Forgot password link -->
-  <p><a href="#" id="forgot-password-link">Forgot your password?</a></p>
-
-  <!-- Password reset form (hidden initially) -->
-  <div id="reset-password-section" style="display: none;">
-    <p>Enter your email to reset your password:</p>
-    <input type="email" id="reset-email" placeholder="Email" required />
-    <button id="reset-btn">Send Reset Link</button>
-    <p id="reset-error" style="color: red;"></p>
-  </div>
-
-  <p>Don't have an account? <a href="register.html">Register</a></p>
 
   <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
@@ -57,7 +208,7 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    let currentUnverifiedUser = null; // Save for resending
+    let currentUnverifiedUser = null; // To save unverified user for resending the email
 
     const form = document.getElementById("login-form");
     const errorDisplay = document.getElementById("login-error");
@@ -69,6 +220,7 @@
     const resetBtn = document.getElementById("reset-btn");
     const resetErrorDisplay = document.getElementById("reset-error");
 
+    // Login form submission
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       errorDisplay.textContent = "";
@@ -77,6 +229,11 @@
 
       const email = document.getElementById("login-email").value;
       const password = document.getElementById("login-password").value;
+
+      if (!validateEmail(email)) {
+        errorDisplay.textContent = "❌ Please enter a valid email address.";
+        return;
+      }
 
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -96,7 +253,7 @@
         });
     });
 
-    // Handle resend link
+    // Resend Verification email
     resendLink.addEventListener("click", (e) => {
       e.preventDefault();
       if (currentUnverifiedUser) {
@@ -110,7 +267,7 @@
       }
     });
 
-    // Show the password reset section
+    // Show password reset section
     forgotPasswordLink.addEventListener("click", (e) => {
       e.preventDefault();
       resetSection.style.display = "block";
@@ -121,21 +278,28 @@
       e.preventDefault();
       const email = resetEmailInput.value;
 
-      if (!email) {
-        resetErrorDisplay.textContent = "❌ Please enter your email address.";
+      if (!email || !validateEmail(email)) {
+        resetErrorDisplay.textContent = "❌ Please enter a valid email address.";
         return;
       }
 
       sendPasswordResetEmail(auth, email)
         .then(() => {
-          alert("📩 A password reset link has been sent to your email. Check your inbox.");
-          resetEmailInput.value = ""; // Clear the input
-          resetSection.style.display = "none"; // Hide the reset form again
+          alert("📩 A password reset link has been sent to your email.");
+          resetEmailInput.value = "";
+          resetSection.style.display = "none";
         })
         .catch((error) => {
           resetErrorDisplay.textContent = "❌ " + error.message;
         });
     });
+
+    // Helper function to validate email format
+    function validateEmail(email) {
+      const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      return re.test(email);
+    }
   </script>
+
 </body>
 </html>
