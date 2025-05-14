@@ -17,7 +17,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-image: url('https://pixabay.com/get/g5dca32c4f31a209411d0b2ab11ca1f56ec534d5bf99bb0964f62c29ec27e43426e9fc05f6e5631c49cfd3c5b649c346e.jpg'); /* Update this with your image URL */
+      background-image: url('https://pixabay.com/get/g5dca32c4f31a209411d0b2ab11ca1f56ec534d5bf99bb0964f62c29ec27e43426e9fc05f6e5631c49cfd3c5b649c346e.jpg'); /* Update with your image URL */
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -30,7 +30,7 @@
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+      background: #fff;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       border-radius: 12px;
       width: 100%;
@@ -66,7 +66,7 @@
 
     input[type="email"], input[type="password"] {
       width: 100%;
-      padding: 14px;
+      padding: 12px;
       border-radius: 8px;
       border: 2px solid #ddd;
       background-color: #f9f9f9;
@@ -78,7 +78,6 @@
 
     input[type="email"]:focus, input[type="password"]:focus {
       border-color: #007bff;
-      background-color: #eef8ff; /* Slightly lighter background on focus */
     }
 
     button, input[type="submit"] {
@@ -132,6 +131,25 @@
       color: #007bff;
     }
 
+    /* Back Button Style */
+    .back-button {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #007bff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 2px solid #007bff;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+
     /* Responsive Design */
     @media (max-width: 500px) {
       .container {
@@ -148,6 +166,9 @@
 <body>
 
   <div class="container">
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">← Back to Home</a>
+
     <h2>Login</h2>
 
     <!-- Login Form -->
