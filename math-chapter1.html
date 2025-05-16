@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6869176794880769"
-     crossorigin="anonymous"></script>
-    
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6869176794880769" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 1: Real Numbers</title>
-
+    <meta name="google-site-verification" content="your-verification-code-here" /> <!-- Added this for verification -->
+    <title>Class 10</title>
+    <!-- Basic Reset -->
     <style>
         * {
             margin: 0;
@@ -19,114 +15,296 @@
             box-sizing: border-box;
         }
 
+        /* Body Background and Layout */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('mathimg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 20px;
-            overflow: hidden;
             position: relative;
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        @keyframes backgroundAnimation {
-            0% {
-                background-position: center;
-                transform: scale(1);
-            }
-            50% {
-                background-position: top right;
-                transform: scale(1.1);
-            }
-            100% {
-                background-position: center;
-                transform: scale(1);
-            }
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-            text-transform: uppercase;
-        }
-
-        .btn-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-            margin-top: 50px;
+            flex-direction: column;
+            justify-content: flex-start;
+            color: #333;
+            background: #1d1d1d; /* Dark Mode */
+            background-image: url("Untitled design.jpg"); /* Ensure image is correct */
+            background-size: cover; /* Make sure it covers the entire screen */
+            background-position: center center; /* Center the background image */
+            overflow: hidden; /* Hide the scrollbar */
+            height: 100vh;
+            transition: background-color 0.3s ease;
         }
 
-        .btn {
-            background: linear-gradient(45deg, #ff7e5f, #feb47b);
-            color: white;
-            padding: 18px 35px;
-            font-size: 18px;
-            text-decoration: none;
-            border-radius: 15px;
-            width: 250px;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease-in-out;
-            position: relative;
+        /* Hide scrollbar but still allow scrolling */
+        body::-webkit-scrollbar {
+            display: none;
         }
 
-        .btn::before {
-            content: '';
+        body {
+            -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+            scrollbar-width: none;  /* For Firefox */
+        }
+
+        /* Add Overlay to Background */
+        body:before {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
             z-index: -1;
-            transition: all 0.3s ease-in-out;
         }
 
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
-        .btn:active {
-            transform: translateY(2px);
-        }
-
-        .btn:hover::before {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        footer {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            text-align: center;
+        nav a {
             color: white;
-            font-size: 14px;
-            background-color: rgba(0, 0, 0, 0.5);
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            transition: color 0.3s;
+            background-color: transparent; /* Transparent background */
+        }
+
+        nav a:hover {
+            color: #feb47b;
+        }
+
+        /* Positioning login/register button at right end */
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            margin: 0 15px;
+        }
+
+        /* Modify login-register button to match navigation buttons */
+        .login-register-btn {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            transition: color 0.3s;
+            background-color: transparent; /* Transparent background */
+        }
+
+        .login-register-btn:hover {
+            color:#feb47b;
+            background-color:#ffffff;
+            padding:10px;
+            border-radius:5px;
+            border-color:#feb47b;
+            border-width:14px;
+            
+        }
+
+        /* Main Content */
+        main {
+            text-align: center;
+            padding-top: 80px;
+            z-index: 5;
+            position: relative;
+            color: white;
+            flex-grow: 1;
+            padding-bottom: 100px; /* Space for footer */
+            overflow: auto;
+            max-height: 100vh;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .subject-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .subject-btn {
+            background-color: #fff;
+            color: #333;
+            border: 2px solid #ff7e5f;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+
+        .subject-btn:hover {
+            background-color: #ff7e5f;
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+        }
+
+        .subject-btn:focus {
+            outline: none;
+        }
+
+        /* Styling for the chapter list */
+        .chapter-list {
+            margin-top: 30px;
+            text-align: left;
             padding: 10px;
-            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.6); /* Add background for contrast */
+            border-radius: 8px;
+            overflow-y: scroll;
+            max-height: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
-          .imge8465846{
-            height:8vh;
-            border-radius:80px;
+
+        .chapter-item {
+            font-size: 18px;
+            margin: 10px 0;
         }
-         
+
+        .chapter-item a {
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+
+        .chapter-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* New Section for Let's Dive Into Learning */
+        .animated-section {
+            margin-top: 50px;
+            padding: 50px 20px;
+            color: white;
+            text-align: center;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .animated-section h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #feb47b;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            font-size: 14px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .bold-155{
+            font-weight:bold;
+        }
+        
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Search Bar Styling */
+        .search-bar {
+            margin-top: 20px;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            border-radius: 25px;
+            border: 2px solid #ff7e5f;
+            font-size: 18px;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: #feb47b;
+        }
+
+        /* Back to Top Button */
+        .back-to-top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff7e5f;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            transition: background-color 0.3s;
+            z-index: 20;
+        }
+
+        .back-to-top-btn:hover {
+            background-color: #feb47b;
+        }
+
+        /* Accessibility - Hidden for Screen Readers */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            border: 0;
+            clip: rect(0, 0, 0, 0);
+            clip-path: inset(50%);
+            white-space: nowrap;
+            overflow: hidden;
+        }
+       .m-h2535{
+        margin-left:10px;
+       }
+            
     </style>
 </head>
 <body>
 
-
+    <!-- Navigation Bar -->
+   <!-- Inside your <nav> tag -->
      <nav class="navbar navbar-expand-lg navbar-dark  bghfh shadow">
   <a class="navbar-brand" href="#">
       <img src="logo-OFA.jpg.png" class="imge8465846" href="index.html"  >
@@ -145,19 +323,240 @@
   </div>
     </nav>
     
-    <h1>Chapter 1: Real Numbers</h1>
 
-    <div class="btn-container">
-        <a href="https://subahanpathan.github.io/One-For-All/assets/pdf/math-chapter1pyq.pdf" class="btn" target="_blank">PYQ</a>
-        <a href="https://subahanpathan.github.io/One-For-All/assets/pdf/math-chapter1.pdf" class="btn" target="_blank">Chapter 1 PDF</a>
-        <a href="mathch1exercise_solution.html" class="btn">Exercise Solution</a>
-        <a href="ch1notes.html" class="btn">Notes</a>
-        <a href="index.html" class="btn">Home</a>
-    </div>
+    <!-- Main Content -->
+    <main>
+        <h1>Let's turn these textbooks into a love story, one chapter at a time!</h1>
 
+        <!-- Search Bar -->
+        <label for="chapter-search" class="sr-only">Search for a chapter</label>
+        <input type="text" id="chapter-search" class="search-bar" placeholder="Search for a chapter..." oninput="searchChapter()">
+
+        <div class="subject-buttons">
+            <button class="subject-btn" onclick="showSubject('Math')">Math</button>
+            <button class="subject-btn" onclick="showSubject('Science')">Science</button>
+            <button class="subject-btn" onclick="showSubject('History')">History</button>
+            <button class="subject-btn" onclick="showSubject('Geography')">Geography</button>
+            <button class="subject-btn" onclick="showSubject('English')">English</button>
+        </div>
+
+        <!-- Updated Section for Let's Dive Into Learning -->
+        <div class="animated-section">
+            <h2>Let's Dive Into Learning!</h2>
+            <p>Get ready to explore all the chapters with interactive PYQs!</p>
+        </div>
+
+        <!-- Subject Chapters Display -->
+        <div id="subject-content" style="opacity: 0;"></div>
+    </main>
+
+    <!-- Footer -->
     <footer>
-        &copy; 2025 Your Website. All Rights Reserved.
+        <p>&copy; 2025 Class 10 PYQs. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn">↑</button>
+
+    <!-- JavaScript -->
+    <script>
+        // Chapter Search Function
+        function searchChapter() {
+            const searchQuery = document.getElementById('chapter-search').value.toLowerCase();
+            const chapterItems = document.querySelectorAll('.chapter-item');
+            
+            // Detect if the user has entered a comma and a keyword after it
+            const [query, keyword] = searchQuery.split(',');
+
+            // If there's a keyword, process it
+            if (keyword) {
+                const trimmedKeyword = keyword.trim();
+                if (trimmedKeyword === 'notes') {
+                    // Redirect to the notes page (you can customize this URL)
+                    window.location.href = `notes.html?chapter=${encodeURIComponent(query.trim())}`;
+                    return;
+                }
+            }
+
+            // Otherwise, continue searching chapters
+            chapterItems.forEach(item => {
+                const chapterName = item.textContent.toLowerCase();
+                if (chapterName.includes(query)) {
+                    item.style.display = 'block'; // Show matching chapter
+                } else {
+                    item.style.display = 'none'; // Hide non-matching chapter
+                }
+            });
+        }
+
+        function showSubject(subject) {
+            const subjectContent = {
+                Math: ` 
+                    <h2>Math Chapters</h2>
+                    <div class="chapter-list">
+                        <div class="chapter-item"><a href="math-chapter1.html">Chapter 1: Real Numbers</a></div>
+                        <div class="chapter-item"><a href="math-chapter2.html">Chapter 2: Polynomials</a></div>
+                        <div class="chapter-item"><a href="math-chapter3.html">Chapter 3: Pair of Linear Equations in Two Variables</a></div>
+                        <div class="chapter-item"><a href="math-chapter4.html">Chapter 4: Quadratic Equations</a></div>
+                        <div class="chapter-item"><a href="math-chapter5.html">Chapter 5: Arithmetic Progressions</a></div>
+                        <div class="chapter-item"><a href="math-chapter6.html">Chapter 6: Triangles </a></div>
+                        <div class="chapter-item"><a href="math-chapter7.html">Chapter 7: Coordinate Geometry</a></div>
+                        <div class="chapter-item"><a href="math-chapter8.html">Chapter 8: Introduction To Trigonometry</a></div>
+                        <div class="chapter-item"><a href="math-chapter9.html">Chapter 9: Some Applications Of Trigonometry</a></div>
+                        <div class="chapter-item"><a href="math-chapter10.html">Chapter 10: Circles</a></div>
+                        <div class="chapter-item"><a href="math-chapter11.html">Chapter 11: Constructions</a></div>
+                        <div class="chapter-item"><a href="math-chapter12.html">Chapter 12: Areas Related To Circles</a></div>
+                        <div class="chapter-item"><a href="math-chapter13.html">Chapter 13: Surface Areas And Volumes</a></div>
+                        <div class="chapter-item"><a href="math-chapter14.html">Chapter 14: Statistics</a></div>
+                        <div class="chapter-item"><a href="math-chapter15.html">Chapter 15: Probability</a></div>
+                    </div>
+                `,
+              
+                Science: ` 
+                    <h2>Science Chapters</h2>
+                    <div class="chapter-list">
+                        <div class="chapter-item"><a href="science-chapter1.html">Chapter 1: Chemical Reactions and Equations</a></div>
+                        <div class="chapter-item"><a href="science-chapter2.html">Chapter 2: Acids, Bases and Salts</a></div>
+                        <div class="chapter-item"><a href="science-chapter3.html">Chapter 3: Metals and Non-metals</a></div>
+                        <div class="chapter-item"><a href="science-chapter4.html">Chapter 4: Carbon and its Compounds</a></div>
+                        <div class="chapter-item"><a href="science-chapter5.html">Chapter 5: Life Processes</a></div>
+                        <div class="chapter-item"><a href="science-chapter6.html">Chapter 6: Control and Coordination </a></div>
+                        <div class="chapter-item"><a href="science-chapter7.html">Chapter 7: How do Organisms Reproduce?</a></div>
+                        <div class="chapter-item"><a href="science-chapter8.html">Chapter 8: Heredity</a></div>
+                        <div class="chapter-item"><a href="science-chapter9.html">Chapter 9: Light – Reflection and Refraction</a></div>
+                        <div class="chapter-item"><a href="science-chapter10.html">CChapter 10: The Human Eye and the Colourful World</a></div>
+                        <div class="chapter-item"><a href="science-chapter11.html">Chapter 11: Electricity</a></div>
+                        <div class="chapter-item"><a href="science-chapter12.html">Chapter 12: Magnetic Effects of Electric Current</a></div>
+                        <div class="chapter-item"><a href="science-chapter13.html">Chapter 13: Our Environment</a></div>
+                `,
+
+ History: ` 
+                    <h2>History Chapters</h2>
+                    <div class="chapter-list">
+                        <div class="chapter-item"><a href="History-chapter1.html">Chapter 1: The Rise of Nationalism in Europe </a></div>
+                        <div class="chapter-item"><a href="History-chapter2.html">Chapter 2: Nationalism in India </a></div>
+                        <div class="chapter-item"><a href="History-chapter3.html">Chapter 3: The Making of a Global World </a></div>
+                        <div class="chapter-item"><a href="History-chapter4.html">Chapter 4: The Age of Industrialisation </a></div>
+                        <div class="chapter-item"><a href="History-chapter5.html">Chapter 5: Print Culture and The Modern World </a></div>
+                        
+                         `,
+     
+Geography: ` 
+                    <h2>Geography Chapters</h2>
+                    <div class="chapter-list">
+                        <div class="chapter-item"><a href="geography-chapter1.html">Chapter 1: Resources and Development </a></div>
+                        <div class="chapter-item"><a href="geography-chapter2.html">Chapter 2: Forest and wild Life Resources </a></div>
+                        <div class="chapter-item"><a href="geography-chapter3.html">Chapter 3: Water Resources </a></div>
+                        <div class="chapter-item"><a href="geography-chapter4.html">Chapter 4: Agriculture </a></div>
+                        <div class="chapter-item"><a href="geography-chapter5.html">Chapter 5: Minerals and Energy Resources </a></div>
+                        <div class="chapter-item"><a href="geography-chapter6.html">Chapter 6: Manufacturing Industries </a></div>
+                        <div class="chapter-item"><a href="geography-chapter7.html">Chapter 7: Life Lines of National Economy </a></div>
+                        
+                         `,
+
+English: ` 
+                    <h2>English Chapters</h2>
+                    <div class="chapter-list">
+                        <div class="chapter-item">
+                          <h4 >Chapter 1:</h4>
+                        <a href="english-chapter1.html" class="m-h2535"><a>A Letter to God</a><br><a>A Letter to God
+                          Dust of Snow</a><a> Frie and Ice<a></a>
+
+                           <div class="chapter-list">
+                          <h4 >Chapter 2:</h4>
+                        <a href="english-chapter1.html" class="m-h2535"><a>Nelson Mandela:Long Walk to Freedom</a><br><a>How to Tell Wind Animals
+                          </a>  <a>The Ball Poem</a></a></div>
+
+                 <div class="chapter-list">
+                          <h4 >Chapter 3:</h4>
+                        <a href="english-chapter1.html" class="m-h2535"><a>Two Storise about Flying <br> <a>I. His first Flight</a><br><a>II.Black Aeroplane</a></a><br>
+                        <a>
+                          </a></a></div>
+                       
+                         `,
+
+
+                           
+                // Add similar content for Science, History, Geography, and English...
+            };
+
+            const subjectContentDiv = document.getElementById('subject-content');
+            subjectContentDiv.innerHTML = subjectContent[subject];
+
+            // Fade-in effect
+            subjectContentDiv.style.opacity = 0;
+            setTimeout(() => {
+                subjectContentDiv.style.transition = 'opacity 0.5s ease';
+                subjectContentDiv.style.opacity = 1;
+            }, 100);
+        }
+
+        // Back to Top Button
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                document.getElementById('back-to-top').style.display = 'block';
+            } else {
+                document.getElementById('back-to-top').style.display = 'none';
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+
+<!-- Firebase Init -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+  import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAEjfnVuMyOD-quEHL97zJZZ_f8ZDYRQgs",
+    authDomain: "one-for-all-c5cad.firebaseapp.com",
+    projectId: "one-for-all-c5cad",
+    storageBucket: "one-for-all-c5cad.appspot.com",
+    messagingSenderId: "441934086050",
+    appId: "1:441934086050:web:4546123218cce1155efcfb"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // Check if the user is logged in
+  onAuthStateChanged(auth, (user) => {
+    const logoutBtn = document.getElementById("logout-btn");
+    
+    if (user) {
+      // Show the logout button if the user is logged in
+      logoutBtn.style.display = "block";
+    } else {
+      // Hide the logout button if the user is not logged in
+      logoutBtn.style.display = "none";
+    }
+  });
+
+  // Logout button handler
+  document.getElementById("logout-btn").addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+
+    signOut(auth)
+      .then(() => {
+        alert("✅ Logged out successfully.");
+        // Optionally disable UI or content here after logout
+        // document.getElementById("protected-content").style.display = "none";
+      })
+      .catch((error) => {
+        console.error("Logout error:", error.message);
+        alert("❌ Something went wrong. Try again.");
+      });
+  });
+</script>
+
+
 
 </body>
 </html>
