@@ -5,10 +5,7 @@
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 1: The Rise of Nationalism in Europe</title>
-
-    <!-- Include Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <title>Chapter 3: The Making of a Global World</title>
 
     <style>
         * {
@@ -17,124 +14,95 @@
             box-sizing: border-box;
         }
 
-        /* Body Background and Layout */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
+            background-image: url('mathimg.jpg'); /* Replace with your own image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             padding: 20px;
-            overflow: hidden; /* Prevent scrolling for body */
+            overflow: hidden;
             position: relative;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            animation: backgroundAnimation 30s ease-in-out infinite;
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: center;
+                transform: scale(1);
+            }
+            50% {
+                background-position: top right;
+                transform: scale(1.1);
+            }
+            100% {
+                background-position: center;
+                transform: scale(1);
+            }
         }
 
         h1 {
             text-align: center;
-            font-size: 36px;
-            margin-bottom: 20px;
+            font-size: 32px;
+            margin-bottom: 40px;
             color: white;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            text-transform: uppercase;
         }
 
-        .content {
-            margin-top: 20px;
-            font-size: 18px;
-            line-height: 1.6;
-            color: white;
-        }
-
-        /* Styling the buttons */
         .btn-container {
             display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
             justify-content: center;
+            margin-top: 50px;
         }
 
         .btn {
-            background-color: #ff7e5f;
+            background:linear-gradient(45deg, #ff7e5f, #feb47b); /* Teal tone */
             color: white;
-            padding: 15px 30px;
+            padding: 18px 35px;
             font-size: 18px;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 15px;
             width: 250px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease-in-out;
+            position: relative;
         }
 
-        .btn:hover {
-            background-color: #feb47b;
-            transform: translateY(-5px); /* Slight hover lift effect */
-        }
-
-        .btn:active {
-            transform: translateY(2px); /* Pressed button effect */
-        }
-
-        /* Positioning the particle background canvas */
-        #particles-js {
+        .btn::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
             z-index: -1;
+            transition: all 0.3s ease-in-out;
         }
 
-        /* Floating 3D objects */
-        .floating-object {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            animation: float 12s ease-in-out infinite, rotate 10s linear infinite;
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
 
-        .cube {
-            background-color: rgba(255, 255, 255, 0.9);
+        .btn:active {
+            transform: translateY(2px);
         }
 
-        .sphere {
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.6);
+        .btn:hover::before {
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotateX(0deg) rotateY(0deg);
-            }
-            25% {
-                transform: translateY(-50px) rotateX(180deg) rotateY(180deg);
-            }
-            50% {
-                transform: translateY(0) rotateX(360deg) rotateY(360deg);
-            }
-            75% {
-                transform: translateY(50px) rotateX(540deg) rotateY(540deg);
-            }
-            100% {
-                transform: translateY(0) rotateX(720deg) rotateY(720deg);
-            }
-        }
-
-        @keyframes rotate {
-            0% {
-                transform: rotateY(0deg);
-            }
-            100% {
-                transform: rotateY(360deg);
-            }
-        }
-
-        /* Footer Styles */
         footer {
             position: absolute;
             bottom: 10px;
@@ -151,25 +119,19 @@
 </head>
 <body>
 
-    <!-- Particles.js background -->
-    <div id="particles-js"></div>
+    <h1>Chapter 3: The Making of a Global World</h1>
 
-    <!-- Chapter Content -->
-    <h1>Chapter 1: The French Revolution</h1>
-
-  
-    <!-- Button Container -->
     <div class="btn-container">
-        <a href="pyq.html" class="btn">PYQ</a>
-        <a href="full-chapter-pdf.html" class="btn">Full Chapter PDF</a>
-        <a href="exercise_solution.html" class="btn">Exercise Solution</a>
-        <a href="ch1hysnotes.html" class="btn">Notes</a>
+        <a href="global-world-ch3pyq.html" class="btn">PYQ</a>
+        <a href="global-world-ch3fullpdf.html" class="btn">Full Chapter PDF</a>
+        <a href="globalworldch3exercise_solution.html" class="btn">Exercise Solution</a>
+        <a href="globalworldch3notes.html" class="btn">Notes</a>
         <a href="index.html" class="btn">Home</a>
     </div>
 
-    <!-- Footer -->
     <footer>
         &copy; 2025 Your Website. All Rights Reserved.
     </footer>
+
 </body>
 </html>
