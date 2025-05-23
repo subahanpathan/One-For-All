@@ -1,92 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6869176794880769"
-        crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-6869176794880769">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 4: Carbon and its Compounds - Notes</title>
-
-    <!-- Include Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notes - Chapter 4: Carbon and its Compounds</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #43cea2, #185a9d); /* Greenish-Blue gradient */
-            padding: 20px;
-            overflow: hidden;
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
         }
 
-        h1 {
+        .header {
+            background: linear-gradient(135deg, #56ab2f, #a8e063);
+            padding: 20px;
+            color: white;
             text-align: center;
             font-size: 36px;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .notes-container {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 900px;
-            color: white;
-            height: 80vh;
-            overflow-y: auto;
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .notes-container h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            text-align: center;
-            color: #43cea2;
-        }
-
-        .notes-container p, .notes-container ul {
+        .content {
             font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
         }
 
-        ul {
-            padding-left: 20px;
+        .content h2 {
+            font-size: 28px;
+            color: #56ab2f;
+            margin-bottom: 20px;
         }
 
         .btn-container {
-            margin-top: 30px;
             display: flex;
             justify-content: center;
+            margin-top: 30px;
         }
 
         .btn {
-            background-color: #43cea2;
+            background-color: #56ab2f;
             color: white;
             padding: 15px 30px;
             font-size: 18px;
             text-decoration: none;
             border-radius: 10px;
-            width: 250px;
-            text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             transition: background-color 0.3s, transform 0.3s;
         }
 
         .btn:hover {
-            background-color: #185a9d;
+            background-color: #a8e063;
             transform: translateY(-5px);
         }
 
@@ -94,109 +66,133 @@
             transform: translateY(2px);
         }
 
-        .see-more-btn {
-            display: block;
-            margin: 30px auto;
-            font-size: 18px;
-            color: #43cea2;
-            background: none;
-            border: none;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        #particles-js {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
         footer {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
             text-align: center;
-            color: white;
-            font-size: 14px;
-            background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
-            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background-color: #56ab2f;
+            color: white;
+        }
+
+        .comparison-table td {
+            background-color: #f4f4f9;
+        }
+
+        .comparison-table a {
+            color: #56ab2f;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
+    <div class="header">Notes - Chapter 4: Carbon and its Compounds</div>
 
-    <!-- Particles.js background -->
-    <div id="particles-js"></div>
+    <div class="container">
+        <div class="content">
+            <h2>Introduction</h2>
+            <p>
+                Carbon is a unique element known for its ability to form a vast number of compounds due to its tetravalency and catenation property. This chapter explores the nature, properties, and compounds of carbon.
+            </p>
 
-    <div class="notes-container" id="notes-container">
-        <h1>Chapter 4: Carbon and its Compounds - Notes</h1>
+            <h2>Allotropes of Carbon</h2>
+            <ul>
+                <li><strong>Diamond:</strong> Hardest natural substance, transparent, and an electrical insulator.</li>
+                <li><strong>Graphite:</strong> Soft, slippery, conducts electricity, and used as a lubricant.</li>
+                <li><strong>Fullerenes:</strong> Molecules made entirely of carbon in the form of hollow spheres, ellipsoids, or tubes.</li>
+            </ul>
 
-        <h2>Introduction</h2>
-        <p>Carbon is a unique element due to its ability to form a large number of compounds. This chapter discusses the bonding in carbon, the concept of covalent bonds, versatile compounds of carbon like hydrocarbons, and functional groups.</p>
+            <h2>Properties of Carbon Compounds</h2>
+            <ul>
+                <li>Typically covalent compounds with low melting and boiling points.</li>
+                <li>Mostly insoluble in water but soluble in organic solvents.</li>
+                <li>Exhibit isomerism.</li>
+                <li>Undergo combustion and substitution reactions.</li>
+            </ul>
 
-        <h2>Covalent Bonding</h2>
-        <p>Carbon forms covalent bonds by sharing electrons. Covalent bonds can be single, double, or triple depending on the number of shared electrons. These bonds are strong and directional.</p>
+            <h2>Important Carbon Compounds</h2>
+            <ul>
+                <li><strong>Hydrocarbons:</strong> Compounds containing only carbon and hydrogen.</li>
+                <li><strong>Alcohols:</strong> Organic compounds containing -OH group (e.g., ethanol).</li>
+                <li><strong>Acids:</strong> Organic acids like acetic acid (vinegar).</li>
+                <li><strong>Esters:</strong> Responsible for pleasant smells and flavors.</li>
+            </ul>
 
-        <h2>Versatile Nature of Carbon</h2>
-        <p>Carbon shows tetravalency (forms 4 bonds) and catenation (ability to form long chains). This results in a vast number of carbon compounds with various structures:</p>
-        <ul>
-            <li>Straight chains</li>
-            <li>Branched chains</li>
-            <li>Rings</li>
-        </ul>
+            <h2>Uses of Carbon Compounds</h2>
+            <ul>
+                <li>Fuel (petrol, diesel, natural gas).</li>
+                <li>Plastics and synthetic materials.</li>
+                <li>Pharmaceuticals and medicines.</li>
+                <li>Food preservatives and flavoring agents.</li>
+            </ul>
+        </div>
 
-        <h2>Hydrocarbons</h2>
-        <p>Hydrocarbons are compounds made up of hydrogen and carbon atoms. They are classified as:</p>
-        <ul>
-            <li><strong>Alkanes</strong>: Single bonds only (e.g., methane)</li>
-            <li><strong>Alkenes</strong>: At least one double bond (e.g., ethene)</li>
-            <li><strong>Alkynes</strong>: At least one triple bond (e.g., ethyne)</li>
-        </ul>
+        <section>
+            <h3>Additional Learning Resources</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Content Type</th>
+                        <th>Features</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Byju's</td>
+                        <td>Video lessons and notes</td>
+                        <td>Animations, quizzes, examples</td>
+                        <td><a href="https://byjus.com/chemistry/carbon-and-its-compounds/" target="_blank">Visit</a></td>
+                    </tr>
+                    <tr>
+                        <td>Vedantu</td>
+                        <td>Interactive classes</td>
+                        <td>Live sessions, doubt clearing</td>
+                        <td><a href="https://www.vedantu.com/chemistry/carbon-and-its-compounds" target="_blank">Visit</a></td>
+                    </tr>
+                    <tr>
+                        <td>Toppr</td>
+                        <td>Detailed notes and exercises</td>
+                        <td>Concept explanations, tests</td>
+                        <td><a href="https://www.toppr.com/guides/chemistry/carbon-and-its-compounds/" target="_blank">Visit</a></td>
+                    </tr>
+                    <tr>
+                        <td>Brainly</td>
+                        <td>Community Q&A</td>
+                        <td>Discussion, solutions</td>
+                        <td><a href="https://brainly.in/question/carbon-and-its-compounds" target="_blank">Visit</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-        <h2>Functional Groups</h2>
-        <p>Functional groups are atoms or groups of atoms that impart specific properties to the compounds. Common ones include:</p>
-        <ul>
-            <li>-OH (alcohol)</li>
-            <li>-COOH (carboxylic acid)</li>
-            <li>-CHO (aldehyde)</li>
-            <li>-CO (ketone)</li>
-        </ul>
-
-        <h2>Chemical Properties of Carbon Compounds</h2>
-        <ul>
-            <li><strong>Combustion:</strong> Carbon compounds burn in air to give CO₂, water, heat, and light.</li>
-            <li><strong>Oxidation:</strong> Alcohols get oxidized to acids.</li>
-            <li><strong>Addition Reaction:</strong> Unsaturated hydrocarbons undergo addition reactions.</li>
-            <li><strong>Substitution Reaction:</strong> Seen in saturated hydrocarbons in the presence of sunlight.</li>
-        </ul>
-
-        <h2>Soap and Detergents</h2>
-        <p>Soaps are sodium or potassium salts of fatty acids. They work effectively in soft water. Detergents are effective in hard water too and are synthetic in nature.</p>
-
-        <h2>Conclusion</h2>
-        <p>Carbon's ability to form diverse compounds makes it the backbone of organic chemistry. Its compounds are fundamental in industries, biology, and daily life.</p>
-
-        <!-- See More Button -->
-        <button class="see-more-btn" id="see-more-btn">See More</button>
-    </div>
-
-    <div class="btn-container">
-        <a href="index.html" class="btn">Back to Home</a>
+        <div class="btn-container">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
     </div>
 
     <footer>
-        &copy; 2025 YourSiteName. All rights reserved.
+        &copy; 2025 Your Website. All Rights Reserved.
     </footer>
-
-    <script>
-        particlesJS.load('particles-js', 'particles.json', function() {
-            console.log('particles.js loaded - callback');
-        });
-    </script>
 </body>
 </html>
-
