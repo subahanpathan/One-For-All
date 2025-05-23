@@ -1,94 +1,64 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6869176794880769"
-        crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-6869176794880769">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 2: Acids, Bases and Salts - Notes</title>
-
-    <!-- Include Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-
+    <title>Notes - Chapter 2: Acids, Bases and Salts</title>
     <style>
-        /* Same styles as Chapter 3 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #00c6ff, #0072ff); /* Blue gradient background */
-            padding: 20px;
-            overflow: hidden;
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
         }
 
-        h1 {
+        .header {
+            background: linear-gradient(135deg, #70e1f5, #ffd194);
+            padding: 20px;
+            color: white;
             text-align: center;
             font-size: 36px;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .notes-container {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 900px;
-            color: white;
-            height: 80vh;
-            overflow-y: auto;
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .notes-container h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            text-align: center;
-            color: #00c6ff;
-        }
-
-        .notes-container p, .notes-container ul {
+        .content {
             font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
         }
 
-        ul {
-            padding-left: 20px;
+        .content h2 {
+            font-size: 28px;
+            color: #70e1f5;
+            margin-bottom: 20px;
         }
 
         .btn-container {
-            margin-top: 30px;
             display: flex;
             justify-content: center;
+            margin-top: 30px;
         }
 
         .btn {
-            background-color: #00c6ff;
+            background-color: #70e1f5;
             color: white;
             padding: 15px 30px;
             font-size: 18px;
             text-decoration: none;
             border-radius: 10px;
-            width: 250px;
-            text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             transition: background-color 0.3s, transform 0.3s;
         }
 
         .btn:hover {
-            background-color: #0072ff;
+            background-color: #ffd194;
             transform: translateY(-5px);
         }
 
@@ -96,110 +66,147 @@
             transform: translateY(2px);
         }
 
-        .see-more-btn {
-            display: block;
-            margin: 30px auto;
-            font-size: 18px;
-            color: #00c6ff;
-            background: none;
-            border: none;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        #particles-js {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
         footer {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
             text-align: center;
-            color: white;
-            font-size: 14px;
-            background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
-            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .comparison-table th {
+            background-color: #70e1f5;
+            color: white;
+        }
+
+        .comparison-table td {
+            background-color: #f4f4f9;
+        }
+
+        .comparison-table a {
+            color: #70e1f5;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-    <!-- Particles.js background -->
-    <div id="particles-js"></div>
-
-    <div class="notes-container" id="notes-container">
-        <h1>Chapter 2: Acids, Bases and Salts - Notes</h1>
-
-        <h2>Introduction</h2>
-        <p>This chapter discusses the nature and properties of acids, bases, and salts. It covers how these substances react with each other and their importance in everyday life.</p>
-
-        <h2>Acids</h2>
-        <p>Acids are substances that release H⁺ ions in aqueous solution. Common properties include:</p>
-        <ul>
-            <li>Sour taste</li>
-            <li>Turn blue litmus red</li>
-            <li>React with metals to release hydrogen gas</li>
-            <li>Conduct electricity in aqueous solution</li>
-        </ul>
-
-        <h2>Bases</h2>
-        <p>Bases are substances that release OH⁻ ions in aqueous solution. Properties include:</p>
-        <ul>
-            <li>Bitter taste</li>
-            <li>Slippery to touch</li>
-            <li>Turn red litmus blue</li>
-            <li>React with acids to form salt and water</li>
-        </ul>
-
-        <h2>Salts</h2>
-        <p>Salts are formed when acids react with bases in a neutralization reaction. Examples:</p>
-        <ul>
-            <li>NaCl (table salt) from HCl and NaOH</li>
-            <li>CuSO₄ from H₂SO₄ and CuO</li>
-        </ul>
-
-        <h2>Importance in Daily Life</h2>
-        <ul>
-            <li><strong>Hydrochloric acid</strong> in the stomach aids digestion.</li>
-            <li><strong>NaOH</strong> used in soap making.</li>
-            <li><strong>Baking soda</strong> (NaHCO₃) used in cooking and as an antacid.</li>
-        </ul>
-
-        <h2>Indicators</h2>
-        <p>Indicators are substances that change color in acidic or basic solutions:</p>
-        <ul>
-            <li>Litmus: Blue in base, red in acid</li>
-            <li>Phenolphthalein: Colorless in acid, pink in base</li>
-            <li>Methyl orange: Red in acid, yellow in base</li>
-        </ul>
-
-        <h2>Conclusion</h2>
-        <p>Acids, bases, and salts are essential in both laboratory and daily applications. Understanding their properties and reactions is vital for deeper study in chemistry.</p>
-
-        <!-- See More Button -->
-        <button class="see-more-btn" id="see-more-btn">See More</button>
+    <div class="header">
+        Notes - Chapter 2: Acids, Bases and Salts
     </div>
 
-    <div class="btn-container">
-        <a href="index.html" class="btn">Back to Home</a>
+    <div class="container">
+        <div class="content">
+            <h2>Introduction</h2>
+            <p>This chapter deals with acids, bases, and salts—substances that play a crucial role in chemistry and everyday life. You will learn their properties, uses, and the reactions they undergo.</p>
+
+            <h2>Acids</h2>
+            <ul>
+                <li>Acids are substances that release H⁺ ions in aqueous solution.</li>
+                <li>They have a sour taste and turn blue litmus red.</li>
+                <li>Examples: Hydrochloric acid (HCl), Sulphuric acid (H₂SO₄), Acetic acid (CH₃COOH).</li>
+            </ul>
+
+            <h2>Bases</h2>
+            <ul>
+                <li>Bases release OH⁻ ions in aqueous solution.</li>
+                <li>They have a bitter taste and turn red litmus blue.</li>
+                <li>Examples: Sodium hydroxide (NaOH), Calcium hydroxide [Ca(OH)₂].</li>
+            </ul>
+
+            <h2>Indicators</h2>
+            <ul>
+                <li>Indicators are substances that change color in acidic or basic media.</li>
+                <li>Examples: Litmus, phenolphthalein, methyl orange.</li>
+            </ul>
+
+            <h2>Neutralization Reaction</h2>
+            <p>
+                A reaction between an acid and a base to form salt and water is called a neutralization reaction.<br>
+                Example: HCl + NaOH → NaCl + H₂O
+            </p>
+
+            <h2>Salts</h2>
+            <ul>
+                <li>Salts are formed when an acid reacts with a base.</li>
+                <li>They can be neutral, acidic, or basic in nature.</li>
+                <li>Examples: Sodium chloride (NaCl), Sodium carbonate (Na₂CO₃), Potassium nitrate (KNO₃).</li>
+            </ul>
+
+            <h2>Important Compounds</h2>
+            <ul>
+                <li><strong>Baking Soda (NaHCO₃)</strong>: Used in baking, extinguishers, antacids.</li>
+                <li><strong>Washing Soda (Na₂CO₃·10H₂O)</strong>: Used in cleaning, glass, and paper industry.</li>
+                <li><strong>Plaster of Paris (CaSO₄·½H₂O)</strong>: Used in orthopedics and sculpture.</li>
+            </ul>
+
+            <h2>pH Scale</h2>
+            <p>The pH scale ranges from 0 to 14 and measures the hydrogen ion concentration. A pH less than 7 is acidic, more than 7 is basic, and equal to 7 is neutral.</p>
+        </div>
+
+        <!-- Comparison Table -->
+        <section>
+            <h3>Educational Resources for Chapter 2</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Content Type</th>
+                        <th>Features</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Byju's</td>
+                        <td>Video and notes</td>
+                        <td>Visual aids, summaries, tests</td>
+                        <td><a href="https://byjus.com/chemistry/acids-bases-and-salts/" target="_blank">Visit</a></td>
+                    </tr>
+                    <tr>
+                        <td>Vedantu</td>
+                        <td>Live classes</td>
+                        <td>Doubt clearing, practice tests</td>
+                        <td><a href="https://www.vedantu.com/chemistry/acids-bases-and-salts" target="_blank">Visit</a></td>
+                    </tr>
+                    <tr>
+                        <td>Toppr</td>
+                        <td>Concept notes</td>
+                        <td>Examples, diagrams, MCQs</td>
+                        <td><a href="https://www.toppr.com/guides/chemistry/acids-bases-and-salts/" target="_blank">Visit</a></td>
+                    </tr>
+                    <tr>
+                        <td>Brainly</td>
+                        <td>Community Q&A</td>
+                        <td>Ask doubts, find solutions</td>
+                        <td><a href="https://brainly.in/question/acids-bases-salts" target="_blank">Visit</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="btn-container">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
     </div>
 
     <footer>
-        &copy; 2025 YourSiteName. All rights reserved.
+        &copy; 2025 Your Website. All Rights Reserved.
     </footer>
 
-    <script>
-        /* Optionally initialize particles.js if desired */
-        particlesJS.load('particles-js', 'particles.json', function() {
-            console.log('particles.js loaded - callback');
-        });
-    </script>
 </body>
 </html>
