@@ -1,142 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6869176794880769"
-     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 6: Chemical Reactions - Notes</title>
-
-   
+    <title>Notes - Chapter 1: Chemical Reactions and Equations</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body Background and Layout */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient background */
-            padding: 20px;
-            overflow: hidden; /* Prevent scrolling for body */
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
         }
 
-        h1 {
+        .header {
+            background: linear-gradient(135deg, #36d1dc, #5b86e5);
+            padding: 20px;
+            color: white;
             text-align: center;
             font-size: 36px;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Notes Content */
-        .notes-container {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 900px;
-            color: white;
-            height: 80vh; /* Fixed height for scroll */
-            overflow-y: auto; /* Enable vertical scrolling */
+        .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .notes-container h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            text-align: center;
-            color: #ff7e5f;
-        }
-
-        .notes-container p {
+        .content {
             font-size: 18px;
-            line-height: 1.6;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            color: #36d1dc;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
             margin-bottom: 20px;
         }
 
         .btn-container {
-            margin-top: 30px;
             display: flex;
             justify-content: center;
+            margin-top: 30px;
         }
 
         .btn {
-            background-color: #ff7e5f;
+            background-color: #36d1dc;
             color: white;
             padding: 15px 30px;
             font-size: 18px;
             text-decoration: none;
             border-radius: 10px;
-            width: 250px;
-            text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             transition: background-color 0.3s, transform 0.3s;
         }
 
         .btn:hover {
-            background-color: #feb47b;
-            transform: translateY(-5px); /* Slight hover lift effect */
+            background-color: #5b86e5;
+            transform: translateY(-5px);
         }
 
         .btn:active {
-            transform: translateY(2px); /* Pressed button effect */
+            transform: translateY(2px);
         }
 
-        .see-more-btn {
-            display: block;
-            margin: 30px auto;
-            font-size: 18px;
-            color: #ff7e5f;
-            background: none;
-            border: none;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-       
-
-        /* Footer Styles */
         footer {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
             text-align: center;
-            color: white;
-            font-size: 14px;
-            background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
-            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
 
-           /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-
-            .content h2 {
-                font-size: 24px;
-            }
-
-            iframe {
-                height: 250px;
-            }
-
-            .btn {
-                font-size: 16px;
-                padding: 12px 24px;
-            }
-        }
-
-        /* Comparison Table Styles */
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
@@ -150,7 +98,7 @@
         }
 
         .comparison-table th {
-            background-color: #ff7e5f;
+            background-color: #36d1dc;
             color: white;
         }
 
@@ -159,134 +107,103 @@
         }
 
         .comparison-table a {
-            color: #ff7e5f;
+            color: #36d1dc;
             text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-   
-    <!-- Notes Content -->
-    <div class="notes-container" id="notes-container">
-        <h1>Chapter 1: Chemical Reactions - Notes</h1>
-
-        <h2>Introduction to Chemical Reactions</h2>
-        <p>Chemical reactions are processes in which substances are transformed into new substances with different properties. This transformation occurs when chemical bonds are broken and formed. During a reaction, the atoms rearrange to create products that are distinct from the reactants.</p>
-
-        <h2>Types of Chemical Reactions</h2>
-        <p>Chemical reactions can be classified into several types, such as:</p>
-        <ul>
-            <li><strong>Synthesis Reaction:</strong> Two or more reactants combine to form a single product (A + B → AB).</li>
-            <li><strong>Decomposition Reaction:</strong> A compound breaks down into simpler products (AB → A + B).</li>
-            <li><strong>Single Displacement Reaction:</strong> One element replaces another in a compound (A + BC → B + AC).</li>
-            <li><strong>Double Displacement Reaction:</strong> Two compounds react to form two new compounds (AB + CD → AD + BC).</li>
-            <li><strong>Combustion Reaction:</strong> A substance reacts with oxygen to produce heat and light (usually forming CO₂ and H₂O as products).</li>
-        </ul>
-
-        <h2>Balancing Chemical Equations</h2>
-        <p>One of the key principles in studying chemical reactions is balancing chemical equations. In a balanced equation, the number of atoms for each element is the same on both sides of the equation. This reflects the law of conservation of mass, which states that mass cannot be created or destroyed in a chemical reaction.</p>
-
-        <h2>Factors Affecting the Rate of Reactions</h2>
-        <p>Several factors can influence the rate at which chemical reactions occur:</p>
-        <ul>
-            <li><strong>Temperature:</strong> Increasing the temperature generally speeds up the rate of reaction.</li>
-            <li><strong>Concentration:</strong> Higher concentration of reactants leads to more collisions and faster reactions.</li>
-            <li><strong>Surface Area:</strong> Smaller particles or higher surface area speed up reactions by allowing more collisions.</li>
-            <li><strong>Catalysts:</strong> Catalysts are substances that speed up reactions without being consumed in the process.</li>
-        </ul>
-
-        <h2>Exothermic and Endothermic Reactions</h2>
-        <p>Reactions can be classified into exothermic and endothermic reactions based on the heat exchanged during the process:</p>
-        <ul>
-            <li><strong>Exothermic Reactions:</strong> These reactions release heat energy, making the surroundings warmer. For example, combustion reactions like burning wood or coal.</li>
-            <li><strong>Endothermic Reactions:</strong> These reactions absorb heat from the surroundings, making the surroundings cooler. For example, the process of photosynthesis in plants is endothermic.</li>
-        </ul>
-
-        <h2>Catalysis and Inhibition in Reactions</h2>
-        <p>Catalysts are substances that increase the rate of a reaction without being consumed in the process. They lower the activation energy required for the reaction to occur. On the other hand, inhibitors are substances that slow down or prevent reactions from taking place.</p>
-
-        <h2>Applications of Chemical Reactions</h2>
-        <p>Chemical reactions are fundamental to many processes in daily life, such as:</p>
-        <ul>
-            <li><strong>Medicine:</strong> Chemical reactions are used in the synthesis of drugs and vaccines.</li>
-            <li><strong>Energy Production:</strong> Combustion reactions in fossil fuels produce energy for electricity generation.</li>
-            <li><strong>Food Processing:</strong> Fermentation is a chemical reaction used to produce alcoholic beverages and bread.</li>
-        </ul>
-
-        <h2>Reversible Reactions</h2>
-        <p>Some chemical reactions are reversible, meaning the products can react to form the original reactants. These reactions are often in equilibrium, where the rate of the forward reaction equals the rate of the reverse reaction. For example, the Haber process for ammonia synthesis is a reversible reaction.</p>
-
-        <h2>Conclusion</h2>
-        <p>Chemical reactions are fundamental processes that drive the transformation of materials in our world. Understanding the different types of reactions, how to balance them, and the factors that affect their rates is essential in chemistry. The study of reactions also has practical applications in many fields such as medicine, energy production, and food science.</p>
-
-        <!-- See More Button -->
-        <button class="see-more-btn" id="see-more-btn">See More</button>
+    <div class="header">
+        Notes - Chapter 1: Chemical Reactions and Equations
     </div>
 
-     <!-- Comparison Table Section -->
+    <div class="container">
+        <div class="content">
+            <h2>Introduction</h2>
+            <p>Chemical reactions are processes in which substances are transformed into new substances with different properties. This chapter introduces how to identify chemical changes and how to represent them using balanced chemical equations.</p>
+
+            <h2>Types of Chemical Reactions</h2>
+            <ul>
+                <li><strong>Combination Reaction:</strong> Two or more substances combine to form a single product. <br> Example: 2H₂ + O₂ → 2H₂O</li>
+                <li><strong>Decomposition Reaction:</strong> A compound breaks down into two or more simpler substances. <br> Example: 2H₂O → 2H₂ + O₂</li>
+                <li><strong>Displacement Reaction:</strong> One element displaces another from a compound. <br> Example: Zn + CuSO₄ → ZnSO₄ + Cu</li>
+                <li><strong>Double Displacement Reaction:</strong> Exchange of ions between two compounds. <br> Example: Na₂SO₄ + BaCl₂ → BaSO₄ + 2NaCl</li>
+                <li><strong>Redox Reaction:</strong> Involves oxidation and reduction simultaneously.</li>
+            </ul>
+
+            <h2>Balancing Chemical Equations</h2>
+            <p>To satisfy the Law of Conservation of Mass, chemical equations must be balanced so the number of atoms of each element is the same on both sides of the equation.</p>
+
+            <h2>Oxidation and Reduction</h2>
+            <ul>
+                <li><strong>Oxidation:</strong> Gain of oxygen or loss of hydrogen.</li>
+                <li><strong>Reduction:</strong> Loss of oxygen or gain of hydrogen.</li>
+                <li><strong>Redox Reaction:</strong> A reaction in which both oxidation and reduction occur.</li>
+            </ul>
+
+            <h2>Effects of Oxidation</h2>
+            <ul>
+                <li>Rancidity of food due to oxidation of fats and oils.</li>
+                <li>Rusting of iron when exposed to moisture and air.</li>
+            </ul>
+        </div>
+
+        <!-- Comparison Table Section -->
         <section>
-            <h3>Compare Educational Content Across Platforms:</h3>
+            <h3>Compare Learning Resources:</h3>
             <table class="comparison-table">
                 <thead>
                     <tr>
                         <th>Website</th>
                         <th>Overview</th>
-                        <th>Key Features</th>
-                        <th>Visit</th>
+                        <th>Features</th>
+                        <th>Link</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Byju's</td>
-                        <td>Detailed explanations with interactive lessons.</td>
-                        <td>Interactive lessons, animations, quizzes</td>
-                        <td><a href="https://byjus.com/maths/real-numbers/" target="_blank">Visit Byju's</a></td>
+                        <td>Detailed explanation and animations on chemical reactions</td>
+                        <td>Videos, diagrams, quizzes</td>
+                        <td><a href="https://byjus.com/chemistry/chemical-reactions-and-equations/" target="_blank">Visit</a></td>
                     </tr>
                     <tr>
                         <td>Vedantu</td>
-                        <td>Interactive lessons and quizzes.</td>
-                        <td>Live classes, quizzes, notes</td>
-                        <td><a href="https://www.vedantu.com/maths/real-numbers" target="_blank">Visit Vedantu</a></td>
+                        <td>Live classes and concept videos on this chapter</td>
+                        <td>Live support, tests, downloadable PDFs</td>
+                        <td><a href="https://www.vedantu.com/chemistry/chemical-reactions-and-equations" target="_blank">Visit</a></td>
                     </tr>
                     <tr>
-                        <td>Inacademy</td>
-                        <td>Comprehensive study material for deeper understanding.</td>
-                        <td>Text-based lessons, examples</td>
-                        <td><a href="https://inacademy.in/maths/real-numbers" target="_blank">Visit Inacademy</a></td>
+                        <td>Toppr</td>
+                        <td>Practice tests and conceptual notes</td>
+                        <td>Practice questions, revision notes</td>
+                        <td><a href="https://www.toppr.com/guides/chemistry/chemical-reactions-and-equations/" target="_blank">Visit</a></td>
                     </tr>
                     <tr>
                         <td>Brainly</td>
-                        <td>Community-driven platform with answers and discussions.</td>
-                        <td>Community questions, discussions, solutions</td>
-                        <td><a href="https://brainly.in/question/real-numbers" target="_blank">Visit Brainly</a></td>
+                        <td>Community Q&A and student discussion on chemical reactions</td>
+                        <td>Ask doubts, see answers</td>
+                        <td><a href="https://brainly.in/question/chemical-reactions" target="_blank">Visit</a></td>
                     </tr>
                     <tr>
-                        <td>Toppers</td>
-                        <td>Study materials and resources for students.</td>
-                        <td>Notes, exam tips, practice papers</td>
-                        <td><a href="https://www.toppers.com/real-numbers" target="_blank">Visit Toppers</a></td>
-                    </tr>
-                    <tr>
-                        <td>Shalah.com</td>
-                        <td>Detailed explanations and practice exercises.</td>
-                        <td>Study materials, exercises, practice questions</td>
-                        <td><a href="https://www.shalah.com/maths/real-numbers" target="_blank">Visit Shalah.com</a></td>
+                        <td>Shiksha</td>
+                        <td>Educational summaries and explanations</td>
+                        <td>Notes, articles, question banks</td>
+                        <td><a href="https://www.shiksha.com/chemical-reactions-and-equations" target="_blank">Visit</a></td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-    <!-- Button to return home -->
-    <div class="btn-container">
-        <a href="index.html" class="btn">Back to Home</a>
+        <div class="btn-container">
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         &copy; 2025 Your Website. All Rights Reserved.
     </footer>
 
-    
 </body>
 </html>
