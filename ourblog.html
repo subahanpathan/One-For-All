@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the galaxy of flavors through our cosmic food adventures">
+    <meta name="theme-color" content="#0B0B2A">
+    <title>Space Food Blog | Cosmic Culinary Adventures</title>
+    <link href='https://fonts.googleapis.com/css?family=Space+Grotesk:400,700' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(45deg, #0B0B2A, #1B1B3A);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .background69 {
+            padding: 2rem;
+            min-height: 100vh;
+            background: url(space-bg.jpg) center/cover fixed;
+            position: relative;
+        }
+
+        .background69::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(11, 11, 42, 0.8);
+            z-index: 1;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+            position: relative;
+        }
+
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #FFD700, transparent);
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(255,215,0,0.5); }
+            to { text-shadow: 0 0 20px rgba(255,215,0,0.8), 0 0 30px rgba(255,215,0,0.6); }
+        }
+
+        .producth4 {
+            color: #fff;
+            text-align: center;
+            font-size: 1.4rem;
+            margin-bottom: 4rem;
+            line-height: 1.6;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.5s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .blog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .blogdiv {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .blogdiv:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 2px solid #FFD700;
+            transition: transform 0.4s ease;
+        }
+
+        .blogdiv:hover .blog-image {
+            transform: scale(1.1);
+        }
+
+        .blog-title {
+            color: #FFD700;
+            padding: 1.5rem;
+            margin: 0;
+            font-size: 1.3rem;
+            position: relative;
+        }
+
+        .blog-title::after {
+            content: '';
+            position: absolute;
+            bottom: 15px;
+            left: 1.5rem;
+            width: 50px;
+            height: 2px;
+            background: #FFD700;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: left;
+        }
+
+        .blogdiv:hover .blog-title::after {
+            transform: scaleX(1);
+        }
+
+        .floating-stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+            .producth4 {
+                font-size: 1.1rem;
+            }
+            .blog {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background69">
+        <div class="content-wrapper">
+            <h1 class="page-title">Cosmic Food Chronicles</h1>
+            <h4 class="producth4">
+                Explore the galaxy of flavors through our culinary adventures.<br>
+                Join us on an interstellar journey of taste and innovation!
+            </h4>
+            <div class="blog">
+                <div class="blogdiv">
+                    <img class="blog-image" src="blog1.jpg" alt="Galactic Cuisine">
+                    <h4 class="blog-title">Exploring Galactic Cuisine</h4>
+                </div>
+                <div class="blogdiv">
+                    <img class="blog-image" src="blog2.jpg" alt="Stellar Recipes">
+                    <h4 class="blog-title">Stellar Recipes Collection</h4>
+                </div>
+                <div class="blogdiv">
+                    <img class="blog-image" src="blog3.jpg" alt="Space Delivery">
+                    <h4 class="blog-title">Intergalactic Food Delivery</h4>
+                </div>
+            </div>
+        </div>
+        <div class="floating-stars"></div>
+    </div>
+    <script>
+        // Create floating stars
+        const starsContainer = document.querySelector('.floating-stars');
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.style.cssText = `
+                position: absolute;
+                width: ${Math.random() * 3}px;
+                height: ${Math.random() * 3}px;
+                background: #FFD700;
+                left: ${Math.random() * 100}vw;
+                top: ${Math.random() * 100}vh;
+                opacity: ${Math.random()};
+                border-radius: 50%;
+                animation: twinkle ${Math.random() * 3 + 1}s infinite alternate;
+            `;
+            starsContainer.appendChild(star);
+        }
+
+        // Add hover effect to blog cards
+        document.querySelectorAll('.blogdiv').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add animation styles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes twinkle {
+                from { opacity: 0.2; }
+                to { opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinary Heaven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(food_back.jpg);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated food icons */
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .floating-icon {
+            position: absolute;
+            animation: float 8s infinite linear;
+            opacity: 0;
+            font-size: 2rem;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+        }
+
+        nav {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            color: #e78f38;
+            font-size: 2rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            transition: 0.5s;
+        }
+
+        .logo:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: 0.3s;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: #e78f38;
+            color: #fff;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            color: #fff;
+            max-width: 600px;
+        }
+
+        .content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            animation: slideUp 1s ease;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            color: #eee;
+            animation: slideUp 1s ease 0.2s backwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: slideUp 1s ease 0.4s backwards;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #e78f38;
+            color: #fff;
+        }
+
+        .secondary-btn {
+            border: 2px solid #e78f38;
+            color: #e78f38;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(231, 143, 56, 0.4);
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .content h1 { font-size: 3rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="floating-icons">
+            <span class="floating-icon" style="left: 10%;">🍕</span>
+            <span class="floating-icon" style="left: 30%;">🍔</span>
+            <span class="floating-icon" style="left: 50%;">🍟</span>
+            <span class="floating-icon" style="left: 70%;">🌮</span>
+            <span class="floating-icon" style="left: 90%;">🍜</span>
+        </div>
+
+        <nav>
+            <a href="#" class="logo">CULINARY HEAVEN</a>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="about us.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="ourblog.html">Blog</a>
+            </div>
+        </nav>
+
+        <div class="content">
+            <h1>Experience Food Paradise</h1>
+            <p>Embark on a culinary journey where every bite tells a story. Our master chefs craft each dish with passion and premium ingredients to deliver an unforgettable dining experience.</p>
+            <div class="cta-buttons">
+                <a href="menu.html" class="cta-button primary-btn">Explore Menu</a>
+                <a href="about us.html" class="cta-button secondary-btn">About Us</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animate floating icons
+        const icons = document.querySelectorAll('.floating-icon');
+        icons.forEach(icon => {
+            icon.style.animationDelay = Math.random() * 5 + 's';
+        });
+    </script>
+</body>
+</html>
