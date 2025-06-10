@@ -244,16 +244,7 @@
         }
 
         /* Parallax Section Styles */
-        .parallax-section {
-            position: relative;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            min-height: 100vh;
-            padding: 80px 0;
-            margin-bottom: 30px;
-        }
+        
 
         .food-category {
             background: rgba(255, 255, 255, 0.95);
@@ -739,14 +730,14 @@
 
             <!-- Menu Cards -->
             <!-- First Parallax Section -->
-            <div class="parallax-section" style="background-image: url('food_back.jpg');">
+            <div class="parallax-section" >
                 <div class="container py-5">
                     <div class="food-category">
                         <div class="floating-badges">
                             <span class="badge-custom">Chef's Special</span>
                             <span class="badge-custom">Most Popular</span>
                         </div>
-                        <h2 class="category-title">Pizza & Burgers</h2>
+                        <h2 class="category-title">all items</h2>
                     </div>
                 </div>
             </div>
@@ -776,17 +767,7 @@
                 </div>
 
 
-                <!-- Fast Food Card -->
-                <div class="col-md-3 menu-card">
-                    <img src="fastfood.png" alt="Fast Food Items" class="img-fluid">
-                    <h4 class="producth4">
-                        We provide many more items.<br>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fastfoodModal">
-                            BUY NOW
-                        </button>
-                    </h4>
-                </div>
-
+               
                 <!-- Noodle Card -->
                 <div class="col-md-3 menu-card">
                     <img src="noodle.png" alt="Yummy Noodles" class="img-fluid">
@@ -797,58 +778,6 @@
                         </button>
                     </h4>
                 </div>                <!-- Pasta Card -->
-                <div class="col-md-3 menu-card">
-                    <img src="Pasta.jpg" alt="Delicious Pasta" class="img-fluid">
-                    <h4 class="producth4">
-                        Authentic Italian Pasta.<br>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pastaModal">
-                            BUY NOW
-                        </button>
-                    </h4>
-                </div>
-
-                <!-- Ice Cream Card -->
-                <div class="col-md-3 menu-card">
-                    <img src="Ice cream.jpg" alt="Delicious Ice Cream" class="img-fluid">
-                    <h4 class="producth4">
-                        Refreshing Ice Cream.<br>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#iceCreamModal">
-                            BUY NOW
-                        </button>
-                    </h4>
-                </div>
-
-                <!-- Special Combo Platter Card -->
-                <div class="col-md-3 menu-card">
-                    <img src="fastfood.png" alt="Special Combo Platter" class="img-fluid">
-                    <h4 class="producth4">
-                        Special Combo Platter<br>
-                        <span class="badge-custom" style="font-size: 0.8rem; padding: 3px 8px; margin: 5px 0; display: inline-block;">
-                            Best Value
-                        </span><br>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#comboModal">
-                            BUY NOW
-                        </button>
-                    </h4>
-                </div>
-            </div>
-
-            <!-- Second Parallax Section -->
-            <div class="parallax-section" style="background-image: url('food_back2.jpg');">
-                <div class="container py-5">
-                    <div class="food-category">
-                        <div class="floating-badges">
-                            <span class="badge-custom">Chef's Special</span>
-                            <span class="badge-custom">Most Popular</span>
-                        </div>
-                        <h2 class="category-title">Pasta & Desserts</h2>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Second Row of Cards -->
-            <div class="row justify-content-center">
-                <!-- Pasta Card -->
                 <div class="col-md-3 menu-card">
                     <img src="Pasta.jpg" alt="Delicious Pasta" class="img-fluid">
                     <h4 class="producth4">
@@ -909,20 +838,32 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="modal-body">
+       <img style="width: 50%;" src="pizza.png" alt="">
+       
+      </div>
+      <div class="modal-body">
                         <input type="hidden" name="item" value="{{ item.name }}">
-                        <img src="{{ url_for('static', filename=item.image) }}" class="img-fluid mb-3" alt="{{ item.name }}">
+                        
                         <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                         <input type="email" class="form-control" name="email" placeholder="Your Email" required>
                         <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
                         <input type="number" class="form-control" name="quantity" placeholder="Order Quantity" min="1" required>
- <input type="char" class="form-control" name="location" placeholder="Location" min="1" required>
+<div class="form-group">
+    <label for="location">Select Your Location</label>
+    <select class="form-control" name="location" id="location" required>
+        <option value="" disabled selected>Select a location</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Pune">Pune</option>
+        <option value="Kolhapur">Kolhapur</option>
+        <option value="Nagpur">Nagpur</option>
+        <option value="Nanded">Nanded</option>
+        <!-- Add more locations as needed -->
+    </select>
+</div>
+
+
 
                     </div>
-
-       <img style="width: 50%;" src="pizza.png" alt="">
-       
-      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" onclick="alert('Order placed')">ORDER NOW </button>
@@ -945,6 +886,31 @@
        <img style="width: 50%;" src="burger.png" alt="">
        
       </div>
+      
+
+<div class="modal-body">
+                        <input type="hidden" name="item" value="{{ item.name }}">
+                        
+                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                        <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
+                        <input type="number" class="form-control" name="quantity" placeholder="Order Quantity" min="1" required>
+<div class="form-group">
+    <label for="location">Select Your Location</label>
+    <select class="form-control" name="location" id="location" required>
+        <option value="" disabled selected>Select a location</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Pune">Pune</option>
+        <option value="Kolhapur">Kolhapur</option>
+        <option value="Nagpur">Nagpur</option>
+        <option value="Nanded">Nanded</option>
+        <!-- Add more locations as needed -->
+    </select>
+</div>
+
+
+
+                    </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" onclick="alert('Order placed')">ORDER NOW </button>
@@ -953,27 +919,7 @@
   </div>
 </div>
 
-    <!-- Fast Food Modal -->
-    <div class="modal fade" id="fastfoodModal" tabindex="-1" aria-labelledby="fastfoodModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="fastfoodModalLabel">Fast Food</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <img style="width: 50%;" src="fastfood.png" alt="">
-       
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="alert('Order placed')">ORDER NOW </button>
-      </div>
-    </div>
-  </div>
-</div>
+    
 
     <!-- Noodle Modal -->
     <div class="modal fade" id="noodleModal" tabindex="-1" aria-labelledby="noodleModalLabel" aria-hidden="true">
@@ -988,13 +934,40 @@
       <div class="modal-body">
         <img style="width: 50%;" src="noodle.png" alt="">
       </div>
+      
+
+<div class="modal-body">
+                        <input type="hidden" name="item" value="{{ item.name }}">
+                        
+                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                        <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
+                        <input type="number" class="form-control" name="quantity" placeholder="Order Quantity" min="1" required>
+<div class="form-group">
+    <label for="location">Select Your Location</label>
+    <select class="form-control" name="location" id="location" required>
+        <option value="" disabled selected>Select a location</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Pune">Pune</option>
+        <option value="Kolhapur">Kolhapur</option>
+        <option value="Nagpur">Nagpur</option>
+        <option value="Nanded">Nanded</option>
+        <!-- Add more locations as needed -->
+    </select>
+</div>
+
+
+
+                    </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" onclick="alert('Order placed')">ORDER NOW</button>
       </div>
     </div>
   </div>
-</div>    <!-- Pasta Modal -->
+</div>   
+ <!-- Pasta Modal -->
     <div class="modal fade" id="pastaModal" tabindex="-1" aria-labelledby="pastaModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -1007,6 +980,32 @@
                 <div class="modal-body">
                     <img style="width: 50%;" src="Pasta.jpg" alt="Delicious Italian Pasta">
                 </div>
+                
+
+<div class="modal-body">
+                        <input type="hidden" name="item" value="{{ item.name }}">
+                        
+                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                        <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
+                        <input type="number" class="form-control" name="quantity" placeholder="Order Quantity" min="1" required>
+<div class="form-group">
+    <label for="location">Select Your Location</label>
+    <select class="form-control" name="location" id="location" required>
+        <option value="" disabled selected>Select a location</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Pune">Pune</option>
+        <option value="Kolhapur">Kolhapur</option>
+        <option value="Nagpur">Nagpur</option>
+        <option value="Nanded">Nanded</option>
+        <!-- Add more locations as needed -->
+    </select>
+</div>
+
+
+
+                    </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" onclick="alert('Order placed')">ORDER NOW</button>
@@ -1027,6 +1026,32 @@
                 <div class="modal-body">
                     <img style="width: 50%;" src="Ice cream.jpg" alt="Delicious Ice Cream">
                 </div>
+                
+
+<div class="modal-body">
+                        <input type="hidden" name="item" value="{{ item.name }}">
+                        
+                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                        <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
+                        <input type="number" class="form-control" name="quantity" placeholder="Order Quantity" min="1" required>
+<div class="form-group">
+    <label for="location">Select Your Location</label>
+    <select class="form-control" name="location" id="location" required>
+        <option value="" disabled selected>Select a location</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Pune">Pune</option>
+        <option value="Kolhapur">Kolhapur</option>
+        <option value="Nagpur">Nagpur</option>
+        <option value="Nanded">Nanded</option>
+        <!-- Add more locations as needed -->
+    </select>
+</div>
+
+
+
+                    </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" onclick="alert('Order placed')">ORDER NOW</button>
@@ -1050,6 +1075,32 @@
                         <div class="col-md-6">
                             <img src="fastfood.png" alt="Special Combo Platter" class="img-fluid">
                         </div>
+                        
+
+<div class="modal-body">
+                        <input type="hidden" name="item" value="{{ item.name }}">
+                        
+                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                        <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
+                        <input type="number" class="form-control" name="quantity" placeholder="Order Quantity" min="1" required>
+<div class="form-group">
+    <label for="location">Select Your Location</label>
+    <select class="form-control" name="location" id="location" required>
+        <option value="" disabled selected>Select a location</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Pune">Pune</option>
+        <option value="Kolhapur">Kolhapur</option>
+        <option value="Nagpur">Nagpur</option>
+        <option value="Nanded">Nanded</option>
+        <!-- Add more locations as needed -->
+    </select>
+</div>
+
+
+
+                    </div>
+
                         <div class="col-md-6">
                             <h4 class="text-primary mb-3">Ultimate Feast Combo</h4>
                             <div class="price mb-3">
@@ -1105,10 +1156,10 @@
         <div class="footer-section">
             <h4>Quick Links</h4>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="index4.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="about us.html">Contact</a></li>
             </ul>
         </div>
         <div class="footer-section">
@@ -1127,14 +1178,7 @@
             </form>
         </div>
     </div>
-    <!-- Map Section -->
-    <div class="map-section">
-        <h4>Find Us</h4>            <div id="map" style="width: 100%; height: 400px; border-radius: 8px;">
-                <div id="map-loading" style="display: flex; justify-content: center; align-items: center; height: 100%; background-color: #f8f9fa;">
-                    Loading map...
-                </div>
-            </div>
-    </div>
+    
     <div class="footer-bottom">
         <p>&copy; 2025 Food Heaven. All rights reserved.</p>
     </div>
