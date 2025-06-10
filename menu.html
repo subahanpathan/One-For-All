@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+          #cart-items li {
+    background-color: #f8f9fa;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
         * {
             margin: 0;
             padding: 0;
@@ -722,6 +728,16 @@
             <!-- Hero Section -->
             <div class="hero-section">
                 <div class="hero-decoration"></div>
+                            <!-- Cart Tally Section -->
+<div class="container mb-5">
+  <div class="card p-4">
+    <h3 class="text-center">🛒 Your Cart</h3>
+    <ul id="cart-items" class="list-group mb-3"></ul>
+    <h4>Total: ₹<span id="cart-total">0</span></h4>
+    <button class="btn btn-success btn-block" onclick="placeOrder()">Place Order</button>
+  </div>
+</div>
+
                 <div class="container text-center">
                     <h1 class="hero-title">Delicious Menu</h1>
                     <p class="hero-subtitle">Experience the finest culinary delights in India</p>
@@ -749,9 +765,12 @@
                     <img src="pizza.png" alt="Delicious Pizza" class="img-fluid">
                     <h4 class="producth4">
                         We provide best quality Pizza.<br>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pizzaModal">
-                            BUY NOW
-                        </button>
+                       <button type="button" class="btn btn-primary add-to-cart" 
+        data-name="Pizza" data-price="150"
+        data-toggle="modal" data-target="#pizzaModal">
+    BUY NOW
+</button>
+
                     </h4>
                 </div>
 
@@ -760,9 +779,12 @@
                     <img src="burger.png" alt="Tasty Burger" class="img-fluid">
                     <h4 class="producth4">
                         Burger with best taste.<br>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#burgerModal">
-                            BUY NOW
-                        </button>
+                      <button type="button" class="btn btn-primary add-to-cart" 
+        data-name="Burger" data-price="100"
+        data-toggle="modal" data-target="#burgerModal">
+    BUY NOW
+</button>
+
                     </h4>
                 </div>
 
@@ -773,18 +795,24 @@
                     <img src="noodle.png" alt="Yummy Noodles" class="img-fluid">
                     <h4 class="producth4">
                         Yummy noodles. You should try it.<br>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#noodleModal">
-                            BUY NOW
-                        </button>
+                        <button type="button" class="btn btn-primary add-to-cart" 
+        data-name="Noodles" data-price="80"
+        data-toggle="modal" data-target="#noodleModal">
+    BUY NOW
+</button>
+
                     </h4>
                 </div>                <!-- Pasta Card -->
                 <div class="col-md-3 menu-card">
                     <img src="Pasta.jpg" alt="Delicious Pasta" class="img-fluid">
                     <h4 class="producth4">
                         Authentic Italian Pasta.<br>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pastaModal">
-                            BUY NOW
-                        </button>
+                    <button type="button" class="btn btn-primary add-to-cart" 
+        data-name="Pasta" data-price="70"
+        data-toggle="modal" data-target="#pastaModal">
+    BUY NOW
+</button>
+
                     </h4>
                 </div>
 
@@ -793,9 +821,12 @@
                     <img src="Ice cream.jpg" alt="Delicious Ice Cream" class="img-fluid">
                     <h4 class="producth4">
                         Refreshing Ice Cream.<br>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#iceCreamModal">
-                            BUY NOW
-                        </button>
+                     <button type="button" class="btn btn-primary add-to-cart" 
+        data-name="Ice Cream" data-price="50"
+        data-toggle="modal" data-target="#iceCreamModal">
+    BUY NOW
+</button>
+
                     </h4>
                 </div>
 
@@ -807,9 +838,12 @@
                         <span class="badge-custom" style="font-size: 0.8rem; padding: 3px 8px; margin: 5px 0; display: inline-block;">
                             Best Value
                         </span><br>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#comboModal">
-                            BUY NOW
-                        </button>
+                      <button type="button" class="btn btn-primary add-to-cart" 
+        data-name="Special Combo" data-price="799"
+        data-toggle="modal" data-target="#comboModal">
+    BUY NOW
+</button>
+
                     </h4>
                 </div>
             </div>
@@ -1333,5 +1367,57 @@
             }
         });
     </script>
+    <script>
+    const cart = {};
+    const cartList = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+            const name = button.getAttribute('data-name');
+            const price = parseFloat(button.getAttribute('data-price'));
+
+            if (cart[name]) {
+                cart[name].qty += 1;
+            } else {
+                cart[name] = { price, qty: 1 };
+            }
+
+            updateCart();
+        });
+    });
+
+    function updateCart() {
+        cartList.innerHTML = '';
+        let total = 0;
+        for (const item in cart) {
+            const { price, qty } = cart[item];
+            const itemTotal = price * qty;
+            total += itemTotal;
+
+            const li = document.createElement('li');
+            li.className = 'list-group-item d-flex justify-content-between align-items-center';
+            li.textContent = `${item} x ${qty} = ₹${itemTotal}`;
+            cartList.appendChild(li);
+        }
+        cartTotal.textContent = total;
+    }
+
+    function placeOrder() {
+        if (Object.keys(cart).length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
+
+        let summary = "You have ordered:\n";
+        for (const item in cart) {
+            const { qty, price } = cart[item];
+            summary += `- ${item} x ${qty} = ₹${qty * price}\n`;
+        }
+        summary += `Total: ₹${cartTotal.textContent}`;
+        alert(summary);
+    }
+</script>
+
 </body>
 </html>
