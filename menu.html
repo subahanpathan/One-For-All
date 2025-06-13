@@ -10,18 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-          #cart-items li {
-    background-color: #f8f9fa;
-    margin-bottom: 5px;
-    border-radius: 5px;
-}
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+        
 
         .background45 {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(menubackground.jpg);
@@ -728,14 +717,7 @@
             <!-- Hero Section -->
             <div class="hero-section">
                 <div class="hero-decoration"></div>
-                            <!-- Cart Tally Section -->
-<div class="container mb-5">
-  <div class="card p-4">
-    <h3 class="text-center">🛒 Your Cart</h3>
-    <ul id="cart-items" class="list-group mb-3"></ul>
-    <h4>Total: ₹<span id="cart-total">0</span></h4>
-    <button class="btn btn-success btn-block" onclick="placeOrder()">Place Order</button>
-  </div>
+ 
 </div>
 
                 <div class="container text-center">
@@ -816,19 +798,17 @@
                     </h4>
                 </div>
 
-                <!-- Ice Cream Card -->
-                <div class="col-md-3 menu-card">
-                    <img src="Ice cream.jpg" alt="Delicious Ice Cream" class="img-fluid">
-                    <h4 class="producth4">
-                        Refreshing Ice Cream.<br>
-                     <button type="button" class="btn btn-primary add-to-cart" 
-        data-name="Ice Cream" data-price="50"
-        data-toggle="modal" data-target="#iceCreamModal">
-    BUY NOW
-</button>
+    <div class="col-md-3 menu-card">
+    <img src="{{ url_for('static', filename='icecream.jpg') }}" alt="Delicious Ice Cream" class="img-fluid">
+    <h4 class="producth4">
+        Refreshing Ice Cream.<br>
+        <button type="button" class="btn btn-primary" 
+                data-toggle="modal" data-target="#iceCreamModal">
+            BUY NOW
+        </button>
+    </h4>
+</div>
 
-                    </h4>
-                </div>
 
                 <!-- Special Combo Platter Card -->
                 <div class="col-md-3 menu-card">
@@ -862,308 +842,231 @@
 
     <!-- Modals -->
     <!-- Pizza Modal -->
-    <div class="modal fade" id="pizzaModal" tabindex="-1" aria-labelledby="pizzaModalLabel" aria-hidden="true">
+<div class="modal fade" id="pizzaModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <form method="POST" action="{{ url_for('submit_order') }}" class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="pizzaModalLabel">Pizza</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5 class="modal-title">Order Pizza</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-       <img style="width: 50%;" src="pizza.png" alt="">
-       
+        <img src="{{ url_for('static', filename='pizza.png') }}" class="img-fluid mb-3" alt="Pizza">
+        <input type="hidden" name="item" value="Pizza">
+        <input type="text" class="form-control mb-2" name="name" placeholder="Your Name" required>
+        <input type="email" class="form-control mb-2" name="email" placeholder="Your Email" required>
+        <input type="tel" class="form-control mb-2" name="phone" placeholder="Phone Number" required>
+        <input type="number" class="form-control mb-2" name="quantity" placeholder="Order Quantity" min="1" required>
+        <select class="form-control" name="location" required>
+          <option disabled selected>Select Location</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Pune">Pune</option>
+          <option value="Nagpur">Nagpur</option>
+          <option value="Kolhapur">Kolhapur</option>
+        </select>
       </div>
-        <h4  style="text-align:center; "><b>Rs.150</b></h4>
-      <div class="modal-body">
-                        <input type="hidden" name="item" value="{{ item.name }}">
-                        
-                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                        <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
-                        <input type="number" class="form-control" name="quantity" placeholder="Order Quantity" min="1" required>
-<div class="form-group">
-    <label for="location">Select Your Location</label>
-    <select class="form-control" name="location" id="location" required>
-        <option value="" disabled selected>Select a location</option>
-        <option value="Mumbai">Mumbai</option>
-        <option value="Pune">Pune</option>
-        <option value="Kolhapur">Kolhapur</option>
-        <option value="Nagpur">Nagpur</option>
-        <option value="Nanded">Nanded</option>
-        <!-- Add more locations as needed -->
-    </select>
-</div>
-
-
-
-                    </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="alert('Order placed')">ORDER NOW </button>
+        <button type="submit" class="btn btn-success">ORDER NOW</button>
       </div>
-    </div>
+    </form>
   </div>
 </div>
+
 
     <!-- Burger Modal -->
-    <div class="modal fade" id="burgerModal" tabindex="-1" aria-labelledby="burgerModalLabel" aria-hidden="true">
+ <div class="modal fade" id="burgerModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <form method="POST" action="{{ url_for('submit_order') }}" class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="burgerModalLabel">Burger</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5 class="modal-title">Order Burger</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-       <img style="width: 50%;" src="burger.png" alt="">
-       
+        <img src="{{ url_for('static', filename='burger.png') }}" class="img-fluid mb-3" alt="Burger">
+        <input type="hidden" name="item" value="Burger">
+        <input type="text" class="form-control mb-2" name="name" placeholder="Your Name" required>
+        <input type="email" class="form-control mb-2" name="email" placeholder="Your Email" required>
+        <input type="tel" class="form-control mb-2" name="phone" placeholder="Phone Number" required>
+        <input type="number" class="form-control mb-2" name="quantity" placeholder="Order Quantity" min="1" required>
+        <select class="form-control" name="location" required>
+          <option disabled selected>Select Location</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Pune">Pune</option>
+          <option value="Nagpur">Nagpur</option>
+          <option value="Kolhapur">Kolhapur</option>
+        </select>
       </div>
-      
-<h4  style="text-align:center; "><b>Rs.100</b></h4>
-<div class="modal-body">
-                        <input type="hidden" name="item" value="{{ item.name }}">
-                        
-                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                        <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
-                        <input type="number" class="form-control" name="quantity" placeholder="Order Quantity" min="1" required>
-<div class="form-group">
-    <label for="location">Select Your Location</label>
-    <select class="form-control" name="location" id="location" required>
-        <option value="" disabled selected>Select a location</option>
-        <option value="Mumbai">Mumbai</option>
-        <option value="Pune">Pune</option>
-        <option value="Kolhapur">Kolhapur</option>
-        <option value="Nagpur">Nagpur</option>
-        <option value="Nanded">Nanded</option>
-        <!-- Add more locations as needed -->
-    </select>
-</div>
-
-
-
-                    </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="alert('Order placed')">ORDER NOW </button>
+        <button type="submit" class="btn btn-success">ORDER NOW</button>
       </div>
-    </div>
+    </form>
   </div>
 </div>
 
-    
 
     <!-- Noodle Modal -->
-    <div class="modal fade" id="noodleModal" tabindex="-1" aria-labelledby="noodleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="noodleModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <form method="POST" action="{{ url_for('submit_order') }}" class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="noodleModalLabel">Yummy Noodle</h5>
+        <h5 class="modal-title">Order Noodle</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="{{ url_for('static', filename='noodle.png') }}" class="img-fluid mb-3" alt="Noodle">
+        <input type="hidden" name="item" value="Noodle">
+        <input type="text" class="form-control mb-2" name="name" placeholder="Your Name" required>
+        <input type="email" class="form-control mb-2" name="email" placeholder="Your Email" required>
+        <input type="tel" class="form-control mb-2" name="phone" placeholder="Phone Number" required>
+        <input type="number" class="form-control mb-2" name="quantity" placeholder="Order Quantity" min="1" required>
+        <select class="form-control" name="location" required>
+          <option disabled selected>Select Location</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Pune">Pune</option>
+          <option value="Nagpur">Nagpur</option>
+          <option value="Kolhapur">Kolhapur</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">ORDER NOW</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+ <!-- Pasta Modal -->
+   <div class="modal fade" id="pastaModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <form method="POST" action="{{ url_for('submit_order') }}" class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Order Pasta</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="{{ url_for('static', filename='pasta.png') }}" class="img-fluid mb-3" alt="Pasta">
+        <input type="hidden" name="item" value="Pasta">
+        <input type="text" class="form-control mb-2" name="name" placeholder="Your Name" required>
+        <input type="email" class="form-control mb-2" name="email" placeholder="Your Email" required>
+        <input type="tel" class="form-control mb-2" name="phone" placeholder="Phone Number" required>
+        <input type="number" class="form-control mb-2" name="quantity" placeholder="Order Quantity" min="1" required>
+        <select class="form-control" name="location" required>
+          <option disabled selected>Select Location</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Pune">Pune</option>
+          <option value="Nagpur">Nagpur</option>
+          <option value="Kolhapur">Kolhapur</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">ORDER NOW</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+    <!-- Ice Cream Modal -->
+
+<div class="modal fade" id="iceCreamModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <form method="POST" action="{{ url_for('submit_order') }}" class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Order Ice Cream</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="{{ url_for('static', filename='icecream.jpg') }}" class="img-fluid mb-3" alt="Ice Cream">
+        <input type="hidden" name="item" value="Ice Cream">
+        <input type="text" class="form-control mb-2" name="name" placeholder="Your Name" required>
+        <input type="email" class="form-control mb-2" name="email" placeholder="Your Email" required>
+        <input type="tel" class="form-control mb-2" name="phone" placeholder="Phone Number" required>
+        <input type="number" class="form-control mb-2" name="quantity" placeholder="Order Quantity" min="1" required>
+        <select class="form-control" name="location" required>
+          <option disabled selected>Select Location</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Pune">Pune</option>
+          <option value="Nagpur">Nagpur</option>
+          <option value="Kolhapur">Kolhapur</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">ORDER NOW</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+    <!-- Combo Platter Modal -->
+ <!-- Combo Platter Modal -->
+<div class="modal fade" id="comboModal" tabindex="-1" aria-labelledby="comboModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <form method="POST" action="{{ url_for('submit_order') }}" class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="comboModalLabel">Special Combo Platter</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
       <div class="modal-body">
-        <img style="width: 50%;" src="noodle.png" alt="">
+        <div class="row">
+          <!-- Image & Inputs -->
+          <div class="col-md-6">
+            <img src="{{ url_for('static', filename='fastfood.png') }}" alt="Special Combo Platter" class="img-fluid mb-3">
+            
+            <input type="hidden" name="item" value="Combo Platter">
+
+            <input type="text" class="form-control mb-2" name="name" placeholder="Your Name" required>
+            <input type="email" class="form-control mb-2" name="email" placeholder="Your Email" required>
+            <input type="tel" class="form-control mb-2" name="phone" placeholder="Phone Number" required>
+            <input type="number" class="form-control mb-2" name="quantity" placeholder="Order Quantity" min="1" required>
+
+            <select class="form-control mb-2" name="location" required>
+              <option disabled selected>Select Your Location</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Pune">Pune</option>
+              <option value="Nagpur">Nagpur</option>
+              <option value="Kolhapur">Kolhapur</option>
+              <option value="Nanded">Nanded</option>
+            </select>
+          </div>
+
+          <!-- Combo Description -->
+          <div class="col-md-6">
+            <h4 class="text-primary mb-3">Ultimate Feast Combo</h4>
+            <div class="price mb-3">
+              <span class="h3 text-danger"><s>₹999</s> ₹799</span>
+              <span class="badge badge-success ml-2">Save ₹200</span>
+            </div>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="fas fa-check-circle text-success"></i> 1 Medium Pizza</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-success"></i> 2 Burgers</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-success"></i> 1 Plate Noodles</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-success"></i> 2 Ice Creams</li>
+              <li class="mb-2"><i class="fas fa-check-circle text-success"></i> 2 Soft Drinks</li>
+            </ul>
+            <div class="alert alert-warning">
+              <i class="fas fa-clock"></i> Limited Time Offer!
+            </div>
+          </div>
+        </div>
       </div>
-      
-<h4  style="text-align:center; "><b>Rs.80</b></h4>
-<div class="modal-body">
-                        <input type="hidden" name="item" value="{{ item.name }}">
-                        
-                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                        <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
-                        <input type="number" class="form-control" name="quantity" placeholder="Order Quantity" min="1" required>
-<div class="form-group">
-    <label for="location">Select Your Location</label>
-    <select class="form-control" name="location" id="location" required>
-        <option value="" disabled selected>Select a location</option>
-        <option value="Mumbai">Mumbai</option>
-        <option value="Pune">Pune</option>
-        <option value="Kolhapur">Kolhapur</option>
-        <option value="Nagpur">Nagpur</option>
-        <option value="Nanded">Nanded</option>
-        <!-- Add more locations as needed -->
-    </select>
-</div>
-
-
-
-                    </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="alert('Order placed')">ORDER NOW</button>
+        <button type="submit" class="btn btn-success">
+          <i class="fas fa-shopping-cart"></i> ORDER NOW
+        </button>
       </div>
-    </div>
+    </form>
   </div>
-</div>   
- <!-- Pasta Modal -->
-    <div class="modal fade" id="pastaModal" tabindex="-1" aria-labelledby="pastaModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="pastaModalLabel">Italian Pasta</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img style="width: 50%;" src="Pasta.jpg" alt="Delicious Italian Pasta">
-                </div>
-                <h4  style="text-align:center; "><b>Rs.70</b></h4>
-
-<div class="modal-body">
-                        <input type="hidden" name="item" value="{{ item.name }}">
-                        
-                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                        <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
-                        <input type="number" class="form-control" name="quantity" placeholder="Order Quantity" min="1" required>
-<div class="form-group">
-    <label for="location">Select Your Location</label>
-    <select class="form-control" name="location" id="location" required>
-        <option value="" disabled selected>Select a location</option>
-        <option value="Mumbai">Mumbai</option>
-        <option value="Pune">Pune</option>
-        <option value="Kolhapur">Kolhapur</option>
-        <option value="Nagpur">Nagpur</option>
-        <option value="Nanded">Nanded</option>
-        <!-- Add more locations as needed -->
-    </select>
 </div>
-
-
-
-                    </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="alert('Order placed')">ORDER NOW</button>
-                </div>
-            </div>
-        </div>    </div>
-
-    <!-- Ice Cream Modal -->
-    <div class="modal fade" id="iceCreamModal" tabindex="-1" aria-labelledby="iceCreamModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="iceCreamModalLabel">Refreshing Ice Cream</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img style="width: 50%;" src="Ice cream.jpg" alt="Delicious Ice Cream">
-                </div>
-                <h4  style="text-align:center; "><b>Rs.50</b></h4>
-
-<div class="modal-body">
-                        <input type="hidden" name="item" value="{{ item.name }}">
-                        
-                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                        <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
-                        <input type="number" class="form-control" name="quantity" placeholder="Order Quantity" min="1" required>
-<div class="form-group">
-    <label for="location">Select Your Location</label>
-    <select class="form-control" name="location" id="location" required>
-        <option value="" disabled selected>Select a location</option>
-        <option value="Mumbai">Mumbai</option>
-        <option value="Pune">Pune</option>
-        <option value="Kolhapur">Kolhapur</option>
-        <option value="Nagpur">Nagpur</option>
-        <option value="Nanded">Nanded</option>
-        <!-- Add more locations as needed -->
-    </select>
-</div>
-
-
-
-                    </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="alert('Order placed')">ORDER NOW</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Combo Platter Modal -->
-    <div class="modal fade" id="comboModal" tabindex="-1" aria-labelledby="comboModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="comboModalLabel">Special Combo Platter</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img src="fastfood.png" alt="Special Combo Platter" class="img-fluid">
-                        </div>
-                        
-
-<div class="modal-body">
-                        <input type="hidden" name="item" value="{{ item.name }}">
-                        
-                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                        <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
-                        <input type="number" class="form-control" name="quantity" placeholder="Order Quantity" min="1" required>
-<div class="form-group">
-    <label for="location">Select Your Location</label>
-    <select class="form-control" name="location" id="location" required>
-        <option value="" disabled selected>Select a location</option>
-        <option value="Mumbai">Mumbai</option>
-        <option value="Pune">Pune</option>
-        <option value="Kolhapur">Kolhapur</option>
-        <option value="Nagpur">Nagpur</option>
-        <option value="Nanded">Nanded</option>
-        <!-- Add more locations as needed -->
-    </select>
-</div>
-
-
-
-                    </div>
-
-                        <div class="col-md-6">
-                            <h4 class="text-primary mb-3">Ultimate Feast Combo</h4>
-                            <div class="price mb-3">
-                                <span class="h3 text-danger"><s>₹999</s> ₹799</span>
-                                <span class="badge badge-success ml-2">Save ₹200</span>
-                            </div>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check-circle text-success"></i> 1 Medium Pizza</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success"></i> 2 Burgers</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success"></i> 1 Plate Noodles</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success"></i> 2 Ice Creams</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success"></i> 2 Soft Drinks</li>
-                            </ul>
-                            <div class="alert alert-warning">
-                                <i class="fas fa-clock"></i> Limited Time Offer!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="alert('Combo order placed!')">
-                        <i class="fas fa-shopping-cart"></i> Order Now
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -1367,57 +1270,5 @@
             }
         });
     </script>
-    <script>
-    const cart = {};
-    const cartList = document.getElementById('cart-items');
-    const cartTotal = document.getElementById('cart-total');
-
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.addEventListener('click', () => {
-            const name = button.getAttribute('data-name');
-            const price = parseFloat(button.getAttribute('data-price'));
-
-            if (cart[name]) {
-                cart[name].qty += 1;
-            } else {
-                cart[name] = { price, qty: 1 };
-            }
-
-            updateCart();
-        });
-    });
-
-    function updateCart() {
-        cartList.innerHTML = '';
-        let total = 0;
-        for (const item in cart) {
-            const { price, qty } = cart[item];
-            const itemTotal = price * qty;
-            total += itemTotal;
-
-            const li = document.createElement('li');
-            li.className = 'list-group-item d-flex justify-content-between align-items-center';
-            li.textContent = `${item} x ${qty} = ₹${itemTotal}`;
-            cartList.appendChild(li);
-        }
-        cartTotal.textContent = total;
-    }
-
-    function placeOrder() {
-        if (Object.keys(cart).length === 0) {
-            alert("Your cart is empty!");
-            return;
-        }
-
-        let summary = "You have ordered:\n";
-        for (const item in cart) {
-            const { qty, price } = cart[item];
-            summary += `- ${item} x ${qty} = ₹${qty * price}\n`;
-        }
-        summary += `Total: ₹${cartTotal.textContent}`;
-        alert(summary);
-    }
-</script>
-
 </body>
 </html>
