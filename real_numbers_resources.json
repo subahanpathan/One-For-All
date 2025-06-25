@@ -1,0 +1,38 @@
+[
+  {
+    "site": "Byju's",
+    "overview": "Detailed explanations with interactive lessons.",
+    "features": "Interactive lessons, animations, quizzes",
+    "link": "https://byjus.com/maths/real-numbers/"
+  },
+  {
+    "site": "Vedantu",
+    "overview": "Interactive lessons and quizzes.",
+    "features": "Live classes, quizzes, notes",
+    "link": "https://www.vedantu.com/maths/real-numbers"
+  },
+  {
+    "site": "Inacademy",
+    "overview": "Comprehensive study material for deeper understanding.",
+    "features": "Text-based lessons, examples",
+    "link": "https://inacademy.in/maths/real-numbers"
+  },
+  {
+    "site": "Brainly",
+    "overview": "Community-driven platform with answers and discussions.",
+    "features": "Community questions, discussions, solutions",
+    "link": "https://brainly.in/question/real-numbers"
+  },
+  {
+    "site": "Toppers",
+    "overview": "Study materials and resources for students.",
+    "features": "Notes, exam tips, practice papers",
+    "link": "https://www.toppers.com/real-numbers"
+  },
+  {
+    "site": "Shalah.com",
+    "overview": "Detailed explanations and practice exercises.",
+    "features": "Study materials, exercises, practice questions",
+    "link": "https://www.shalah.com/maths/real-numbers"
+  }
+]
