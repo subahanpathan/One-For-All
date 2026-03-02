@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EduAdventure Realm</title>
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    background:black;
+}
+
+#hud{
+    position:fixed;
+    top:10px;
+    left:10px;
+    color:cyan;
+    font-family:Segoe UI;
+    background:rgba(0,0,0,0.6);
+    padding:10px;
+    border-radius:8px;
+}
+
+.back{
+    position:absolute;
+    top:20px;
+    right:20px;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<a class="back" href="character.html">Change Character</a>
+
+<div id="hud">
+Player: <span id="playerName"></span>
+</div>
+
+<script type="module">
+
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.161/build/three.module.js";
+import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.161/examples/jsm/loaders/GLTFLoader.js";
+
+const playerName = localStorage.getItem("playerName");
+const avatarURL = localStorage.getItem("avatarURL");
+
+if(!playerName){
+    window.location.href="character.html";
+}
+
+document.getElementById("playerName").innerText = playerName;
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x000000);
+
+const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth/window.innerHeight,
+    0.1,
+    1000
+);
+camera.position.set(0,2,5);
+
+const renderer = new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+const hemiLight = new THREE.HemisphereLight(0xffffff,0x444444,2);
+scene.add(hemiLight);
+
+const ground = new THREE.Mesh(
+    new THREE.PlaneGeometry(50,50),
+    new THREE.MeshStandardMaterial({color:0x1b5e20})
+);
+ground.rotation.x = -Math.PI/2;
+scene.add(ground);
+
+const loader = new GLTFLoader();
+let avatar;
+
+if(avatarURL){
+    loader.load(avatarURL, (gltf)=>{
+        avatar = gltf.scene;
+        avatar.scale.set(1.5,1.5,1.5);
+        scene.add(avatar);
+    });
+}
+
+function animate(){
+    requestAnimationFrame(animate);
+    if(avatar){
+        avatar.rotation.y += 0.005;
+    }
+    renderer.render(scene,camera);
+}
+animate();
+
+</script>
+
+</body>
+</html>

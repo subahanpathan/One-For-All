@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduAdventure - Game Mode</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    font-family:Segoe UI;
+    color:white;
+}
+
+#bgVideo{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}
+
+.overlay{
+    position:relative;
+    height:100vh;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.9));
+    text-align:center;
+}
+
+h1{
+    font-size:60px;
+    letter-spacing:2px;
+    text-shadow:0 0 30px #00f2ff;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:20px;
+    opacity:0.9;
+    margin-bottom:40px;
+}
+
+button{
+    padding:18px 60px;
+    font-size:20px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background:linear-gradient(45deg,#00f2ff,#0077ff);
+    color:white;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px #00f2ff;
+}
+
+.back-btn{
+    position:absolute;
+    top:20px;
+    left:20px;
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Video -->
+<video autoplay muted loop playsinline id="bgVideo">
+    <source src="bg.mp4" type="video/mp4">
+</video>
+
+<!-- Back to Main Site -->
+<a href="index.html" class="back-btn">← Back to Home</a>
+
+<div class="overlay">
+    <h1>EduAdventure</h1>
+    <p>Enter the 3D Learning Arena</p>
+    <button onclick="startGame()">ENTER THE ISLAND</button>
+</div>
+
+<script>
+function startGame(){
+    window.location.href = "character.html";
+}
+</script>
+
+</body>
+</html>

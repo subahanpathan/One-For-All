@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create Your Hero</title>
+
+<style>
+body{
+    margin:0;
+    background:#0b0f1a;
+    color:white;
+    font-family:Segoe UI;
+    text-align:center;
+}
+
+.top{
+    padding:15px;
+    background:#111827;
+    font-size:24px;
+}
+
+input{
+    margin-top:20px;
+    padding:12px;
+    width:260px;
+    border-radius:8px;
+    border:none;
+}
+
+button{
+    padding:12px 30px;
+    margin-left:10px;
+    border:none;
+    border-radius:8px;
+    background:#00c3ff;
+    color:white;
+    cursor:pointer;
+}
+
+#avatarFrame{
+    width:100%;
+    height:75vh;
+    border:none;
+    margin-top:15px;
+}
+
+.back{
+    position:absolute;
+    top:20px;
+    left:20px;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<a class="back" href="game.html">← Back</a>
+
+<div class="top">Create Your Hero</div>
+
+<div style="margin-top:15px;">
+    <input type="text" id="playerName" placeholder="Enter your name">
+    <button onclick="saveName()">Continue</button>
+</div>
+
+<iframe id="avatarFrame"
+src="https://demo.readyplayer.me/avatar?frameApi"
+allow="camera *; microphone *">
+</iframe>
+
+<script>
+let playerName = null;
+
+function saveName(){
+    const name = document.getElementById("playerName").value.trim();
+
+    if(name.length < 2){
+        alert("Please enter your name first");
+        return;
+    }
+
+    playerName = name;
+    localStorage.setItem("playerName", name);
+    alert("Now create avatar and press DONE.");
+}
+
+window.addEventListener("message", function(event){
+    try{
+        const data = JSON.parse(event.data);
+
+        if(data.eventName === "v1.avatar.exported"){
+            localStorage.setItem("avatarURL", data.data.url);
+
+            if(playerName){
+                window.location.href = "arena.html";
+            }else{
+                alert("Enter name first!");
+            }
+        }
+    }catch(e){}
+});
+</script>
+
+</body>
+</html>
